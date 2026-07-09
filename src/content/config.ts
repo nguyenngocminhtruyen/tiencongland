@@ -15,6 +15,8 @@ const properties = defineCollection({
     bathrooms: z.number().int().nonnegative(),
     area: z.number(),
     legalStatus: z.string(),
+    developer: z.string().optional(),
+    handover: z.string().optional(),
     featured: z.boolean().default(false),
     images: z.array(z.string()).min(1),
     description: z.string(),

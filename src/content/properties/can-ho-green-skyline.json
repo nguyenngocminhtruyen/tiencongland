@@ -1,0 +1,33 @@
+{
+  "title": "Căn hộ Green Skyline 2PN view hồ bơi tràn bờ, Dĩ An",
+  "status": "for-sale",
+  "propertyType": "apartment",
+  "price": 4.0,
+  "priceUnit": "billion",
+  "district": "Dĩ An",
+  "city": "TP. Hồ Chí Minh",
+  "address": "Đại lộ Phạm Văn Đồng nối dài, P. Dĩ An",
+  "bedrooms": 2,
+  "bathrooms": 2,
+  "area": 70,
+  "legalStatus": "Sổ hồng lâu dài",
+  "developer": "TBS Land",
+  "handover": "Quý III/2026",
+  "featured": true,
+  "images": [
+    "/images/properties/can-ho-green-skyline-1.svg",
+    "/images/properties/can-ho-green-skyline-2.svg",
+    "/images/properties/can-ho-green-skyline-3.svg"
+  ],
+  "description": "Green Skyline là dự án căn hộ cao cấp tọa lạc ngay cửa ngõ Đông TP.HCM (Dĩ An), do TBS Land phát triển, dự kiến bàn giao Quý III/2026. Dự án mang đến không gian sống nghỉ dưỡng giữa lòng phố thị với các tầng tiện ích đang trong giai đoạn hoàn thiện: hồ bơi tràn bờ, Cầu Vọng Cảnh với tầm view độc bản, khu vực thưởng trà và mocktail ngoài trời. Căn hộ 2 phòng ngủ, diện tích khoảng 70m², pháp lý minh bạch, khách mua nhận sổ hồng lâu dài - phù hợp cho gia đình trẻ tìm nơi an cư hoặc nhà đầu tư dài hạn.",
+  "amenities": [
+    "Hồ bơi tràn bờ",
+    "Cầu Vọng Cảnh - tầm view độc bản",
+    "Khu thưởng trà và mocktail ngoài trời",
+    "Phòng gym & yoga",
+    "Khu vui chơi trẻ em",
+    "An ninh 24/7, khóa vân tay/thẻ từ",
+    "Đối diện siêu thị Go! Dĩ An"
+  ],
+  "publishDate": "2026-07-10"
+}
