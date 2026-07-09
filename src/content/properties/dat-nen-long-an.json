@@ -1,0 +1,29 @@
+{
+  "title": "Đất nền sổ đỏ Bến Lức, Long An gần cao tốc",
+  "status": "for-sale",
+  "propertyType": "land",
+  "price": 1.9,
+  "priceUnit": "billion",
+  "district": "Bến Lức",
+  "city": "Long An",
+  "address": "Xã Nhựt Chánh, Huyện Bến Lức, Long An",
+  "bedrooms": 0,
+  "bathrooms": 0,
+  "area": 100,
+  "legalStatus": "Sổ đỏ thổ cư 100%",
+  "featured": false,
+  "images": [
+    "/images/properties/dat-nen-long-an-1.svg",
+    "/images/properties/dat-nen-long-an-2.svg",
+    "/images/properties/dat-nen-long-an-3.svg"
+  ],
+  "description": "Lô đất nền thổ cư pháp lý rõ ràng, tiếp giáp đường nhựa, cách cao tốc TP.HCM - Trung Lương 5 phút di chuyển. Khu vực đang phát triển hạ tầng mạnh, tiềm năng tăng giá tốt cho đầu tư trung hạn.",
+  "amenities": [
+    "Sổ đỏ thổ cư",
+    "Gần cao tốc",
+    "Đường nhựa trước nhà",
+    "Khu dân cư hiện hữu",
+    "Điện nước đầy đủ"
+  ],
+  "publishDate": "2026-04-10"
+}

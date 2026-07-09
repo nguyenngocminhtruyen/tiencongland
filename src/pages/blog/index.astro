@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import BlogCard from '@/components/BlogCard.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+const categories = [...new Set(posts.map((p) => p.data.category))];
+---
+
+<Layout
+  title="Kiến thức bất động sản"
+  description="Chia sẻ kinh nghiệm mua bán, pháp lý nhà đất, phong thủy và xu hướng đầu tư bất động sản tại Việt Nam."
+>
+  <Breadcrumbs items={[{ label: 'Kiến thức' }]} />
+
+  <section class="container-page pb-10">
+    <h1 class="font-serif text-3xl font-semibold sm:text-4xl">Kiến thức bất động sản</h1>
+    <p class="mt-3 max-w-2xl text-primary-500">
+      Kinh nghiệm thực tế, cập nhật pháp lý và góc nhìn đầu tư được chia sẻ thường xuyên.
+    </p>
+    <div class="mt-5 flex flex-wrap gap-2">
+      <span class="badge">Tất cả</span>
+      {categories.map((c) => <span class="badge">{c}</span>)}
+    </div>
+  </section>
+
+  <section class="container-page section pt-0">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => <BlogCard post={post} />)}
+    </div>
+  </section>
+</Layout>

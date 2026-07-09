@@ -1,0 +1,30 @@
+{
+  "title": "Căn hộ Landmark 81 view triệu đô, full nội thất",
+  "status": "for-rent",
+  "propertyType": "apartment",
+  "price": 45,
+  "priceUnit": "million-per-month",
+  "district": "Bình Thạnh",
+  "city": "TP. Hồ Chí Minh",
+  "address": "720A Điện Biên Phủ, Phường 22, Quận Bình Thạnh",
+  "bedrooms": 3,
+  "bathrooms": 2,
+  "area": 112,
+  "legalStatus": "Hợp đồng thuê linh hoạt",
+  "featured": true,
+  "images": [
+    "/images/properties/can-ho-landmark81-1.svg",
+    "/images/properties/can-ho-landmark81-2.svg",
+    "/images/properties/can-ho-landmark81-3.svg"
+  ],
+  "description": "Căn hộ cao cấp tại tòa tháp biểu tượng Landmark 81, tầm nhìn toàn cảnh thành phố và sông Sài Gòn. Nội thất nhập khẩu đồng bộ, sẵn sàng dọn vào ở ngay. Phù hợp cho chuyên gia nước ngoài hoặc gia đình trẻ.",
+  "amenities": [
+    "View toàn cảnh thành phố",
+    "Nội thất cao cấp",
+    "Hồ bơi & spa",
+    "Trung tâm thương mại Vincom",
+    "An ninh 24/7",
+    "Bãi đỗ xe hầm"
+  ],
+  "publishDate": "2026-06-30"
+}

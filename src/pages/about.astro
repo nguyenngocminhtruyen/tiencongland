@@ -1,0 +1,149 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import Icon from '@/components/Icon.astro';
+import StatItem from '@/components/StatItem.astro';
+import { SITE } from '@/lib/site';
+
+const credentials = [
+  {
+    icon: 'shield-check' as const,
+    title: 'Chứng chỉ hành nghề môi giới BĐS',
+    description: 'Cấp bởi Bộ Xây dựng, đáp ứng đầy đủ yêu cầu pháp lý hành nghề.',
+  },
+  {
+    icon: 'award' as const,
+    title: 'Thành viên VARS',
+    description: 'Hội viên Hội Môi giới Bất động sản Việt Nam, tuân thủ quy tắc đạo đức nghề nghiệp.',
+  },
+  {
+    icon: 'users' as const,
+    title: '250+ khách hàng tin tưởng',
+    description: 'Đồng hành cùng hàng trăm gia đình và nhà đầu tư trong các giao dịch quan trọng.',
+  },
+  {
+    icon: 'building' as const,
+    title: '300+ giao dịch thành công',
+    description: 'Từ căn hộ, nhà phố, biệt thự đến đất nền và bất động sản thương mại.',
+  },
+];
+
+const timeline = [
+  { year: '2018', title: 'Bắt đầu sự nghiệp môi giới', description: 'Khởi nghiệp với vai trò tư vấn viên tại một sàn giao dịch bất động sản tại TP.HCM.' },
+  { year: '2020', title: 'Chuyên sâu phân khúc căn hộ trung - cao cấp', description: 'Tích lũy kinh nghiệm tư vấn các dự án căn hộ khu vực Bình Thạnh, Quận 2.' },
+  { year: '2022', title: 'Mở rộng sang nhà phố, biệt thự và đất nền', description: 'Phục vụ đa dạng nhu cầu khách hàng từ để ở đến đầu tư dài hạn.' },
+  { year: '2026', title: 'Xây dựng thương hiệu cá nhân Tiến Công Land', description: 'Tập trung vào tư vấn minh bạch, đặt lợi ích khách hàng làm trọng tâm.' },
+];
+
+const values = [
+  { title: 'Minh bạch', description: 'Mọi thông tin pháp lý, giá cả đều được cung cấp rõ ràng, không che giấu rủi ro.' },
+  { title: 'Tận tâm', description: 'Đồng hành cùng khách hàng từ bước tìm hiểu đến khi hoàn tất giao dịch và sau đó.' },
+  { title: 'Chuyên nghiệp', description: 'Cập nhật liên tục kiến thức thị trường, pháp lý để đưa ra tư vấn chính xác.' },
+];
+---
+
+<Layout
+  title="Giới thiệu"
+  description={`Tìm hiểu về ${SITE.name} - chuyên viên tư vấn bất động sản với 8+ năm kinh nghiệm tại TP.HCM, cam kết minh bạch và tận tâm với khách hàng.`}
+>
+  <Breadcrumbs items={[{ label: 'Giới thiệu' }]} />
+
+  <!-- Intro -->
+  <section class="container-page grid gap-10 pb-16 sm:pb-20 lg:grid-cols-2 lg:items-center lg:gap-16">
+    <div class="overflow-hidden rounded-lg shadow-card">
+      <img
+        src="/images/about-portrait.svg"
+        alt={`Chân dung ${SITE.name}`}
+        width="900"
+        height="1200"
+        class="aspect-[3/4] w-full object-cover"
+        fetchpriority="high"
+      />
+    </div>
+    <div>
+      <p class="badge">
+        <Icon name="shield-check" size={14} class="text-accent-600" />
+        Chuyên viên tư vấn bất động sản
+      </p>
+      <h1 class="mt-4 font-serif text-3xl font-semibold sm:text-4xl">{SITE.name}</h1>
+      <p class="mt-4 text-primary-600">
+        Tôi tin rằng mỗi quyết định bất động sản đều ảnh hưởng lớn đến cuộc sống của một gia đình. Vì vậy, triết lý làm việc của tôi luôn đặt sự minh bạch và lợi ích khách hàng lên hàng đầu, thay vì chạy theo doanh số ngắn hạn.
+      </p>
+      <p class="mt-4 text-primary-600">
+        Hơn 8 năm gắn bó với thị trường bất động sản TP.HCM và các tỉnh lân cận, tôi đã đồng hành cùng hàng trăm khách hàng tìm được bất động sản phù hợp với nhu cầu ở thực và mục tiêu đầu tư dài hạn.
+      </p>
+      <div class="mt-6 grid grid-cols-2 gap-6 border-t border-border pt-6 sm:grid-cols-4">
+        <StatItem icon="award" value="8+" label="Năm kinh nghiệm" />
+        <StatItem icon="building" value="300+" label="Giao dịch" />
+        <StatItem icon="users" value="250+" label="Khách hàng" />
+        <StatItem icon="star" value="4.9/5" label="Đánh giá" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section bg-primary-50">
+    <div class="container-page">
+      <SectionHeading eyebrow="Giá trị cốt lõi" title="Nguyên tắc làm việc của tôi" align="center" class="mx-auto" />
+      <div class="mt-10 grid gap-6 sm:grid-cols-3">
+        {values.map((v) => (
+          <div class="card p-6 text-center">
+            <h3 class="font-serif text-xl font-semibold text-primary-900">{v.title}</h3>
+            <p class="mt-2 text-sm text-primary-500">{v.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section class="section">
+    <div class="container-page">
+      <SectionHeading eyebrow="Chứng nhận & thành tích" title="Nền tảng uy tín đã được xác thực" />
+      <div class="mt-10 grid gap-6 sm:grid-cols-2">
+        {credentials.map((c) => (
+          <div class="card flex gap-4 p-6">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent-600">
+              <Icon name={c.icon} size={22} />
+            </span>
+            <div>
+              <h3 class="font-serif text-lg font-semibold text-primary-900">{c.title}</h3>
+              <p class="mt-1 text-sm text-primary-500">{c.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="section bg-primary-50">
+    <div class="container-page">
+      <SectionHeading eyebrow="Hành trình" title="Các cột mốc quan trọng" align="center" class="mx-auto" />
+      <ol class="relative mt-12 space-y-10 border-l border-primary-200 pl-6 sm:pl-8">
+        {timeline.map((item) => (
+          <li class="relative">
+            <span class="absolute -left-[calc(1.5rem+5px)] top-1 h-2.5 w-2.5 rounded-full bg-accent-500 sm:-left-[calc(2rem+5px)]"></span>
+            <span class="text-sm font-semibold text-accent-600">{item.year}</span>
+            <h3 class="mt-1 font-serif text-lg font-semibold text-primary-900">{item.title}</h3>
+            <p class="mt-1 text-sm text-primary-500">{item.description}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section bg-primary-900">
+    <div class="container-page flex flex-col items-center gap-6 text-center">
+      <h2 class="max-w-2xl font-serif text-3xl font-semibold text-white sm:text-4xl">
+        Hãy để tôi đồng hành cùng bạn trong quyết định quan trọng này
+      </h2>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a href="/contact" class="btn-accent">Liên hệ tư vấn ngay</a>
+        <a href="/properties" class="btn border border-primary-700 text-white hover:bg-primary-800">Xem bất động sản</a>
+      </div>
+    </div>
+  </section>
+</Layout>

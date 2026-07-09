@@ -1,0 +1,85 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import BlogCard from '@/components/BlogCard.astro';
+import Icon from '@/components/Icon.astro';
+import { formatDate } from '@/lib/format';
+import { blogSlug } from '@/lib/content';
+import { SITE } from '@/lib/site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: blogSlug(post.id) },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { title, description, publishDate, author, category, image } = post.data;
+const { Content } = await render(post);
+
+const allPosts = await getCollection('blog');
+const related = allPosts.filter((p) => p.id !== post.id && p.data.category === category).slice(0, 3);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: new URL(image, SITE.url).toString(),
+  datePublished: publishDate.toISOString().slice(0, 10),
+  author: { '@type': 'Person', name: author },
+  publisher: { '@type': 'Organization', name: SITE.brand },
+};
+---
+
+<Layout title={title} description={description} image={image} type="article" jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ label: 'Kiến thức', href: '/blog' }, { label: title }]} />
+
+  <article class="container-page pb-16">
+    <div class="mx-auto max-w-3xl">
+      <span class="badge">{category}</span>
+      <h1 class="mt-4 font-serif text-3xl font-semibold sm:text-4xl">{title}</h1>
+      <div class="mt-4 flex items-center gap-4 text-sm text-primary-400">
+        <span class="flex items-center gap-1.5">
+          <Icon name="calendar" size={16} />
+          {formatDate(publishDate)}
+        </span>
+        <span>Tác giả: {author}</span>
+      </div>
+
+      <div class="mt-8 overflow-hidden rounded-lg shadow-card">
+        <img src={image} alt={title} width="1200" height="800" class="aspect-[3/2] w-full object-cover" fetchpriority="high" />
+      </div>
+
+      <div class="prose prose-neutral mt-10 max-w-none prose-headings:font-serif prose-headings:text-primary-900 prose-a:text-accent-600 prose-a:no-underline hover:prose-a:underline">
+        <Content />
+      </div>
+
+      <div class="mt-10 flex items-center justify-between rounded-lg border border-border bg-primary-50 p-6">
+        <div>
+          <p class="font-serif font-semibold text-primary-900">Cần tư vấn thêm về bất động sản?</p>
+          <p class="mt-1 text-sm text-primary-500">Liên hệ ngay để được hỗ trợ miễn phí.</p>
+        </div>
+        <a href="/contact" class="btn-accent shrink-0">Liên hệ</a>
+      </div>
+    </div>
+  </article>
+
+  {related.length > 0 && (
+    <section class="section bg-primary-50 pt-0 sm:pt-0 lg:pt-0">
+      <div class="container-page">
+        <h2 class="font-serif text-2xl font-semibold">Bài viết liên quan</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((p) => <BlogCard post={p} />)}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>

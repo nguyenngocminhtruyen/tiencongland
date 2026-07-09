@@ -1,0 +1,90 @@
+---
+import { NAV_LINKS, SITE } from '@/lib/site';
+import Icon from './Icon.astro';
+
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? currentPath === '/' : currentPath.startsWith(href));
+---
+
+<header class="sticky top-0 z-40 border-b border-border bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/80">
+  <div class="container-page flex h-16 items-center justify-between sm:h-20">
+    <a href="/" class="flex items-center gap-2.5 shrink-0">
+      <span class="flex h-9 w-9 items-center justify-center rounded bg-primary-800 font-serif text-lg font-bold text-white sm:h-10 sm:w-10">
+        T
+      </span>
+      <span class="flex flex-col leading-none">
+        <span class="font-serif text-base font-semibold text-primary-900 sm:text-lg">{SITE.name}</span>
+        <span class="text-[11px] tracking-wide text-primary-400 uppercase">{SITE.brand}</span>
+      </span>
+    </a>
+
+    <nav class="hidden lg:flex lg:items-center lg:gap-8" aria-label="Chính">
+      {NAV_LINKS.map((link) => (
+        <a
+          href={link.href}
+          class={`text-sm font-medium transition-colors ${isActive(link.href) ? 'text-accent-600' : 'text-primary-700 hover:text-primary-900'}`}
+          aria-current={isActive(link.href) ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden items-center gap-3 lg:flex">
+      <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} class="flex items-center gap-2 text-sm font-medium text-primary-800 hover:text-accent-600">
+        <Icon name="phone" size={18} />
+        {SITE.phoneDisplay}
+      </a>
+      <a href="/contact" class="btn-accent text-sm">Liên hệ tư vấn</a>
+    </div>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      class="flex h-11 w-11 items-center justify-center rounded text-primary-800 lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Mở menu điều hướng"
+    >
+      <Icon name="menu" size={26} class="block" />
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-border bg-surface lg:hidden" role="dialog" aria-modal="true" aria-label="Menu điều hướng">
+    <nav class="container-page flex flex-col gap-1 py-4" aria-label="Di động">
+      {NAV_LINKS.map((link) => (
+        <a
+          href={link.href}
+          class={`rounded px-3 py-3 text-base font-medium ${isActive(link.href) ? 'bg-accent-50 text-accent-600' : 'text-primary-800 hover:bg-primary-50'}`}
+          aria-current={isActive(link.href) ? 'page' : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+      <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} class="mt-2 flex items-center gap-2 rounded px-3 py-3 text-base font-medium text-primary-800">
+        <Icon name="phone" size={18} />
+        {SITE.phoneDisplay}
+      </a>
+      <a href="/contact" class="btn-accent mt-2 w-full">Liên hệ tư vấn</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.contains('hidden') === false;
+    menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  const mediaQuery = window.matchMedia('(min-width: 1024px)');
+  mediaQuery.addEventListener('change', (e) => {
+    if (e.matches) {
+      menu?.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>

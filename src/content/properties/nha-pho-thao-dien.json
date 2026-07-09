@@ -1,0 +1,30 @@
+{
+  "title": "Nhà phố Thảo Điền 1 trệt 3 lầu, hẻm xe hơi",
+  "status": "for-sale",
+  "propertyType": "house",
+  "price": 15.5,
+  "priceUnit": "billion",
+  "district": "Quận 2",
+  "city": "TP. Hồ Chí Minh",
+  "address": "Đường Quốc Hương, Phường Thảo Điền, Quận 2",
+  "bedrooms": 4,
+  "bathrooms": 4,
+  "area": 120,
+  "legalStatus": "Sổ hồng, xây dựng hoàn công đầy đủ",
+  "featured": true,
+  "images": [
+    "/images/properties/nha-pho-thao-dien-1.svg",
+    "/images/properties/nha-pho-thao-dien-2.svg",
+    "/images/properties/nha-pho-thao-dien-3.svg"
+  ],
+  "description": "Nhà phố hiện đại trong khu compound an ninh khép kín tại Thảo Điền, khu vực tập trung đông đảo chuyên gia nước ngoài. Thiết kế thông minh, sân vườn riêng, gần trường quốc tế và tiện ích cao cấp.",
+  "amenities": [
+    "Hẻm xe hơi thông thoáng",
+    "Sân vườn riêng",
+    "Gần trường quốc tế",
+    "Khu compound an ninh",
+    "Gần sông Sài Gòn",
+    "Thang máy gia đình"
+  ],
+  "publishDate": "2026-06-02"
+}

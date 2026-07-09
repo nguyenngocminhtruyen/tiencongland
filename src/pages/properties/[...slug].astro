@@ -1,0 +1,220 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import PropertyCard from '@/components/PropertyCard.astro';
+import Icon from '@/components/Icon.astro';
+import { formatArea, formatDate, formatPrice, statusLabel, typeLabel } from '@/lib/format';
+import { SITE } from '@/lib/site';
+
+export async function getStaticPaths() {
+  const properties = await getCollection('properties');
+  return properties.map((property) => ({
+    params: { slug: property.id },
+    props: { property },
+  }));
+}
+
+interface Props {
+  property: CollectionEntry<'properties'>;
+}
+
+const { property } = Astro.props;
+const {
+  title,
+  status,
+  propertyType,
+  price,
+  priceUnit,
+  district,
+  city,
+  address,
+  bedrooms,
+  bathrooms,
+  area,
+  legalStatus,
+  images,
+  description,
+  amenities,
+  publishDate,
+} = property.data;
+
+const allProperties = await getCollection('properties');
+const related = allProperties
+  .filter((p) => p.id !== property.id && p.data.propertyType === propertyType)
+  .slice(0, 3);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateListing',
+  name: title,
+  description,
+  image: images.map((img) => new URL(img, SITE.url).toString()),
+  url: new URL(`/properties/${property.id}`, SITE.url).toString(),
+  datePosted: publishDate.toISOString().slice(0, 10),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: address,
+    addressLocality: district,
+    addressRegion: city,
+    addressCountry: 'VN',
+  },
+  offers: {
+    '@type': 'Offer',
+    price,
+    priceCurrency: priceUnit === 'billion' ? 'VND' : 'VND',
+    availability: status === 'sold' ? 'https://schema.org/SoldOut' : 'https://schema.org/InStock',
+  },
+};
+---
+
+<Layout title={title} description={description} image={images[0]} type="article" jsonLd={jsonLd}>
+  <Breadcrumbs items={[{ label: 'Bất động sản', href: '/properties' }, { label: title }]} />
+
+  <section class="container-page grid gap-10 pb-16 lg:grid-cols-3 lg:gap-12">
+    <div class="lg:col-span-2">
+      <!-- Gallery -->
+      <div>
+        <div class="overflow-hidden rounded-lg bg-primary-100 shadow-card">
+          <img
+            id="gallery-main"
+            src={images[0]}
+            alt={title}
+            width="1200"
+            height="900"
+            class="aspect-[4/3] w-full object-cover"
+            fetchpriority="high"
+          />
+        </div>
+        {images.length > 1 && (
+          <div class="mt-3 grid grid-cols-3 gap-3">
+            {images.map((img, i) => (
+              <button
+                type="button"
+                class="gallery-thumb overflow-hidden rounded border-2 border-transparent aria-selected:border-accent-500"
+                data-src={img}
+                aria-selected={i === 0}
+                aria-label={`Xem ảnh ${i + 1}`}
+              >
+                <img src={img} alt="" width="400" height="300" class="aspect-[4/3] w-full object-cover" loading="lazy" />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <!-- Header -->
+      <div class="mt-8 border-b border-border pb-8">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="badge">{statusLabel(status)}</span>
+          <span class="badge">{typeLabel(propertyType)}</span>
+        </div>
+        <h1 class="mt-3 font-serif text-2xl font-semibold sm:text-3xl">{title}</h1>
+        <p class="mt-2 flex items-center gap-1.5 text-primary-500">
+          <Icon name="map-pin" size={18} class="shrink-0 text-primary-400" />
+          {address}, {district}, {city}
+        </p>
+        <p class="mt-4 font-serif text-3xl font-semibold text-accent-600">{formatPrice(price, priceUnit)}</p>
+      </div>
+
+      <!-- Key facts -->
+      <div class="grid grid-cols-2 gap-4 py-8 sm:grid-cols-4">
+        {bedrooms > 0 && (
+          <div class="flex flex-col items-center gap-1.5 rounded-lg border border-border bg-surface-card py-4 text-center">
+            <Icon name="bed" size={22} class="text-accent-600" />
+            <span class="text-sm font-semibold text-primary-900">{bedrooms} phòng ngủ</span>
+          </div>
+        )}
+        {bathrooms > 0 && (
+          <div class="flex flex-col items-center gap-1.5 rounded-lg border border-border bg-surface-card py-4 text-center">
+            <Icon name="bath" size={22} class="text-accent-600" />
+            <span class="text-sm font-semibold text-primary-900">{bathrooms} phòng tắm</span>
+          </div>
+        )}
+        <div class="flex flex-col items-center gap-1.5 rounded-lg border border-border bg-surface-card py-4 text-center">
+          <Icon name="expand" size={22} class="text-accent-600" />
+          <span class="text-sm font-semibold text-primary-900">{formatArea(area)}</span>
+        </div>
+        <div class="flex flex-col items-center gap-1.5 rounded-lg border border-border bg-surface-card py-4 text-center">
+          <Icon name="shield-check" size={22} class="text-accent-600" />
+          <span class="text-sm font-semibold text-primary-900">{legalStatus}</span>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="border-t border-border py-8">
+        <h2 class="font-serif text-xl font-semibold text-primary-900">Mô tả chi tiết</h2>
+        <p class="mt-3 leading-relaxed text-primary-600">{description}</p>
+      </div>
+
+      <!-- Amenities -->
+      {amenities.length > 0 && (
+        <div class="border-t border-border py-8">
+          <h2 class="font-serif text-xl font-semibold text-primary-900">Tiện ích nổi bật</h2>
+          <ul class="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {amenities.map((a) => (
+              <li class="flex items-center gap-2.5 text-sm text-primary-700">
+                <Icon name="check-circle" size={18} class="shrink-0 text-accent-600" />
+                {a}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <p class="border-t border-border pt-6 text-xs text-primary-400">
+        Đăng ngày {formatDate(publishDate)} &middot; Mã tin: {property.id}
+      </p>
+    </div>
+
+    <!-- Sidebar contact -->
+    <aside class="lg:col-span-1">
+      <div class="card sticky top-24 p-6">
+        <h2 class="font-serif text-lg font-semibold text-primary-900">Quan tâm bất động sản này?</h2>
+        <p class="mt-2 text-sm text-primary-500">
+          Liên hệ trực tiếp với tôi để được tư vấn chi tiết, xem nhà thực tế hoặc thương lượng giá.
+        </p>
+        <div class="mt-5 flex flex-col gap-3">
+          <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} class="btn-accent w-full">
+            <Icon name="phone" size={18} />
+            Gọi {SITE.phoneDisplay}
+          </a>
+          <a href={`/contact?property=${property.id}`} class="btn-outline w-full">
+            <Icon name="envelope" size={18} />
+            Gửi yêu cầu tư vấn
+          </a>
+        </div>
+        <div class="mt-5 flex items-center gap-2 border-t border-border pt-5 text-xs text-primary-400">
+          <Icon name="shield-check" size={16} class="shrink-0 text-accent-500" />
+          Thông tin pháp lý đã được xác minh trước khi đăng tin
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  {related.length > 0 && (
+    <section class="section bg-primary-50 pt-0 sm:pt-0 lg:pt-0">
+      <div class="container-page">
+        <h2 class="font-serif text-2xl font-semibold">Bất động sản tương tự</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {related.map((p) => <PropertyCard property={p} />)}
+        </div>
+      </div>
+    </section>
+  )}
+</Layout>
+
+<script>
+  const mainImage = document.getElementById('gallery-main') as HTMLImageElement | null;
+  const thumbs = document.querySelectorAll<HTMLButtonElement>('.gallery-thumb');
+
+  thumbs.forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      const src = thumb.dataset.src;
+      if (!src || !mainImage) return;
+      mainImage.src = src;
+      thumbs.forEach((t) => t.setAttribute('aria-selected', 'false'));
+      thumb.setAttribute('aria-selected', 'true');
+    });
+  });
+</script>

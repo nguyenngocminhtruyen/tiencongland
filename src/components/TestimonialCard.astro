@@ -1,0 +1,33 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  quote: string;
+  name: string;
+  role: string;
+  rating?: number;
+}
+
+const { quote, name, role, rating = 5 } = Astro.props;
+---
+
+<figure class="card flex h-full flex-col p-6 sm:p-7">
+  <div class="flex items-center gap-1 text-accent-500" aria-hidden="true">
+    {Array.from({ length: 5 }).map((_, i) => (
+      <Icon name="star" size={16} filled={i < rating} class={i < rating ? 'text-accent-500' : 'text-primary-200'} />
+    ))}
+  </div>
+  <span class="sr-only">{rating} trên 5 sao</span>
+  <blockquote class="mt-4 flex-1 text-[15px] leading-relaxed text-primary-700">
+    &ldquo;{quote}&rdquo;
+  </blockquote>
+  <figcaption class="mt-5 flex items-center gap-3 border-t border-border pt-4">
+    <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-100 font-serif text-sm font-semibold text-primary-700">
+      {name.charAt(0)}
+    </span>
+    <span class="flex flex-col leading-tight">
+      <span class="text-sm font-semibold text-primary-900">{name}</span>
+      <span class="text-xs text-primary-400">{role}</span>
+    </span>
+  </figcaption>
+</figure>

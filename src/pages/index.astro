@@ -1,0 +1,228 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import Icon from '@/components/Icon.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import PropertyCard from '@/components/PropertyCard.astro';
+import BlogCard from '@/components/BlogCard.astro';
+import TestimonialCard from '@/components/TestimonialCard.astro';
+import StatItem from '@/components/StatItem.astro';
+import { SITE } from '@/lib/site';
+
+const allProperties = await getCollection('properties');
+const featuredProperties = allProperties
+  .filter((p) => p.data.featured)
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+
+const allPosts = await getCollection('blog');
+const latestPosts = allPosts.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()).slice(0, 3);
+
+const testimonials = [
+  {
+    quote: 'Anh Công tư vấn rất tận tâm và trung thực, giúp gia đình tôi tìm được căn hộ ưng ý trong ngân sách. Toàn bộ thủ tục pháp lý được hỗ trợ rõ ràng, minh bạch.',
+    name: 'Chị Minh Anh',
+    role: 'Khách mua căn hộ Vinhomes Central Park',
+  },
+  {
+    quote: 'Là nhà đầu tư lần đầu, tôi được anh Công phân tích rất kỹ về tiềm năng khu vực và rủi ro pháp lý trước khi quyết định. Rất chuyên nghiệp.',
+    name: 'Anh Quốc Bảo',
+    role: 'Nhà đầu tư đất nền Long An',
+  },
+  {
+    quote: 'Quá trình cho thuê nhà phố của tôi được xử lý nhanh chóng, tìm được khách thuê phù hợp chỉ trong 2 tuần. Sẽ tiếp tục hợp tác lâu dài.',
+    name: 'Cô Thanh Hà',
+    role: 'Chủ nhà cho thuê Thảo Điền',
+  },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateAgent',
+  name: SITE.name,
+  image: new URL('/images/hero-agent.svg', SITE.url).toString(),
+  url: SITE.url,
+  telephone: SITE.phone,
+  email: SITE.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: SITE.address,
+    addressLocality: 'TP. Hồ Chí Minh',
+    addressCountry: 'VN',
+  },
+  areaServed: 'TP. Hồ Chí Minh, Việt Nam',
+  sameAs: [SITE.social.facebook, SITE.social.youtube],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5',
+    reviewCount: String(testimonials.length),
+  },
+  review: testimonials.map((t) => ({
+    '@type': 'Review',
+    reviewBody: t.quote,
+    author: { '@type': 'Person', name: t.name },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+  })),
+};
+---
+
+<Layout jsonLd={jsonLd}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-primary-900" aria-labelledby="hero-heading">
+    <div class="container-page grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-28">
+      <div>
+        <p class="badge border-accent-400/40 bg-accent-500/10 text-accent-300">
+          <Icon name="shield-check" size={14} />
+          8+ năm kinh nghiệm &middot; 300+ giao dịch thành công
+        </p>
+        <h1 id="hero-heading" class="mt-5 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
+          Đồng hành cùng bạn tìm được bất động sản đáng giá từng đồng
+        </h1>
+        <p class="mt-5 max-w-xl text-lg text-primary-300">
+          Tôi là {SITE.name}, chuyên viên tư vấn bất động sản tại TP.HCM. Cam kết minh bạch pháp lý, tư vấn trung thực và đồng hành cùng bạn đến khi giao dịch hoàn tất.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="/properties" class="btn-accent">
+            Xem bất động sản
+            <Icon name="arrow-right" size={18} />
+          </a>
+          <a href="/contact" class="btn-outline-dark">
+            Đặt lịch tư vấn miễn phí
+          </a>
+        </div>
+        <div class="mt-10 flex items-center gap-6 border-t border-primary-800 pt-6 text-primary-300">
+          <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} class="flex items-center gap-2 text-sm hover:text-accent-400">
+            <Icon name="phone" size={18} />
+            {SITE.phoneDisplay}
+          </a>
+          <span class="flex items-center gap-2 text-sm">
+            <Icon name="map-pin" size={18} />
+            TP. Hồ Chí Minh
+          </span>
+        </div>
+      </div>
+      <div>
+        <div class="relative mx-auto max-w-md overflow-hidden rounded-lg shadow-card-hover lg:max-w-none">
+          <img
+            src="/images/hero-agent.svg"
+            alt={`Chân dung ${SITE.name}, chuyên viên tư vấn bất động sản`}
+            width="1600"
+            height="1200"
+            class="aspect-[4/3] w-full object-cover"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <section class="border-b border-border bg-surface-card" aria-labelledby="trust-bar-heading">
+    <h2 id="trust-bar-heading" class="sr-only">Thành tích và uy tín</h2>
+    <div class="container-page grid grid-cols-2 gap-8 py-12 sm:grid-cols-4">
+      <StatItem icon="award" value="8+" label="Năm kinh nghiệm" />
+      <StatItem icon="building" value="300+" label="Giao dịch thành công" />
+      <StatItem icon="users" value="250+" label="Khách hàng tin tưởng" />
+      <StatItem icon="star" value="4.9/5" label="Đánh giá trung bình" />
+    </div>
+  </section>
+
+  <!-- Featured properties -->
+  <section class="section" aria-labelledby="featured-heading">
+    <div class="container-page">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <SectionHeading id="featured-heading" eyebrow="Bất động sản nổi bật" title="Những lựa chọn đáng cân nhắc" description="Danh sách bất động sản được chọn lọc kỹ lưỡng về pháp lý, vị trí và tiềm năng đầu tư." />
+        <a href="/properties" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
+          Xem tất cả
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {featuredProperties.map((property) => <PropertyCard property={property} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- About teaser -->
+  <section class="section bg-primary-50" aria-labelledby="about-heading">
+    <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div class="overflow-hidden rounded-lg shadow-card">
+        <img
+          src="/images/about-portrait.svg"
+          alt={`${SITE.name} tại văn phòng tư vấn`}
+          width="900"
+          height="1200"
+          loading="lazy"
+          class="aspect-[3/4] w-full object-cover"
+        />
+      </div>
+      <div>
+        <SectionHeading id="about-heading" eyebrow="Về tôi" title="Người bạn đồng hành đáng tin cậy trong hành trình bất động sản" />
+        <p class="mt-5 text-primary-600">
+          Với hơn 8 năm hoạt động trong lĩnh vực bất động sản tại TP.HCM, tôi hiểu rằng mỗi giao dịch không chỉ là con số mà còn là quyết định quan trọng của cả gia đình. Tôi cam kết tư vấn trung thực, minh bạch pháp lý và luôn đặt lợi ích khách hàng lên hàng đầu.
+        </p>
+        <ul class="mt-6 space-y-3">
+          {[
+            'Chứng chỉ hành nghề môi giới bất động sản',
+            'Thành viên Hội Môi giới Bất động sản Việt Nam (VARS)',
+            'Cam kết hỗ trợ pháp lý trọn đời hồ sơ',
+          ].map((item) => (
+            <li class="flex items-start gap-2.5 text-sm text-primary-700">
+              <Icon name="check-circle" size={18} class="mt-0.5 shrink-0 text-accent-600" />
+              {item}
+            </li>
+          ))}
+        </ul>
+        <a href="/about" class="btn-primary mt-8">
+          Tìm hiểu thêm về tôi
+          <Icon name="arrow-right" size={18} />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" aria-labelledby="testimonials-heading">
+    <div class="container-page">
+      <SectionHeading id="testimonials-heading" eyebrow="Khách hàng nói gì" title="Sự hài lòng của khách hàng là ưu tiên hàng đầu" align="center" class="mx-auto" />
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map((t) => <TestimonialCard {...t} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog teaser -->
+  <section class="section bg-primary-50" aria-labelledby="blog-heading">
+    <div class="container-page">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <SectionHeading id="blog-heading" eyebrow="Kiến thức bất động sản" title="Cập nhật thông tin hữu ích" description="Kinh nghiệm mua bán, pháp lý và xu hướng đầu tư được chia sẻ thường xuyên." />
+        <a href="/blog" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
+          Xem tất cả
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {latestPosts.map((post) => <BlogCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section bg-primary-900" aria-labelledby="final-cta-heading">
+    <div class="container-page flex flex-col items-center gap-6 text-center">
+      <h2 id="final-cta-heading" class="max-w-2xl font-serif text-3xl font-semibold text-white sm:text-4xl">
+        Sẵn sàng tìm bất động sản phù hợp với bạn?
+      </h2>
+      <p class="max-w-xl text-primary-300">
+        Liên hệ ngay để được tư vấn miễn phí, không ràng buộc. Tôi sẽ phản hồi trong vòng 24 giờ.
+      </p>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a href="/contact" class="btn-accent">Đặt lịch tư vấn miễn phí</a>
+        <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} class="btn-outline-dark">
+          <Icon name="phone" size={18} />
+          Gọi {SITE.phoneDisplay}
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

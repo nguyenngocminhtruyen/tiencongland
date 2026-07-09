@@ -1,0 +1,283 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Icon from '@/components/Icon.astro';
+import { SITE } from '@/lib/site';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Liên hệ',
+  url: new URL('/contact', SITE.url).toString(),
+};
+---
+
+<Layout
+  title="Liên hệ"
+  description="Liên hệ tư vấn bất động sản miễn phí. Gọi điện, nhắn tin hoặc để lại thông tin, tôi sẽ phản hồi trong vòng 24 giờ."
+  jsonLd={jsonLd}
+>
+  <Breadcrumbs items={[{ label: 'Liên hệ' }]} />
+
+  <section class="container-page pb-10">
+    <h1 class="font-serif text-3xl font-semibold sm:text-4xl">Liên hệ tư vấn</h1>
+    <p class="mt-3 max-w-2xl text-primary-500">
+      Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ phản hồi trong vòng 24 giờ để tư vấn miễn phí, không ràng buộc.
+    </p>
+  </section>
+
+  <section class="container-page section pt-0">
+    <div class="grid gap-10 lg:grid-cols-5 lg:gap-12">
+      <!-- Form -->
+      <div class="lg:col-span-3">
+        <div class="card p-6 sm:p-8">
+          <h2 class="font-serif text-xl font-semibold text-primary-900">Gửi yêu cầu tư vấn</h2>
+
+          <form id="contact-form" novalidate class="mt-6 space-y-5">
+            <div id="form-status" class="hidden" role="status" aria-live="polite"></div>
+
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label for="name" class="block text-sm font-medium text-primary-700">
+                  Họ và tên <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  autocomplete="name"
+                  class="mt-1.5 h-11 w-full rounded border border-primary-200 px-3.5 text-base text-primary-900 placeholder:text-primary-300 focus:border-accent-500"
+                  placeholder="Nguyễn Văn A"
+                />
+                <p class="field-error mt-1.5 hidden text-sm text-danger" role="alert"></p>
+              </div>
+
+              <div>
+                <label for="phone" class="block text-sm font-medium text-primary-700">
+                  Số điện thoại <span class="text-danger">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  autocomplete="tel"
+                  inputmode="tel"
+                  class="mt-1.5 h-11 w-full rounded border border-primary-200 px-3.5 text-base text-primary-900 placeholder:text-primary-300 focus:border-accent-500"
+                  placeholder="0909 123 456"
+                />
+                <p class="field-error mt-1.5 hidden text-sm text-danger" role="alert"></p>
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-primary-700">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                class="mt-1.5 h-11 w-full rounded border border-primary-200 px-3.5 text-base text-primary-900 placeholder:text-primary-300 focus:border-accent-500"
+                placeholder="ban@email.com"
+              />
+              <p class="field-error mt-1.5 hidden text-sm text-danger" role="alert"></p>
+            </div>
+
+            <div>
+              <label for="interest" class="block text-sm font-medium text-primary-700">Nhu cầu</label>
+              <select
+                id="interest"
+                name="interest"
+                class="mt-1.5 h-11 w-full rounded border border-primary-200 px-3.5 text-base text-primary-900 focus:border-accent-500"
+              >
+                <option value="mua">Mua bất động sản</option>
+                <option value="ban">Bán bất động sản</option>
+                <option value="thue">Thuê / cho thuê</option>
+                <option value="tu-van">Tư vấn đầu tư</option>
+                <option value="khac">Khác</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-primary-700">
+                Nội dung <span class="text-danger">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="4"
+                class="mt-1.5 w-full rounded border border-primary-200 px-3.5 py-2.5 text-base text-primary-900 placeholder:text-primary-300 focus:border-accent-500"
+                placeholder="Tôi quan tâm đến bất động sản..."
+              ></textarea>
+              <p class="field-error mt-1.5 hidden text-sm text-danger" role="alert"></p>
+            </div>
+
+            <p class="text-xs text-primary-400">
+              Bằng việc gửi thông tin, bạn đồng ý để {SITE.name} liên hệ tư vấn qua điện thoại hoặc email.
+            </p>
+
+            <button type="submit" class="btn-accent w-full sm:w-auto">
+              <span id="submit-label">Gửi yêu cầu</span>
+              <Icon name="arrow-right" size={18} />
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact info -->
+      <div class="lg:col-span-2">
+        <div class="card divide-y divide-border">
+          <div class="flex items-start gap-3 p-5">
+            <Icon name="phone" size={20} class="mt-0.5 shrink-0 text-accent-600" />
+            <div>
+              <p class="text-sm font-medium text-primary-900">Điện thoại</p>
+              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} class="text-sm text-primary-500 hover:text-accent-600">{SITE.phoneDisplay}</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-5">
+            <Icon name="envelope" size={20} class="mt-0.5 shrink-0 text-accent-600" />
+            <div>
+              <p class="text-sm font-medium text-primary-900">Email</p>
+              <a href={`mailto:${SITE.email}`} class="text-sm text-primary-500 hover:text-accent-600">{SITE.email}</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-5">
+            <Icon name="map-pin" size={20} class="mt-0.5 shrink-0 text-accent-600" />
+            <div>
+              <p class="text-sm font-medium text-primary-900">Văn phòng</p>
+              <p class="text-sm text-primary-500">{SITE.address}</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-5">
+            <Icon name="clock" size={20} class="mt-0.5 shrink-0 text-accent-600" />
+            <div>
+              <p class="text-sm font-medium text-primary-900">Giờ làm việc</p>
+              <p class="text-sm text-primary-500">{SITE.workingHours}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 overflow-hidden rounded-lg border border-border shadow-subtle">
+          <iframe
+            title="Bản đồ văn phòng"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=106.695%2C10.768%2C106.715%2C10.788&layer=mapnik"
+            class="h-64 w-full"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <div class="mt-6 flex items-center gap-3">
+          <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-full border border-primary-200 text-primary-600 hover:border-accent-500 hover:text-accent-600">
+            <Icon name="facebook" size={20} />
+          </a>
+          <a href={SITE.social.zalo} target="_blank" rel="noopener noreferrer" aria-label="Zalo" class="flex h-11 w-11 items-center justify-center rounded-full border border-primary-200 text-primary-600 hover:border-accent-500 hover:text-accent-600">
+            <Icon name="zalo" size={20} />
+          </a>
+          <a href={SITE.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="flex h-11 w-11 items-center justify-center rounded-full border border-primary-200 text-primary-600 hover:border-accent-500 hover:text-accent-600">
+            <Icon name="youtube" size={20} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script define:vars={{ contactEmail: SITE.email }} is:inline>
+  const form = document.getElementById('contact-form');
+  const statusBox = document.getElementById('form-status');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const submitLabel = document.getElementById('submit-label');
+
+  const params = new URLSearchParams(window.location.search);
+  const propertyRef = params.get('property');
+  const messageField = document.getElementById('message');
+  if (propertyRef && messageField) {
+    messageField.value = `Tôi quan tâm đến bất động sản mã: ${propertyRef}. Vui lòng liên hệ tư vấn thêm.`;
+  }
+
+  function fieldError(field) {
+    return field.parentElement ? field.parentElement.querySelector('.field-error') : null;
+  }
+
+  function showError(field, message) {
+    field.setAttribute('aria-invalid', 'true');
+    field.classList.add('border-danger');
+    const errorEl = fieldError(field);
+    if (errorEl) {
+      errorEl.textContent = message;
+      errorEl.classList.remove('hidden');
+    }
+  }
+
+  function clearError(field) {
+    field.removeAttribute('aria-invalid');
+    field.classList.remove('border-danger');
+    const errorEl = fieldError(field);
+    if (errorEl) errorEl.classList.add('hidden');
+  }
+
+  function validateField(field) {
+    if (field.required && !field.value.trim()) {
+      showError(field, 'Vui lòng nhập thông tin này.');
+      return false;
+    }
+    if (field.type === 'email' && field.value && !/^\S+@\S+\.\S+$/.test(field.value)) {
+      showError(field, 'Email không hợp lệ.');
+      return false;
+    }
+    if (field.type === 'tel' && field.value && !/^[0-9+\s]{9,15}$/.test(field.value)) {
+      showError(field, 'Số điện thoại không hợp lệ.');
+      return false;
+    }
+    clearError(field);
+    return true;
+  }
+
+  const validatedFields = ['name', 'phone', 'email', 'message']
+    .map((id) => document.getElementById(id))
+    .filter((el) => el !== null);
+
+  validatedFields.forEach((field) => {
+    field.addEventListener('blur', () => validateField(field));
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let firstInvalid = null;
+    let allValid = true;
+    validatedFields.forEach((field) => {
+      const valid = validateField(field);
+      if (!valid) {
+        allValid = false;
+        if (!firstInvalid) firstInvalid = field;
+      }
+    });
+
+    if (!allValid) {
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitLabel.textContent = 'Đang gửi...';
+
+    const data = new FormData(form);
+    const subject = encodeURIComponent(`Yêu cầu tư vấn từ ${data.get('name')}`);
+    const body = encodeURIComponent(
+      `Họ tên: ${data.get('name')}\nSĐT: ${data.get('phone')}\nEmail: ${data.get('email') || 'Không cung cấp'}\nNhu cầu: ${data.get('interest')}\n\nNội dung:\n${data.get('message')}`
+    );
+
+    window.setTimeout(() => {
+      window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
+      statusBox.textContent = 'Đã mở ứng dụng email của bạn. Vui lòng nhấn gửi để hoàn tất yêu cầu tư vấn.';
+      statusBox.classList.remove('hidden');
+      statusBox.className = 'rounded border border-success/30 bg-success/10 p-3 text-sm text-success';
+      submitBtn.disabled = false;
+      submitLabel.textContent = 'Gửi yêu cầu';
+      form.reset();
+    }, 400);
+  });
+</script>

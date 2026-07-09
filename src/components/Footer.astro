@@ -1,0 +1,80 @@
+---
+import { NAV_LINKS, SITE } from '@/lib/site';
+import Icon from './Icon.astro';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-border bg-primary-900 text-primary-200">
+  <div class="container-page grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4 lg:py-16">
+    <div class="sm:col-span-2 lg:col-span-1">
+      <a href="/" class="flex items-center gap-2.5">
+        <span class="flex h-9 w-9 items-center justify-center rounded bg-accent font-serif text-lg font-bold text-white">T</span>
+        <span class="flex flex-col leading-none">
+          <span class="font-serif text-base font-semibold text-white">{SITE.name}</span>
+          <span class="text-[11px] tracking-wide text-primary-400 uppercase">{SITE.brand}</span>
+        </span>
+      </a>
+      <p class="mt-4 max-w-xs text-sm text-primary-400">
+        Đồng hành cùng bạn trên hành trình sở hữu bất động sản an toàn, minh bạch và hiệu quả.
+      </p>
+      <div class="mt-5 flex items-center gap-3">
+        <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="flex h-9 w-9 items-center justify-center rounded-full border border-primary-700 text-primary-300 hover:border-accent hover:text-accent">
+          <Icon name="facebook" size={18} />
+        </a>
+        <a href={SITE.social.zalo} target="_blank" rel="noopener noreferrer" aria-label="Zalo" class="flex h-9 w-9 items-center justify-center rounded-full border border-primary-700 text-primary-300 hover:border-accent hover:text-accent">
+          <Icon name="zalo" size={18} />
+        </a>
+        <a href={SITE.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="flex h-9 w-9 items-center justify-center rounded-full border border-primary-700 text-primary-300 hover:border-accent hover:text-accent">
+          <Icon name="youtube" size={18} />
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="font-serif text-sm font-semibold uppercase tracking-wide text-white">Điều hướng</h3>
+      <ul class="mt-4 space-y-2.5 text-sm">
+        {NAV_LINKS.map((link) => (
+          <li><a href={link.href} class="text-primary-400 hover:text-accent">{link.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-serif text-sm font-semibold uppercase tracking-wide text-white">Liên hệ</h3>
+      <ul class="mt-4 space-y-3 text-sm text-primary-400">
+        <li class="flex items-start gap-2.5">
+          <Icon name="map-pin" size={18} class="mt-0.5 shrink-0 text-accent-400" />
+          <span>{SITE.address}</span>
+        </li>
+        <li class="flex items-center gap-2.5">
+          <Icon name="phone" size={18} class="shrink-0 text-accent-400" />
+          <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} class="hover:text-accent">{SITE.phoneDisplay}</a>
+        </li>
+        <li class="flex items-center gap-2.5">
+          <Icon name="envelope" size={18} class="shrink-0 text-accent-400" />
+          <a href={`mailto:${SITE.email}`} class="hover:text-accent">{SITE.email}</a>
+        </li>
+        <li class="flex items-start gap-2.5">
+          <Icon name="clock" size={18} class="mt-0.5 shrink-0 text-accent-400" />
+          <span>{SITE.workingHours}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-serif text-sm font-semibold uppercase tracking-wide text-white">Chứng nhận</h3>
+      <p class="mt-4 flex items-start gap-2.5 text-sm text-primary-400">
+        <Icon name="shield-check" size={18} class="mt-0.5 shrink-0 text-accent-400" />
+        <span>{SITE.license}</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="border-t border-primary-800">
+    <div class="container-page flex flex-col gap-2 py-6 text-xs text-primary-500 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; {year} {SITE.brand}. Tất cả các quyền được bảo lưu.</p>
+      <p>Thiết kế &amp; phát triển với Astro</p>
+    </div>
+  </div>
+</footer>
