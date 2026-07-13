@@ -24,4 +24,6 @@ export type IconName =
   | 'bath'
   | 'facebook'
   | 'zalo'
-  | 'youtube';
+  | 'youtube'
+  | 'list'
+  | 'sparkle';

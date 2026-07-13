@@ -1,0 +1,84 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import { SITE } from '@/lib/site';
+
+const lastUpdated = '14/07/2026';
+---
+
+<Layout
+  title="Chính sách bảo mật"
+  description="Chính sách bảo mật thông tin khách hàng của kênh thông tin cá nhân chuyên viên tư vấn bất động sản."
+>
+  <Breadcrumbs items={[{ label: 'Chính sách bảo mật' }]} />
+
+  <section class="container-page pb-16">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="font-serif text-3xl font-semibold sm:text-4xl">Chính sách bảo mật</h1>
+      <p class="mt-2 text-sm text-primary-400">Cập nhật lần cuối: {lastUpdated}</p>
+
+      <div class="prose prose-neutral mt-8 max-w-none prose-headings:font-serif prose-headings:text-primary-900 prose-a:text-accent-600 prose-a:no-underline hover:prose-a:underline">
+        <p>
+          Website {SITE.url} là kênh thông tin cá nhân của {SITE.name}, chuyên viên tư vấn bất động sản. Chính sách này giải thích những thông tin được thu thập khi Quý khách sử dụng website và cách thông tin đó được sử dụng, lưu trữ và bảo vệ.
+        </p>
+
+        <h2>1. Thông tin được thu thập</h2>
+        <p>Khi Quý khách điền vào biểu mẫu liên hệ/đăng ký tư vấn trên website, các thông tin sau có thể được thu thập:</p>
+        <ul>
+          <li>Họ và tên</li>
+          <li>Số điện thoại</li>
+          <li>Địa chỉ email</li>
+          <li>Nhu cầu mua/bán/thuê bất động sản</li>
+          <li>Ngân sách và khu vực quan tâm (nếu Quý khách cung cấp)</li>
+          <li>Nội dung tin nhắn hoặc yêu cầu tư vấn</li>
+        </ul>
+        <p>Chúng tôi không chủ động thu thập các thông tin nhạy cảm khác ngoài những gì Quý khách tự nguyện cung cấp qua biểu mẫu.</p>
+
+        <h2>2. Mục đích thu thập thông tin</h2>
+        <p>Thông tin được thu thập nhằm phục vụ các mục đích sau:</p>
+        <ul>
+          <li>Liên hệ, tư vấn theo đúng nhu cầu Quý khách đã đăng ký</li>
+          <li>Cung cấp thông tin về bất động sản, dự án phù hợp với yêu cầu</li>
+          <li>Chăm sóc khách hàng và phản hồi các thắc mắc liên quan</li>
+        </ul>
+
+        <h2>3. Cách thức sử dụng thông tin</h2>
+        <p>
+          Thông tin Quý khách cung cấp chỉ được {SITE.name} sử dụng trực tiếp để liên hệ tư vấn qua điện thoại, email hoặc các kênh nhắn tin (Zalo, Facebook Messenger...) mà Quý khách đã cung cấp hoặc lựa chọn liên hệ.
+        </p>
+
+        <h2>4. Giới hạn chia sẻ thông tin</h2>
+        <p>
+          Thông tin cá nhân của Quý khách không được bán, cho thuê hoặc chia sẻ cho bên thứ ba nhằm mục đích thương mại nếu không có sự đồng ý của Quý khách, trừ trường hợp cần thiết để hoàn tất một giao dịch cụ thể theo yêu cầu của Quý khách (ví dụ: kết nối với chủ đầu tư/đơn vị phân phối liên quan đến sản phẩm Quý khách quan tâm) hoặc theo yêu cầu của cơ quan nhà nước có thẩm quyền theo quy định pháp luật.
+        </p>
+
+        <h2>5. Sự đồng ý của người dùng</h2>
+        <p>
+          Bằng việc tích chọn ô đồng ý và gửi biểu mẫu liên hệ trên website, Quý khách xác nhận đồng ý cho phép thu thập và sử dụng thông tin theo chính sách này. Quý khách có thể rút lại sự đồng ý bất kỳ lúc nào bằng cách liên hệ theo thông tin bên dưới.
+        </p>
+
+        <h2>6. Quyền của người dùng</h2>
+        <p>Quý khách có quyền:</p>
+        <ul>
+          <li>Yêu cầu xem lại thông tin cá nhân đã cung cấp</li>
+          <li>Yêu cầu chỉnh sửa, cập nhật thông tin không chính xác</li>
+          <li>Yêu cầu xóa thông tin cá nhân khỏi hệ thống lưu trữ</li>
+          <li>Từ chối nhận thêm liên hệ tư vấn</li>
+        </ul>
+
+        <h2>7. Liên hệ về quyền riêng tư</h2>
+        <p>
+          Mọi yêu cầu liên quan đến quyền riêng tư, chỉnh sửa hoặc xóa thông tin cá nhân, vui lòng liên hệ:
+        </p>
+        <ul>
+          <li>Điện thoại: {SITE.phoneDisplay}</li>
+          <li>Email: {SITE.email}</li>
+        </ul>
+
+        <p class="text-sm text-primary-400">
+          Chính sách này có thể được cập nhật theo thời gian để phản ánh đúng thực tế thu thập và xử lý thông tin. Phiên bản mới nhất luôn được đăng tải tại trang này.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

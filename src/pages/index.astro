@@ -4,6 +4,7 @@ import Layout from '@/layouts/Layout.astro';
 import Icon from '@/components/Icon.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import PropertyCard from '@/components/PropertyCard.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
 import BlogCard from '@/components/BlogCard.astro';
 import TestimonialCard from '@/components/TestimonialCard.astro';
 import StatItem from '@/components/StatItem.astro';
@@ -13,6 +14,12 @@ const allProperties = await getCollection('properties');
 const featuredProperties = allProperties
   .filter((p) => p.data.featured)
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+
+const allProjects = await getCollection('projects');
+const featuredProjects = allProjects
+  .filter((p) => p.data.featured)
+  .sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf())
   .slice(0, 3);
 
 const allPosts = await getCollection('blog');
@@ -52,17 +59,6 @@ const jsonLd = {
   },
   areaServed: 'TP. Hồ Chí Minh, Việt Nam',
   sameAs: [SITE.social.facebook, SITE.social.youtube],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5',
-    reviewCount: String(testimonials.length),
-  },
-  review: testimonials.map((t) => ({
-    '@type': 'Review',
-    reviewBody: t.quote,
-    author: { '@type': 'Person', name: t.name },
-    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-  })),
 };
 ---
 
@@ -73,13 +69,13 @@ const jsonLd = {
       <div>
         <p class="badge border-accent-400/40 bg-accent-500/10 text-accent-300">
           <Icon name="shield-check" size={14} />
-          8+ năm kinh nghiệm &middot; 300+ giao dịch thành công
+          8+ năm kinh nghiệm tư vấn bất động sản
         </p>
         <h1 id="hero-heading" class="mt-5 font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
-          Đồng hành cùng bạn tìm được bất động sản đáng giá từng đồng
+          Đồng hành cùng bạn tìm hiểu bất động sản phù hợp nhu cầu
         </h1>
         <p class="mt-5 max-w-xl text-lg text-primary-300">
-          Tôi là {SITE.name}, chuyên viên tư vấn bất động sản tại TP.HCM. Cam kết minh bạch pháp lý, tư vấn trung thực và đồng hành cùng bạn đến khi giao dịch hoàn tất.
+          Tôi là {SITE.name}, chuyên viên tư vấn bất động sản tại TP.HCM — kênh thông tin cá nhân hỗ trợ tư vấn, kết nối và cung cấp thông tin tham khảo về các dự án đang được phân phối. Không phải website chính thức của chủ đầu tư hay sàn giao dịch.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           <a href="/properties" class="btn-accent">
@@ -127,11 +123,34 @@ const jsonLd = {
     </div>
   </section>
 
+  <!-- Featured projects -->
+  {featuredProjects.length > 0 && (
+    <section class="section pb-0 sm:pb-0 lg:pb-0" aria-labelledby="projects-heading">
+      <div class="container-page">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <SectionHeading
+            id="projects-heading"
+            eyebrow="Dự án đang tư vấn"
+            title="Dự án bất động sản đáng chú ý"
+            description="Kênh thông tin cá nhân hỗ trợ tư vấn, không phải website chính thức của chủ đầu tư hay sàn giao dịch."
+          />
+          <a href="/du-an" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
+            Xem tất cả dự án
+            <Icon name="arrow-right" size={16} />
+          </a>
+        </div>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredProjects.map((project) => <ProjectCard project={project} />)}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Featured properties -->
   <section class="section" aria-labelledby="featured-heading">
     <div class="container-page">
       <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <SectionHeading id="featured-heading" eyebrow="Bất động sản nổi bật" title="Những lựa chọn đáng cân nhắc" description="Danh sách bất động sản được chọn lọc kỹ lưỡng về pháp lý, vị trí và tiềm năng đầu tư." />
+        <SectionHeading id="featured-heading" eyebrow="Bất động sản nổi bật" title="Những lựa chọn đáng cân nhắc" description="Thông tin dự án được cập nhật theo nguồn công bố/tài liệu bán hàng tại thời điểm đăng tải. Vui lòng liên hệ để kiểm tra thông tin mới nhất." />
         <a href="/properties" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
           Xem tất cả
           <Icon name="arrow-right" size={16} />
@@ -159,13 +178,13 @@ const jsonLd = {
       <div>
         <SectionHeading id="about-heading" eyebrow="Về tôi" title="Người bạn đồng hành đáng tin cậy trong hành trình bất động sản" />
         <p class="mt-5 text-primary-600">
-          Với hơn 8 năm hoạt động trong lĩnh vực bất động sản tại TP.HCM, tôi hiểu rằng mỗi giao dịch không chỉ là con số mà còn là quyết định quan trọng của cả gia đình. Tôi cam kết tư vấn trung thực, minh bạch pháp lý và luôn đặt lợi ích khách hàng lên hàng đầu.
+          Với hơn 8 năm hoạt động trong lĩnh vực bất động sản tại TP.HCM, tôi hiểu rằng mỗi giao dịch không chỉ là con số mà còn là quyết định quan trọng của cả gia đình. Tôi hướng đến tư vấn trung thực, cung cấp thông tin minh bạch và đặt lợi ích khách hàng lên hàng đầu.
         </p>
         <ul class="mt-6 space-y-3">
           {[
             'Chứng chỉ hành nghề môi giới bất động sản',
             'Thành viên Hội Môi giới Bất động sản Việt Nam (VARS)',
-            'Cam kết hỗ trợ pháp lý trọn đời hồ sơ',
+            'Hỗ trợ tư vấn thủ tục pháp lý trong suốt quá trình giao dịch',
           ].map((item) => (
             <li class="flex items-start gap-2.5 text-sm text-primary-700">
               <Icon name="check-circle" size={18} class="mt-0.5 shrink-0 text-accent-600" />

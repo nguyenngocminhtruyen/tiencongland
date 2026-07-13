@@ -1,8 +1,15 @@
 ---
 import { NAV_LINKS, SITE } from '@/lib/site';
+import { GLOBAL_DISCLAIMER } from '@/lib/legal';
 import Icon from './Icon.astro';
+import Disclaimer from './Disclaimer.astro';
 
 const year = new Date().getFullYear();
+
+const LEGAL_LINKS = [
+  { href: '/chinh-sach-bao-mat', label: 'Chính sách bảo mật' },
+  { href: '/dieu-khoan-su-dung', label: 'Điều khoản sử dụng' },
+] as const;
 ---
 
 <footer class="border-t border-border bg-primary-900 text-primary-200">
@@ -16,7 +23,7 @@ const year = new Date().getFullYear();
         </span>
       </a>
       <p class="mt-4 max-w-xs text-sm text-primary-400">
-        Đồng hành cùng bạn trên hành trình sở hữu bất động sản an toàn, minh bạch và hiệu quả.
+        Kênh thông tin cá nhân của chuyên viên tư vấn bất động sản, đồng hành cùng bạn tìm hiểu thông tin dự án một cách minh bạch.
       </p>
       <div class="mt-5 flex items-center gap-3">
         <a href={SITE.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="flex h-9 w-9 items-center justify-center rounded-full border border-primary-700 text-primary-300 hover:border-accent hover:text-accent">
@@ -35,6 +42,9 @@ const year = new Date().getFullYear();
       <h3 class="font-serif text-sm font-semibold uppercase tracking-wide text-white">Điều hướng</h3>
       <ul class="mt-4 space-y-2.5 text-sm">
         {NAV_LINKS.map((link) => (
+          <li><a href={link.href} class="text-primary-400 hover:text-accent">{link.label}</a></li>
+        ))}
+        {LEGAL_LINKS.map((link) => (
           <li><a href={link.href} class="text-primary-400 hover:text-accent">{link.label}</a></li>
         ))}
       </ul>
@@ -72,9 +82,14 @@ const year = new Date().getFullYear();
   </div>
 
   <div class="border-t border-primary-800">
+    <div class="container-page py-6">
+      <Disclaimer text={GLOBAL_DISCLAIMER} class="max-w-4xl text-primary-500" />
+    </div>
+  </div>
+
+  <div class="border-t border-primary-800">
     <div class="container-page flex flex-col gap-2 py-6 text-xs text-primary-500 sm:flex-row sm:items-center sm:justify-between">
-      <p>&copy; {year} {SITE.brand}. Tất cả các quyền được bảo lưu.</p>
-      <p>Thiết kế &amp; phát triển với Astro</p>
+      <p>&copy; {year} {SITE.brand}. Chuyên viên tư vấn bất động sản.</p>
     </div>
   </div>
 </footer>

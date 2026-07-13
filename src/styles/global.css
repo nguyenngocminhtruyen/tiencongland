@@ -80,4 +80,81 @@
   .card {
     @apply rounded-lg bg-surface-card border border-border shadow-card transition-shadow duration-200;
   }
+
+  /* Project info table (used inside article prose via raw HTML <dl>) */
+  .info-table {
+    @apply overflow-hidden rounded-lg border border-border bg-surface-muted/60;
+  }
+
+  .info-table dl {
+    @apply m-0 divide-y divide-border;
+  }
+
+  .info-table dl > div {
+    @apply flex flex-col gap-0.5 px-4 py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4 sm:px-5;
+  }
+
+  .info-table dt {
+    @apply text-sm font-medium text-primary-500 sm:w-1/3 sm:shrink-0;
+  }
+
+  .info-table dd {
+    @apply m-0 text-sm font-medium text-primary-900 sm:text-right;
+  }
+
+  /* FAQ accordion (used inside article prose via raw HTML <details>) */
+  .faq-list {
+    @apply space-y-3;
+  }
+
+  .faq-item {
+    @apply rounded-lg border border-border bg-surface-card px-5 py-1 transition-colors duration-200;
+  }
+
+  .faq-item[open] {
+    @apply border-accent-200 bg-accent-50/40;
+  }
+
+  .faq-item summary {
+    @apply flex cursor-pointer list-none items-center justify-between gap-4 py-3.5 text-[15px] font-medium text-primary-800 marker:content-none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '';
+    @apply h-2.5 w-2.5 shrink-0 rotate-45 border-b-2 border-r-2 border-primary-400 transition-transform duration-200;
+  }
+
+  .faq-item[open] summary::after {
+    @apply rotate-[225deg] border-accent-600;
+  }
+
+  .faq-item > div {
+    @apply pb-4 text-sm leading-relaxed text-primary-500;
+  }
+
+  .faq-item > div p {
+    @apply m-0;
+  }
+
+  /* Mobile collapsible table of contents */
+  .toc summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .toc summary {
+    list-style: none;
+  }
+
+  .toc summary::after {
+    content: '';
+    @apply ml-auto h-2 w-2 shrink-0 rotate-45 border-b-2 border-r-2 border-primary-400 transition-transform duration-200;
+  }
+
+  .toc[open] summary::after {
+    @apply rotate-[225deg];
+  }
 }

@@ -1,0 +1,337 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import BlogCard from '@/components/BlogCard.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import Icon from '@/components/Icon.astro';
+import CTA from '@/components/CTA.astro';
+import Disclaimer from '@/components/Disclaimer.astro';
+import { formatDate } from '@/lib/format';
+import { blogSlug } from '@/lib/content';
+import { SITE } from '@/lib/site';
+import { PROJECT_HERO_NOTE, PROJECT_REFERENCE_NOTE, PROPERTY_INFO_NOTE } from '@/lib/legal';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const {
+  title,
+  tagline,
+  seoTitle,
+  seoDescription,
+  location,
+  locationNote,
+  type,
+  developer,
+  status,
+  priceLabel,
+  legalStatus,
+  updatedDate,
+  source,
+  featuredUnit,
+  heroImage,
+  gallery,
+  highlights,
+  lifestyleValues,
+  cta,
+  relatedPosts,
+} = project.data;
+
+const allPosts = await getCollection('blog');
+const relatedPostEntries = relatedPosts
+  .map((slug) => allPosts.find((p) => blogSlug(p.id) === slug))
+  .filter((p): p is CollectionEntry<'blog'> => p !== undefined);
+
+const allProjects = await getCollection('projects');
+const relatedProjects = allProjects.filter((p) => p.id !== project.id).slice(0, 2);
+
+const lifestyleIcons = ['shield-check', 'users', 'sparkle'] as const;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'RealEstateListing',
+  name: title,
+  description: tagline,
+  image: [new URL(heroImage, SITE.url).toString(), ...gallery.map((g) => new URL(g.src, SITE.url).toString())],
+  url: new URL(`/du-an/${project.id}`, SITE.url).toString(),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: location,
+    addressCountry: 'VN',
+  },
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Trang chủ', item: SITE.url },
+    { '@type': 'ListItem', position: 2, name: 'Dự án', item: new URL('/du-an', SITE.url).toString() },
+    { '@type': 'ListItem', position: 3, name: title, item: new URL(`/du-an/${project.id}`, SITE.url).toString() },
+  ],
+};
+
+const quickFacts = [
+  { icon: 'building' as const, label: 'Tên dự án', value: title },
+  { icon: 'map-pin' as const, label: 'Vị trí', value: location },
+  { icon: 'award' as const, label: 'Loại hình', value: type },
+  { icon: 'users' as const, label: 'Đơn vị hợp tác phát triển', value: developer ?? 'Đang cập nhật' },
+  ...(featuredUnit ? [{ icon: 'bed' as const, label: 'Căn hộ mẫu nổi bật', value: featuredUnit }] : []),
+  { icon: 'calendar' as const, label: 'Ngày cập nhật', value: formatDate(updatedDate) },
+  { icon: 'shield-check' as const, label: 'Nguồn thông tin', value: source },
+];
+
+const DEFAULT_LOCATION_NOTE =
+  'Khả năng kết nối đến các khu vực xung quanh nên được khảo sát thực tế. Tôi có thể hỗ trợ sắp xếp lịch tham quan để Quý khách trải nghiệm trực tiếp.';
+---
+
+<Layout
+  title={seoTitle ?? `${title} – ${type} tại ${location}`}
+  description={
+    seoDescription ??
+    `Tìm hiểu thông tin tham khảo về ${title}, ${type.toLowerCase()} ${developer ? `hợp tác phát triển bởi ${developer} ` : ''}tại ${location}.`
+  }
+  image={heroImage}
+  type="article"
+  jsonLd={[jsonLd, breadcrumbLd]}
+>
+  <Breadcrumbs items={[{ label: 'Dự án', href: '/du-an' }, { label: title }]} />
+
+  <article>
+  <!-- 1. Hero -->
+  <header class="container-page">
+    <div class="mx-auto max-w-3xl">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="badge border-accent-200 bg-accent-50 text-accent-700">{type}</span>
+        <span class="badge">{status}</span>
+      </div>
+      <h1 class="mt-4 font-serif text-3xl font-semibold leading-tight text-primary-900 sm:text-4xl lg:text-[2.75rem]">
+        {title}
+      </h1>
+      <p class="mt-4 text-lg leading-relaxed text-primary-500">{tagline}</p>
+
+      <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-primary-500">
+        <span class="flex items-center gap-1.5">
+          <Icon name="map-pin" size={16} class="shrink-0 text-primary-400" />
+          {location}
+        </span>
+        {developer && (
+          <span class="flex items-center gap-1.5">
+            <Icon name="building" size={16} class="shrink-0 text-primary-400" />
+            {developer}
+          </span>
+        )}
+      </div>
+
+      <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+        <a href="/contact" class="btn-accent justify-center">
+          <Icon name="phone" size={17} />
+          Liên hệ tư vấn
+        </a>
+        {relatedPostEntries.length > 0 && (
+          <a href={`/blog/${blogSlug(relatedPostEntries[0].id)}`} class="btn-outline justify-center">
+            Xem bài viết căn hộ mẫu
+            <Icon name="arrow-right" size={17} />
+          </a>
+        )}
+      </div>
+
+      <Disclaimer text={PROJECT_HERO_NOTE} class="mt-4" />
+    </div>
+
+    <div class="mx-auto mt-8 max-w-4xl overflow-hidden rounded-xl border border-border shadow-card-hover">
+      <img
+        src={heroImage}
+        alt={title}
+        width="1600"
+        height="900"
+        class="aspect-[16/9] w-full object-cover"
+        fetchpriority="high"
+      />
+    </div>
+  </header>
+
+  <!-- 2. Quick facts -->
+  <section class="container-page section" aria-labelledby="quick-facts-heading">
+    <h2 id="quick-facts-heading" class="font-serif text-2xl font-semibold text-primary-900">Thông tin nhanh</h2>
+    <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      {quickFacts.map((fact) => (
+        <div class="rounded-lg border border-border bg-surface-card p-4">
+          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-accent-50 text-accent-600">
+            <Icon name={fact.icon} size={18} />
+          </span>
+          <p class="mt-3 text-xs font-medium uppercase tracking-wide text-primary-400">{fact.label}</p>
+          <p class="mt-1 text-sm font-semibold leading-snug text-primary-900">{fact.value}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- 3. Gallery -->
+  {gallery.length > 0 && (
+    <section class="container-page section pt-0" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading" class="font-serif text-2xl font-semibold text-primary-900">Không gian thực tế căn hộ mẫu</h2>
+      <p class="mt-2 max-w-2xl text-primary-500">
+        Một số hình ảnh căn hộ mẫu theo tài liệu/thông tin giới thiệu tại thời điểm cập nhật.
+      </p>
+      <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {gallery.map((img) => (
+          <figure class="group overflow-hidden rounded-lg border border-border shadow-subtle">
+            <div class="overflow-hidden">
+              <img
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
+                class="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            {img.caption && (
+              <figcaption class="px-4 py-3 text-sm text-primary-500">{img.caption}</figcaption>
+            )}
+          </figure>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- 4. Lifestyle values -->
+  {lifestyleValues.length > 0 && (
+    <section class="bg-primary-50 py-16 sm:py-20" aria-labelledby="lifestyle-heading">
+      <div class="container-page">
+        <h2 id="lifestyle-heading" class="font-serif text-2xl font-semibold text-primary-900">3 giá trị sống</h2>
+        <div class="mt-8 grid gap-6 sm:grid-cols-3">
+          {lifestyleValues.map((value, i) => (
+            <div class="rounded-xl border border-border bg-surface-card p-6">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-accent-50 text-accent-600">
+                <Icon name={lifestyleIcons[i % lifestyleIcons.length]} size={20} filled={lifestyleIcons[i % lifestyleIcons.length] === 'sparkle'} />
+              </span>
+              <h3 class="mt-4 font-serif text-lg font-semibold text-primary-900">{value.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-primary-500">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- 5. Apartment highlight -->
+  {highlights.length > 0 && (
+    <section class="container-page section" aria-labelledby="highlight-heading">
+      <div class="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+        <div>
+          <h2 id="highlight-heading" class="font-serif text-2xl font-semibold text-primary-900">
+            Điểm nổi bật {featuredUnit ? `căn hộ ${featuredUnit}` : 'căn hộ mẫu'}
+          </h2>
+          <p class="mt-3 text-primary-500">
+            Theo thông tin giới thiệu/tài liệu bán hàng tại thời điểm cập nhật, căn hộ mẫu được hoàn thiện với những
+            điểm đáng chú ý sau:
+          </p>
+          <ul class="mt-6 space-y-3">
+            {highlights.map((item) => (
+              <li class="flex items-start gap-2.5 text-sm text-primary-700">
+                <Icon name="check-circle" size={18} class="mt-0.5 shrink-0 text-accent-600" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="overflow-hidden rounded-xl border border-border shadow-card">
+          <img
+            src="/images/blog/gladia-heights-phong-tam-master-kho-uot.webp"
+            alt={`Phòng tắm Master phân tách khu khô ướt tại ${title}`}
+            width="900"
+            height="1100"
+            loading="lazy"
+            class="aspect-[4/5] w-full object-cover"
+          />
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- 6. Location -->
+  <section class="bg-primary-50 py-16 sm:py-20" aria-labelledby="location-heading">
+    <div class="container-page">
+      <h2 id="location-heading" class="font-serif text-2xl font-semibold text-primary-900">Vị trí</h2>
+      <div class="mt-6 max-w-2xl rounded-xl border border-border bg-surface-card p-6">
+        <p class="flex items-start gap-3 text-primary-800">
+          <Icon name="map-pin" size={20} class="mt-0.5 shrink-0 text-accent-600" />
+          <span class="font-medium">{location}</span>
+        </p>
+        <p class="mt-4 text-sm leading-relaxed text-primary-500">
+          {locationNote ?? DEFAULT_LOCATION_NOTE}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Price and policy -->
+  <section class="container-page section" aria-labelledby="price-heading">
+    <h2 id="price-heading" class="font-serif text-2xl font-semibold text-primary-900">Giá bán và chính sách</h2>
+    <div class="mt-6 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-lg border border-border bg-surface-card p-5">
+        <p class="text-xs font-medium uppercase tracking-wide text-primary-400">Giá bán</p>
+        <p class="mt-1.5 text-sm font-semibold text-primary-900">{priceLabel}</p>
+      </div>
+      <div class="rounded-lg border border-border bg-surface-card p-5">
+        <p class="text-xs font-medium uppercase tracking-wide text-primary-400">Chính sách bán hàng</p>
+        <p class="mt-1.5 text-sm font-semibold text-primary-900">
+          Cập nhật theo thông báo của chủ đầu tư/công ty phân phối
+        </p>
+      </div>
+      <div class="rounded-lg border border-border bg-surface-card p-5">
+        <p class="text-xs font-medium uppercase tracking-wide text-primary-400">Tình trạng sản phẩm</p>
+        <p class="mt-1.5 text-sm font-semibold text-primary-900">{status}</p>
+        <p class="mt-1 text-xs text-primary-400">Vui lòng liên hệ để kiểm tra tình trạng sản phẩm mới nhất</p>
+      </div>
+    </div>
+    <p class="mt-4 text-xs text-primary-400">Pháp lý: {legalStatus}</p>
+    <Disclaimer text={PROPERTY_INFO_NOTE} class="mt-4" />
+  </section>
+
+  <!-- 8. CTA -->
+  <section class="container-page pb-4">
+    <CTA
+      title={cta?.headline ?? `Quan tâm ${title}?`}
+      text={
+        cta?.text ??
+        'Tôi có thể hỗ trợ Quý khách kiểm tra thông tin mới nhất, tư vấn loại căn phù hợp và sắp xếp lịch tham quan căn hộ mẫu nếu có nhu cầu.'
+      }
+      primaryLabel="Liên hệ tư vấn"
+      primaryHref="/contact"
+      secondaryLabel="Xem thông tin liên hệ"
+      secondaryHref="/contact#lien-he"
+    />
+  </section>
+  </article>
+
+  <!-- 9. Related content -->
+  {(relatedPostEntries.length > 0 || relatedProjects.length > 0) && (
+    <section class="container-page section pt-8" aria-labelledby="related-heading">
+      <h2 id="related-heading" class="font-serif text-2xl font-semibold text-primary-900">Nội dung liên quan</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {relatedPostEntries.map((post) => <BlogCard post={post} />)}
+        {relatedProjects.map((p) => <ProjectCard project={p} />)}
+      </div>
+    </section>
+  )}
+
+  <!-- 10. Compliance / reference -->
+  <section class="container-page pb-16">
+    <Disclaimer variant="box" text={PROJECT_REFERENCE_NOTE} />
+  </section>
+</Layout>

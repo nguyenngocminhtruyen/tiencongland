@@ -1,0 +1,75 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import { SITE } from '@/lib/site';
+
+const lastUpdated = '14/07/2026';
+---
+
+<Layout
+  title="Điều khoản sử dụng"
+  description="Điều khoản sử dụng website - kênh thông tin cá nhân của chuyên viên tư vấn bất động sản."
+>
+  <Breadcrumbs items={[{ label: 'Điều khoản sử dụng' }]} />
+
+  <section class="container-page pb-16">
+    <div class="mx-auto max-w-3xl">
+      <h1 class="font-serif text-3xl font-semibold sm:text-4xl">Điều khoản sử dụng</h1>
+      <p class="mt-2 text-sm text-primary-400">Cập nhật lần cuối: {lastUpdated}</p>
+
+      <div class="prose prose-neutral mt-8 max-w-none prose-headings:font-serif prose-headings:text-primary-900 prose-a:text-accent-600 prose-a:no-underline hover:prose-a:underline">
+        <p>
+          Vui lòng đọc kỹ các điều khoản dưới đây trước khi sử dụng website {SITE.url}. Việc tiếp tục truy cập và sử dụng website đồng nghĩa với việc Quý khách đồng ý với các điều khoản này.
+        </p>
+
+        <h2>1. Tính chất của website</h2>
+        <p>
+          Website này là kênh thông tin và tư vấn cá nhân của {SITE.name}, chuyên viên tư vấn bất động sản. Website <strong>không phải</strong> là:
+        </p>
+        <ul>
+          <li>Website chính thức của bất kỳ dự án bất động sản, chủ đầu tư nào</li>
+          <li>Đơn vị phân phối/đại lý chính thức được ủy quyền, trừ khi có văn bản ủy quyền cụ thể được công bố</li>
+          <li>Sàn giao dịch bất động sản</li>
+        </ul>
+
+        <h2>2. Tính chất của nội dung</h2>
+        <p>
+          Toàn bộ nội dung về dự án, giá bán, chính sách ưu đãi, tình trạng sản phẩm và pháp lý trên website mang tính chất tham khảo, được tổng hợp theo nguồn công bố hoặc tài liệu bán hàng tại thời điểm đăng tải. Nội dung này <strong>không thay thế</strong> cho tài liệu pháp lý, bảng giá hoặc chính sách bán hàng chính thức của chủ đầu tư/công ty phân phối tại thời điểm giao dịch.
+        </p>
+
+        <h2>3. Thay đổi thông tin</h2>
+        <p>
+          Giá bán, chính sách bán hàng, tình trạng sản phẩm (còn hàng/đã bán/đã cho thuê) và hồ sơ pháp lý có thể thay đổi mà không cần báo trước, theo thông báo của chủ đầu tư/công ty phân phối. Quý khách vui lòng liên hệ trực tiếp để được kiểm tra thông tin mới nhất trước khi ra quyết định.
+        </p>
+
+        <h2>4. Xác minh trước giao dịch</h2>
+        <p>
+          Trước khi thực hiện bất kỳ giao dịch nào, Quý khách nên tự mình hoặc thông qua đơn vị tư vấn kiểm tra, đối chiếu với hồ sơ pháp lý gốc, hợp đồng mua bán và các tài liệu chính thức khác do chủ đầu tư/công ty phân phối/cơ quan nhà nước có thẩm quyền cung cấp.
+        </p>
+
+        <h2>5. Không thực hiện giao dịch tài chính qua website</h2>
+        <p>
+          Website này không trực tiếp thu tiền, nhận đặt cọc hoặc xử lý bất kỳ giao dịch tài chính nào. Mọi khoản đặt cọc, booking hoặc thanh toán cần được thực hiện theo đúng quy trình chính thức của chủ đầu tư/công ty/sàn phân phối, thông qua tài khoản hoặc kênh thanh toán được chỉ định hợp lệ trong hợp đồng/phiếu đặt cọc chính thức.
+        </p>
+        <p>
+          Quý khách <strong>không nên</strong> chuyển tiền đặt cọc, giữ chỗ hoặc thanh toán vào tài khoản cá nhân của bất kỳ cá nhân môi giới/tư vấn viên nào, bao gồm {SITE.name}.
+        </p>
+
+        <h2>6. Giới hạn trách nhiệm</h2>
+        <p>
+          {SITE.name} nỗ lực cung cấp thông tin chính xác nhất có thể tại thời điểm đăng tải nhưng không đảm bảo tuyệt đối về tính đầy đủ, chính xác tuyệt đối hoặc cập nhật liên tục của mọi thông tin do phụ thuộc vào nguồn công bố từ chủ đầu tư/đơn vị phân phối. Website không chịu trách nhiệm đối với các quyết định giao dịch được đưa ra chỉ dựa trên thông tin tham khảo trên website mà không qua bước xác minh chính thức.
+        </p>
+
+        <h2>7. Thay đổi điều khoản</h2>
+        <p>
+          Điều khoản sử dụng có thể được cập nhật theo thời gian. Phiên bản mới nhất luôn được đăng tải tại trang này.
+        </p>
+
+        <h2>8. Liên hệ</h2>
+        <p>
+          Mọi thắc mắc liên quan đến điều khoản sử dụng, vui lòng liên hệ điện thoại {SITE.phoneDisplay} hoặc email {SITE.email}.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

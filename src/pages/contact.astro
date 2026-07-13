@@ -3,6 +3,7 @@ import Layout from '@/layouts/Layout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import Icon from '@/components/Icon.astro';
 import { SITE } from '@/lib/site';
+import { CONSENT_TEXT, PRIVACY_NOTE } from '@/lib/legal';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -114,20 +115,32 @@ const jsonLd = {
               <p class="field-error mt-1.5 hidden text-sm text-danger" role="alert"></p>
             </div>
 
-            <p class="text-xs text-primary-400">
-              Bằng việc gửi thông tin, bạn đồng ý để {SITE.name} liên hệ tư vấn qua điện thoại hoặc email.
-            </p>
+            <div>
+              <label for="consent" class="flex items-start gap-3 text-sm text-primary-600">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  required
+                  class="mt-0.5 h-5 w-5 shrink-0 rounded border-primary-300 text-accent focus:ring-accent-500"
+                />
+                <span>{CONSENT_TEXT}</span>
+              </label>
+              <p class="field-error mt-1.5 hidden text-sm text-danger" role="alert"></p>
+            </div>
 
             <button type="submit" class="btn-accent w-full sm:w-auto">
               <span id="submit-label">Gửi yêu cầu</span>
               <Icon name="arrow-right" size={18} />
             </button>
+
+            <p class="text-xs text-primary-400">{PRIVACY_NOTE}</p>
           </form>
         </div>
       </div>
 
       <!-- Contact info -->
-      <div class="lg:col-span-2">
+      <div id="lien-he" class="scroll-mt-24 lg:col-span-2">
         <div class="card divide-y divide-border">
           <div class="flex items-start gap-3 p-5">
             <Icon name="phone" size={20} class="mt-0.5 shrink-0 text-accent-600" />
@@ -198,7 +211,8 @@ const jsonLd = {
   }
 
   function fieldError(field) {
-    return field.parentElement ? field.parentElement.querySelector('.field-error') : null;
+    const wrapper = field.closest('div');
+    return wrapper ? wrapper.querySelector('.field-error') : null;
   }
 
   function showError(field, message) {
@@ -219,6 +233,14 @@ const jsonLd = {
   }
 
   function validateField(field) {
+    if (field.type === 'checkbox') {
+      if (field.required && !field.checked) {
+        showError(field, 'Vui lòng đồng ý để tiếp tục gửi yêu cầu.');
+        return false;
+      }
+      clearError(field);
+      return true;
+    }
     if (field.required && !field.value.trim()) {
       showError(field, 'Vui lòng nhập thông tin này.');
       return false;
@@ -235,12 +257,13 @@ const jsonLd = {
     return true;
   }
 
-  const validatedFields = ['name', 'phone', 'email', 'message']
+  const validatedFields = ['name', 'phone', 'email', 'message', 'consent']
     .map((id) => document.getElementById(id))
     .filter((el) => el !== null);
 
   validatedFields.forEach((field) => {
-    field.addEventListener('blur', () => validateField(field));
+    const eventName = field.type === 'checkbox' ? 'change' : 'blur';
+    field.addEventListener(eventName, () => validateField(field));
   });
 
   form.addEventListener('submit', (e) => {

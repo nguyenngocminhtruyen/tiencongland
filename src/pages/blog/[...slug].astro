@@ -4,9 +4,13 @@ import Layout from '@/layouts/Layout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import BlogCard from '@/components/BlogCard.astro';
 import Icon from '@/components/Icon.astro';
+import CTA from '@/components/CTA.astro';
+import Disclaimer from '@/components/Disclaimer.astro';
+import TableOfContents from '@/components/TableOfContents.astro';
 import { formatDate } from '@/lib/format';
 import { blogSlug } from '@/lib/content';
 import { SITE } from '@/lib/site';
+import { ARTICLE_REFERENCE_NOTE, ARTICLE_INDEPENDENT_NOTE } from '@/lib/legal';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -22,52 +26,121 @@ interface Props {
 
 const { post } = Astro.props;
 const { title, description, publishDate, author, category, image } = post.data;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+
+const wordCount = post.body ? post.body.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean).length : 0;
+const readingMinutes = wordCount > 0 ? Math.max(1, Math.round(wordCount / 200)) : null;
 
 const allPosts = await getCollection('blog');
 const related = allPosts.filter((p) => p.id !== post.id && p.data.category === category).slice(0, 3);
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'Article',
+  '@type': 'BlogPosting',
   headline: title,
   description,
   image: new URL(image, SITE.url).toString(),
   datePublished: publishDate.toISOString().slice(0, 10),
   author: { '@type': 'Person', name: author },
   publisher: { '@type': 'Organization', name: SITE.brand },
+  mainEntityOfPage: new URL(`/blog/${blogSlug(post.id)}`, SITE.url).toString(),
 };
 ---
 
 <Layout title={title} description={description} image={image} type="article" jsonLd={jsonLd}>
   <Breadcrumbs items={[{ label: 'Kiến thức', href: '/blog' }, { label: title }]} />
 
-  <article class="container-page pb-16">
-    <div class="mx-auto max-w-3xl">
-      <span class="badge">{category}</span>
-      <h1 class="mt-4 font-serif text-3xl font-semibold sm:text-4xl">{title}</h1>
-      <div class="mt-4 flex items-center gap-4 text-sm text-primary-400">
-        <span class="flex items-center gap-1.5">
-          <Icon name="calendar" size={16} />
-          {formatDate(publishDate)}
-        </span>
-        <span>Tác giả: {author}</span>
-      </div>
+  <article class="pb-16 sm:pb-20">
+    <!-- Hero -->
+    <header class="container-page">
+      <div class="mx-auto max-w-3xl">
+        <span class="badge border-accent-200 bg-accent-50 text-accent-700">{category}</span>
+        <h1 class="mt-4 font-serif text-3xl font-semibold leading-tight text-primary-900 sm:text-4xl lg:text-[2.75rem]">
+          {title}
+        </h1>
+        <p class="mt-4 text-lg leading-relaxed text-primary-500">{description}</p>
 
-      <div class="mt-8 overflow-hidden rounded-lg shadow-card">
-        <img src={image} alt={title} width="1200" height="800" class="aspect-[3/2] w-full object-cover" fetchpriority="high" />
-      </div>
-
-      <div class="prose prose-neutral mt-10 max-w-none prose-headings:font-serif prose-headings:text-primary-900 prose-a:text-accent-600 prose-a:no-underline hover:prose-a:underline">
-        <Content />
-      </div>
-
-      <div class="mt-10 flex items-center justify-between rounded-lg border border-border bg-primary-50 p-6">
-        <div>
-          <p class="font-serif font-semibold text-primary-900">Cần tư vấn thêm về bất động sản?</p>
-          <p class="mt-1 text-sm text-primary-500">Liên hệ ngay để được hỗ trợ miễn phí.</p>
+        <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-border pt-5 text-sm text-primary-400">
+          <span class="flex items-center gap-1.5">
+            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-primary-100 text-[11px] font-semibold text-primary-600">
+              {author.charAt(0)}
+            </span>
+            <span class="text-primary-600">{author}</span>
+          </span>
+          <span class="flex items-center gap-1.5">
+            <Icon name="calendar" size={16} class="shrink-0" />
+            {formatDate(publishDate)}
+          </span>
+          {readingMinutes && (
+            <span class="flex items-center gap-1.5">
+              <Icon name="clock" size={16} class="shrink-0" />
+              {readingMinutes} phút đọc
+            </span>
+          )}
         </div>
-        <a href="/contact" class="btn-accent shrink-0">Liên hệ</a>
+      </div>
+
+      <div class="mx-auto mt-8 max-w-4xl overflow-hidden rounded-xl border border-border shadow-card-hover">
+        <img
+          src={image}
+          alt={title}
+          width="1600"
+          height="900"
+          class="aspect-[16/9] w-full object-cover"
+          fetchpriority="high"
+        />
+      </div>
+    </header>
+
+    <!-- Body -->
+    <div class="container-page mt-10 sm:mt-12">
+      <div class="mx-auto grid max-w-3xl gap-10 xl:max-w-none xl:grid-cols-[minmax(0,1fr)_300px] xl:items-start xl:gap-14">
+        <div class="min-w-0">
+          <TableOfContents headings={headings} collapsible class="mb-8 xl:hidden" />
+
+          <div
+            class="article-prose prose prose-neutral max-w-none
+              prose-headings:font-serif prose-headings:font-semibold prose-headings:text-primary-900 prose-headings:scroll-mt-24
+              prose-h2:mt-14 prose-h2:text-2xl prose-h2:sm:text-[1.75rem]
+              prose-h3:mt-8 prose-h3:text-lg
+              prose-p:leading-7 sm:prose-p:leading-8 prose-p:text-primary-700
+              prose-a:text-accent-600 prose-a:no-underline prose-a:font-medium hover:prose-a:underline
+              prose-strong:text-primary-800 prose-strong:font-semibold
+              prose-li:marker:text-accent-500 prose-ul:my-5 prose-li:my-1.5
+              prose-blockquote:border-accent-300 prose-blockquote:text-primary-600 prose-blockquote:font-normal
+              prose-img:my-3 prose-img:rounded-lg prose-img:border prose-img:border-border prose-img:shadow-card
+              prose-hr:border-border
+              prose-em:not-italic prose-em:text-sm prose-em:text-primary-400"
+          >
+            <Content />
+          </div>
+
+          <div class="mt-12 space-y-8">
+            <CTA
+              title="Đăng ký tham quan căn hộ mẫu Gladia Heights"
+              text="Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ hỗ trợ tư vấn, cập nhật thông tin mới nhất và sắp xếp lịch tham quan căn hộ mẫu phù hợp với thời gian của Quý khách."
+              primaryLabel="Liên hệ tư vấn"
+              primaryHref="/contact"
+              secondaryLabel="Xem thông tin liên hệ"
+              secondaryHref="/contact#lien-he"
+            />
+
+            <Disclaimer variant="box" text={ARTICLE_REFERENCE_NOTE} secondaryText={ARTICLE_INDEPENDENT_NOTE} />
+          </div>
+        </div>
+
+        <aside class="hidden xl:block">
+          <div class="sticky top-24 space-y-6">
+            <TableOfContents headings={headings} />
+            <CTA
+              compact
+              title="Cần tư vấn thêm?"
+              text="Sắp xếp lịch tham quan hoặc kiểm tra thông tin mới nhất về Gladia Heights."
+              primaryLabel="Liên hệ tư vấn"
+              primaryHref="/contact"
+            />
+          </div>
+        </aside>
       </div>
     </div>
   </article>

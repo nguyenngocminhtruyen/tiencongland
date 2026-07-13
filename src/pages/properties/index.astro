@@ -5,6 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import PropertyCard from '@/components/PropertyCard.astro';
 import Icon from '@/components/Icon.astro';
 import { typeLabel } from '@/lib/format';
+import { PROPERTY_INFO_NOTE } from '@/lib/legal';
+import Disclaimer from '@/components/Disclaimer.astro';
 
 const properties = (await getCollection('properties')).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
@@ -16,14 +18,14 @@ const districts = [...new Set(properties.map((p) => p.data.district))];
 
 <Layout
   title="Bất động sản"
-  description="Danh sách bất động sản mua bán, cho thuê được chọn lọc kỹ về pháp lý và vị trí tại TP.HCM và các tỉnh lân cận."
+  description="Danh sách bất động sản mua bán, cho thuê được cập nhật thông tin về vị trí, pháp lý theo nguồn công bố tại TP.HCM và các tỉnh lân cận."
 >
   <Breadcrumbs items={[{ label: 'Bất động sản' }]} />
 
   <section class="container-page pb-8">
     <h1 class="font-serif text-3xl font-semibold sm:text-4xl">Danh sách bất động sản</h1>
     <p class="mt-3 max-w-2xl text-primary-500">
-      {properties.length} bất động sản đang được cập nhật, đã qua kiểm tra pháp lý và khảo sát thực tế.
+      {properties.length} bất động sản đang được cập nhật theo nguồn công bố/tài liệu bán hàng của chủ đầu tư và đơn vị phân phối.
     </p>
   </section>
 
@@ -54,6 +56,7 @@ const districts = [...new Set(properties.map((p) => p.data.district))];
         Xóa bộ lọc
       </button>
     </div>
+    <Disclaimer text={PROPERTY_INFO_NOTE} class="mt-4" />
   </section>
 
   <section class="container-page section pt-0">

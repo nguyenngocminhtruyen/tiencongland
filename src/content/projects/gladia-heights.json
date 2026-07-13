@@ -1,0 +1,82 @@
+{
+  "title": "Gladia Heights",
+  "tagline": "Khu căn hộ cao cấp hợp tác phát triển bởi Keppel và Khang Điền, tọa lạc tại đường Võ Chí Công, TP.HCM.",
+  "seoTitle": "Gladia Heights – Căn hộ cao cấp tại đường Võ Chí Công, TP.HCM",
+  "seoDescription": "Tìm hiểu thông tin tham khảo về Gladia Heights, khu căn hộ cao cấp hợp tác phát triển bởi Keppel và Khang Điền tại đường Võ Chí Công, TP.HCM.",
+  "location": "Đường Võ Chí Công, P. Bình Trưng (Quận 2 cũ), TP. Hồ Chí Minh",
+  "locationNote": "Dự án nằm trên trục đường kết nối của khu Đông TP.HCM, khu vực những năm qua ghi nhận nhiều dự án căn hộ và khu dân cư quy hoạch đồng bộ. Khả năng kết nối cụ thể đến từng khu vực Quý khách quan tâm nên được khảo sát thực tế, tôi có thể hỗ trợ sắp xếp lịch tham quan để Quý khách trải nghiệm trực tiếp.",
+  "type": "Khu căn hộ cao cấp",
+  "developer": "Keppel và Khang Điền",
+  "distributor": "Đang cập nhật",
+  "status": "Đang cập nhật",
+  "priceLabel": "Vui lòng liên hệ để kiểm tra bảng giá mới nhất",
+  "legalStatus": "Theo thông tin công bố/tài liệu bán hàng tại thời điểm cập nhật",
+  "updatedDate": "2026-07-14",
+  "source": "Tài liệu/thông tin bán hàng tại thời điểm cập nhật",
+  "featuredUnit": "3 phòng ngủ - Serene Spark",
+  "heroImage": "/images/blog/gladia-heights-can-ho-mau-3-phong-ngu-01.webp",
+  "gallery": [
+    {
+      "src": "/images/blog/gladia-heights-phong-khach-bep-lien-thong.webp",
+      "alt": "Phòng khách kết nối phòng ăn và bếp tại căn hộ mẫu Gladia Heights",
+      "caption": "Phòng khách - bếp - phòng ăn liên thông"
+    },
+    {
+      "src": "/images/blog/gladia-heights-dao-bep-thong-minh.webp",
+      "alt": "Đảo bếp thông minh trong căn hộ mẫu Gladia Heights",
+      "caption": "Đảo bếp trung tâm"
+    },
+    {
+      "src": "/images/blog/gladia-heights-phong-master.webp",
+      "alt": "Phòng ngủ Master tại căn hộ mẫu Gladia Heights",
+      "caption": "Phòng ngủ Master"
+    },
+    {
+      "src": "/images/blog/gladia-heights-phong-tam-master-kho-uot.webp",
+      "alt": "Phòng tắm Master phân tách khu khô ướt tại căn hộ mẫu Gladia Heights",
+      "caption": "Phòng tắm Master khô - ướt"
+    },
+    {
+      "src": "/images/blog/gladia-heights-phong-ngu-be-trai.webp",
+      "alt": "Phòng ngủ dành cho bé trai tại căn hộ mẫu Gladia Heights",
+      "caption": "Phòng ngủ bé trai"
+    },
+    {
+      "src": "/images/blog/gladia-heights-phong-ngu-be-gai.webp",
+      "alt": "Phòng ngủ dành cho bé gái tại căn hộ mẫu Gladia Heights",
+      "caption": "Phòng ngủ bé gái"
+    },
+    {
+      "src": "/images/blog/gladia-heights-phong-ngu-linh-hoat.webp",
+      "alt": "Không gian phòng ngủ linh hoạt tại căn hộ mẫu Gladia Heights",
+      "caption": "Không gian linh hoạt"
+    }
+  ],
+  "highlights": [
+    "Căn hộ mẫu 3 phòng ngủ Serene Spark, theo thông tin giới thiệu/tài liệu bán hàng tại thời điểm cập nhật",
+    "Phòng Master với phòng tắm phân tách khu khô - ướt",
+    "Bồn tắm nằm và phòng tắm đứng riêng biệt",
+    "Vật liệu và thiết bị hoàn thiện tham khảo từ các thương hiệu Grohe, Philips, Hafele",
+    "Không gian khách - bếp - ăn thiết kế liên thông"
+  ],
+  "lifestyleValues": [
+    {
+      "title": "Riêng tư",
+      "description": "Mỗi phòng ngủ được thiết kế như một không gian sống độc lập, tạo sự thư thái và thoải mái cho từng thành viên."
+    },
+    {
+      "title": "Kết nối",
+      "description": "Phòng khách, phòng ăn và bếp liên thông, tạo không gian sinh hoạt chung rộng rãi và tự nhiên."
+    },
+    {
+      "title": "Đón đầu tương lai",
+      "description": "Thiết kế cân bằng giữa công năng, thẩm mỹ và khả năng thích ứng với nhu cầu sống lâu dài của gia đình."
+    }
+  ],
+  "cta": {
+    "headline": "Quan tâm Gladia Heights?",
+    "text": "Tôi có thể hỗ trợ Quý khách kiểm tra thông tin mới nhất, tư vấn loại căn phù hợp và sắp xếp lịch tham quan căn hộ mẫu nếu có nhu cầu."
+  },
+  "relatedPosts": ["can-ho-mau-3-phong-ngu-gladia-heights"],
+  "featured": true
+}

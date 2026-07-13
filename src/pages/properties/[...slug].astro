@@ -6,6 +6,8 @@ import PropertyCard from '@/components/PropertyCard.astro';
 import Icon from '@/components/Icon.astro';
 import { formatArea, formatDate, formatPrice, statusLabel, typeLabel } from '@/lib/format';
 import { SITE } from '@/lib/site';
+import { PROPERTY_INFO_NOTE, PAYMENT_RISK_NOTE } from '@/lib/legal';
+import Disclaimer from '@/components/Disclaimer.astro';
 
 export async function getStaticPaths() {
   const properties = await getCollection('properties');
@@ -34,6 +36,9 @@ const {
   area,
   legalStatus,
   developer,
+  distributor,
+  infoSource,
+  updatedDate,
   handover,
   featured,
   images,
@@ -41,6 +46,9 @@ const {
   amenities,
   publishDate,
 } = property.data;
+
+const PLACEHOLDER = 'Đang cập nhật';
+const infoUpdatedDate = updatedDate ?? publishDate;
 
 const allProperties = await getCollection('properties');
 const related = allProperties
@@ -133,7 +141,8 @@ const breadcrumbLd = {
           <Icon name="map-pin" size={18} class="shrink-0 text-primary-400" />
           {address}, {district}, {city}
         </p>
-        <p class="mt-4 font-serif text-3xl font-semibold text-accent-600">{formatPrice(price, priceUnit)}</p>
+        <p class="mt-4 text-xs uppercase tracking-wide text-primary-400">Giá tham khảo</p>
+        <p class="font-serif text-3xl font-semibold text-accent-600">{formatPrice(price, priceUnit)}</p>
         {(developer || handover) && (
           <div class="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-primary-500">
             {developer && (
@@ -150,6 +159,50 @@ const breadcrumbLd = {
             )}
           </div>
         )}
+        <Disclaimer text={PROPERTY_INFO_NOTE} class="mt-4" />
+      </div>
+
+      <!-- Structured project info -->
+      <div class="border-b border-border py-8">
+        <h2 class="font-serif text-xl font-semibold text-primary-900">Thông tin dự án</h2>
+        <dl class="mt-4 grid grid-cols-1 gap-x-6 gap-y-3 text-sm sm:grid-cols-2">
+          <div class="flex justify-between gap-4 border-b border-border/60 py-2 sm:border-0 sm:py-0">
+            <dt class="text-primary-500">Tên dự án</dt>
+            <dd class="text-right font-medium text-primary-800">{title}</dd>
+          </div>
+          <div class="flex justify-between gap-4 border-b border-border/60 py-2 sm:border-0 sm:py-0">
+            <dt class="text-primary-500">Chủ đầu tư</dt>
+            <dd class="text-right font-medium text-primary-800">{developer || PLACEHOLDER}</dd>
+          </div>
+          <div class="flex justify-between gap-4 border-b border-border/60 py-2 sm:border-0 sm:py-0">
+            <dt class="text-primary-500">Đơn vị phát triển/phân phối</dt>
+            <dd class="text-right font-medium text-primary-800">{distributor || PLACEHOLDER}</dd>
+          </div>
+          <div class="flex justify-between gap-4 border-b border-border/60 py-2 sm:border-0 sm:py-0">
+            <dt class="text-primary-500">Vị trí</dt>
+            <dd class="text-right font-medium text-primary-800">{district}, {city}</dd>
+          </div>
+          <div class="flex justify-between gap-4 border-b border-border/60 py-2 sm:border-0 sm:py-0">
+            <dt class="text-primary-500">Loại hình sản phẩm</dt>
+            <dd class="text-right font-medium text-primary-800">{typeLabel(propertyType)}</dd>
+          </div>
+          <div class="flex justify-between gap-4 border-b border-border/60 py-2 sm:border-0 sm:py-0">
+            <dt class="text-primary-500">Tình trạng pháp lý</dt>
+            <dd class="text-right font-medium text-primary-800">{legalStatus || PLACEHOLDER}</dd>
+          </div>
+          <div class="flex justify-between gap-4 border-b border-border/60 py-2 sm:border-0 sm:py-0">
+            <dt class="text-primary-500">Giá tham khảo</dt>
+            <dd class="text-right font-medium text-primary-800">{formatPrice(price, priceUnit)}</dd>
+          </div>
+          <div class="flex justify-between gap-4 border-b border-border/60 py-2 sm:border-0 sm:py-0">
+            <dt class="text-primary-500">Ngày cập nhật thông tin</dt>
+            <dd class="text-right font-medium text-primary-800">{formatDate(infoUpdatedDate)}</dd>
+          </div>
+          <div class="flex justify-between gap-4 py-2 sm:col-span-2">
+            <dt class="shrink-0 text-primary-500">Nguồn thông tin</dt>
+            <dd class="text-right font-medium text-primary-800">{infoSource}</dd>
+          </div>
+        </dl>
       </div>
 
       <!-- Key facts -->
@@ -219,10 +272,11 @@ const breadcrumbLd = {
             Gửi yêu cầu tư vấn
           </a>
         </div>
-        <div class="mt-5 flex items-center gap-2 border-t border-border pt-5 text-xs text-primary-400">
-          <Icon name="shield-check" size={16} class="shrink-0 text-accent-500" />
-          Thông tin pháp lý đã được xác minh trước khi đăng tin
+        <div class="mt-5 flex items-start gap-2 border-t border-border pt-5 text-xs text-primary-400">
+          <Icon name="shield-check" size={16} class="mt-0.5 shrink-0 text-accent-500" />
+          Thông tin được tổng hợp theo nguồn công bố/tài liệu bán hàng tại thời điểm cập nhật
         </div>
+        <Disclaimer text={PAYMENT_RISK_NOTE} class="mt-3" />
         <p class="mt-3 text-xs text-primary-400">{SITE.license}</p>
       </div>
     </aside>

@@ -10,8 +10,11 @@
   "bedrooms": 2,
   "bathrooms": 2,
   "area": 70,
-  "legalStatus": "Sổ hồng lâu dài",
+  "legalStatus": "Sổ hồng lâu dài (theo thông tin công bố của chủ đầu tư)",
   "developer": "TBS Land",
+  "distributor": "Đang cập nhật",
+  "infoSource": "Theo thông tin công bố/tài liệu bán hàng của chủ đầu tư tại thời điểm cập nhật",
+  "updatedDate": "2026-07-10",
   "handover": "Quý III/2026",
   "featured": true,
   "images": [

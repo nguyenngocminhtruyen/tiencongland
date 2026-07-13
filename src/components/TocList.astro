@@ -1,0 +1,27 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  items: Heading[];
+}
+
+const { items } = Astro.props;
+---
+
+<ol class="toc-list mt-3 space-y-1 border-l border-border pl-4 text-sm">
+  {items.map((h) => (
+    <li>
+      <a
+        href={`#${h.slug}`}
+        data-toc-link={h.slug}
+        class="toc-link block py-1 text-primary-500 transition-colors hover:text-accent-600 aria-[current=true]:font-medium aria-[current=true]:text-accent-600"
+      >
+        {h.text}
+      </a>
+    </li>
+  ))}
+</ol>
