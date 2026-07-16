@@ -27,3 +27,8 @@ Thumbs.db
 # Misc
 coverage/
 *.tsbuildinfo
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
