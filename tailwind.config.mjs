@@ -40,7 +40,7 @@ export default {
         danger: '#DC2626',
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        serif: ['"Lora"', 'Georgia', 'serif'],
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       fontSize: {

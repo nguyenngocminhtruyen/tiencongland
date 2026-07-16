@@ -8,7 +8,7 @@ interface Props {
 
 const { project } = Astro.props;
 const { title, tagline, location, type, status, heroImage } = project.data;
-const href = `/du-an/${project.id}`;
+const href = `/projects/${project.id}`;
 ---
 
 <article class="card group flex flex-col overflow-hidden hover:shadow-card-hover">

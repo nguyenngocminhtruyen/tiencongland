@@ -25,68 +25,81 @@ const districts = [...new Set(properties.map((p) => p.data.district))];
   <section class="container-page pb-8">
     <h1 class="font-serif text-3xl font-semibold sm:text-4xl">Danh sách bất động sản</h1>
     <p class="mt-3 max-w-2xl text-primary-500">
-      {properties.length} bất động sản đang được cập nhật theo nguồn công bố/tài liệu bán hàng của chủ đầu tư và đơn vị phân phối.
+      {properties.length > 0
+        ? `${properties.length} bất động sản đang được cập nhật theo nguồn công bố/tài liệu bán hàng của chủ đầu tư và đơn vị phân phối.`
+        : 'Hiện chưa có bất động sản nào được đăng. Vui lòng quay lại sau hoặc liên hệ trực tiếp để được tư vấn theo nhu cầu của Quý khách.'}
     </p>
   </section>
 
-  <section class="container-page pb-8">
-    <div class="flex flex-wrap items-center gap-3 rounded-lg border border-border bg-surface-card p-4 shadow-subtle" role="group" aria-label="Bộ lọc bất động sản">
-      <div class="flex items-center gap-2 text-sm font-medium text-primary-600">
-        <Icon name="funnel" size={18} class="text-primary-400" />
-        Lọc theo:
+  {properties.length > 0 && (
+    <section class="container-page pb-8">
+      <div class="flex flex-wrap items-center gap-3 rounded-lg border border-border bg-surface-card p-4 shadow-subtle" role="group" aria-label="Bộ lọc bất động sản">
+        <div class="flex items-center gap-2 text-sm font-medium text-primary-600">
+          <Icon name="funnel" size={18} class="text-primary-400" />
+          Lọc theo:
+        </div>
+
+        <select id="filter-status" class="h-11 rounded border border-primary-200 bg-surface-card px-3 text-sm text-primary-800">
+          <option value="all">Tất cả nhu cầu</option>
+          <option value="for-sale">Bán</option>
+          <option value="for-rent">Cho thuê</option>
+        </select>
+
+        <select id="filter-type" class="h-11 rounded border border-primary-200 bg-surface-card px-3 text-sm text-primary-800">
+          <option value="all">Tất cả loại hình</option>
+          {propertyTypes.map((t) => <option value={t}>{typeLabel(t)}</option>)}
+        </select>
+
+        <select id="filter-district" class="h-11 rounded border border-primary-200 bg-surface-card px-3 text-sm text-primary-800">
+          <option value="all">Tất cả khu vực</option>
+          {districts.map((d) => <option value={d}>{d}</option>)}
+        </select>
+
+        <button id="filter-reset" type="button" class="ml-auto text-sm font-medium text-primary-500 hover:text-accent-600">
+          Xóa bộ lọc
+        </button>
       </div>
-
-      <select id="filter-status" class="h-11 rounded border border-primary-200 bg-surface-card px-3 text-sm text-primary-800">
-        <option value="all">Tất cả nhu cầu</option>
-        <option value="for-sale">Bán</option>
-        <option value="for-rent">Cho thuê</option>
-      </select>
-
-      <select id="filter-type" class="h-11 rounded border border-primary-200 bg-surface-card px-3 text-sm text-primary-800">
-        <option value="all">Tất cả loại hình</option>
-        {propertyTypes.map((t) => <option value={t}>{typeLabel(t)}</option>)}
-      </select>
-
-      <select id="filter-district" class="h-11 rounded border border-primary-200 bg-surface-card px-3 text-sm text-primary-800">
-        <option value="all">Tất cả khu vực</option>
-        {districts.map((d) => <option value={d}>{d}</option>)}
-      </select>
-
-      <button id="filter-reset" type="button" class="ml-auto text-sm font-medium text-primary-500 hover:text-accent-600">
-        Xóa bộ lọc
-      </button>
-    </div>
-    <Disclaimer text={PROPERTY_INFO_NOTE} class="mt-4" />
-  </section>
+      <Disclaimer text={PROPERTY_INFO_NOTE} class="mt-4" />
+    </section>
+  )}
 
   <section class="container-page section pt-0">
-    <div id="property-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {properties.map((property) => (
-        <div
-          class="property-item"
-          data-status={property.data.status}
-          data-type={property.data.propertyType}
-          data-district={property.data.district}
-        >
-          <PropertyCard property={property} />
+    {properties.length > 0 ? (
+      <>
+        <div id="property-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {properties.map((property) => (
+            <div
+              class="property-item"
+              data-status={property.data.status}
+              data-type={property.data.propertyType}
+              data-district={property.data.district}
+            >
+              <PropertyCard property={property} />
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-    <p id="empty-state" class="hidden py-16 text-center text-primary-400">
-      Không tìm thấy bất động sản phù hợp với bộ lọc. Vui lòng thử lại với tiêu chí khác.
-    </p>
+        <p id="empty-state" class="hidden py-16 text-center text-primary-400">
+          Không tìm thấy bất động sản phù hợp với bộ lọc. Vui lòng thử lại với tiêu chí khác.
+        </p>
+      </>
+    ) : (
+      <p class="py-16 text-center text-primary-400">
+        Hiện chưa có bất động sản nào được đăng. <a href="/contact" class="font-medium text-accent-600 hover:underline">Liên hệ tư vấn</a> để được cập nhật khi có sản phẩm mới.
+      </p>
+    )}
   </section>
 </Layout>
 
 <script>
-  const statusSelect = document.getElementById('filter-status') as HTMLSelectElement;
-  const typeSelect = document.getElementById('filter-type') as HTMLSelectElement;
-  const districtSelect = document.getElementById('filter-district') as HTMLSelectElement;
+  const statusSelect = document.getElementById('filter-status') as HTMLSelectElement | null;
+  const typeSelect = document.getElementById('filter-type') as HTMLSelectElement | null;
+  const districtSelect = document.getElementById('filter-district') as HTMLSelectElement | null;
   const resetBtn = document.getElementById('filter-reset');
   const items = Array.from(document.querySelectorAll<HTMLElement>('.property-item'));
   const emptyState = document.getElementById('empty-state');
 
   function applyFilters() {
+    if (!statusSelect || !typeSelect || !districtSelect) return;
     const status = statusSelect.value;
     const type = typeSelect.value;
     const district = districtSelect.value;
@@ -104,10 +117,11 @@ const districts = [...new Set(properties.map((p) => p.data.district))];
     emptyState?.classList.toggle('hidden', visibleCount !== 0);
   }
 
-  statusSelect.addEventListener('change', applyFilters);
-  typeSelect.addEventListener('change', applyFilters);
-  districtSelect.addEventListener('change', applyFilters);
+  statusSelect?.addEventListener('change', applyFilters);
+  typeSelect?.addEventListener('change', applyFilters);
+  districtSelect?.addEventListener('change', applyFilters);
   resetBtn?.addEventListener('click', () => {
+    if (!statusSelect || !typeSelect || !districtSelect) return;
     statusSelect.value = 'all';
     typeSelect.value = 'all';
     districtSelect.value = 'all';

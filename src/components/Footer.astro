@@ -7,8 +7,8 @@ import Disclaimer from './Disclaimer.astro';
 const year = new Date().getFullYear();
 
 const LEGAL_LINKS = [
-  { href: '/chinh-sach-bao-mat', label: 'Chính sách bảo mật' },
-  { href: '/dieu-khoan-su-dung', label: 'Điều khoản sử dụng' },
+  { href: '/privacy-policy', label: 'Chính sách bảo mật' },
+  { href: '/terms-of-use', label: 'Điều khoản sử dụng' },
 ] as const;
 ---
 
@@ -32,9 +32,11 @@ const LEGAL_LINKS = [
         <a href={SITE.social.zalo} target="_blank" rel="noopener noreferrer" aria-label="Zalo" class="flex h-9 w-9 items-center justify-center rounded-full border border-primary-700 text-primary-300 hover:border-accent hover:text-accent">
           <Icon name="zalo" size={18} />
         </a>
-        <a href={SITE.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="flex h-9 w-9 items-center justify-center rounded-full border border-primary-700 text-primary-300 hover:border-accent hover:text-accent">
-          <Icon name="youtube" size={18} />
-        </a>
+        {SITE.social.youtube && (
+          <a href={SITE.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="flex h-9 w-9 items-center justify-center rounded-full border border-primary-700 text-primary-300 hover:border-accent hover:text-accent">
+            <Icon name="youtube" size={18} />
+          </a>
+        )}
       </div>
     </div>
 

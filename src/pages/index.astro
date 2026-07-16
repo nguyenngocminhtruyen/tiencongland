@@ -43,11 +43,19 @@ const testimonials = [
   },
 ];
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: SITE.brand,
+  url: SITE.url,
+  inLanguage: 'vi-VN',
+};
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'RealEstateAgent',
   name: SITE.name,
-  image: new URL('/images/hero-agent.svg', SITE.url).toString(),
+  image: new URL('/images/dinh-tien-cong-chuyen-vien-bat-dong-san.jpg', SITE.url).toString(),
   url: SITE.url,
   telephone: SITE.phone,
   email: SITE.email,
@@ -58,11 +66,11 @@ const jsonLd = {
     addressCountry: 'VN',
   },
   areaServed: 'TP. Hồ Chí Minh, Việt Nam',
-  sameAs: [SITE.social.facebook, SITE.social.youtube],
+  sameAs: [SITE.social.facebook, SITE.social.zalo, SITE.social.youtube, SITE.social.tiktok].filter(Boolean),
 };
 ---
 
-<Layout jsonLd={jsonLd}>
+<Layout jsonLd={[websiteJsonLd, jsonLd]}>
   <!-- Hero -->
   <section class="relative overflow-hidden bg-primary-900" aria-labelledby="hero-heading">
     <div class="container-page grid gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:items-center lg:py-28">
@@ -99,14 +107,17 @@ const jsonLd = {
       </div>
       <div>
         <div class="relative mx-auto max-w-md overflow-hidden rounded-lg shadow-card-hover lg:max-w-none">
-          <img
-            src="/images/hero-agent.svg"
-            alt={`Chân dung ${SITE.name}, chuyên viên tư vấn bất động sản`}
-            width="1600"
-            height="1200"
-            class="aspect-[4/3] w-full object-cover"
-            fetchpriority="high"
-          />
+          <picture>
+            <source srcset="/images/dinh-tien-cong-hero.webp" type="image/webp" />
+            <img
+              src="/images/dinh-tien-cong-hero.jpg"
+              alt={`Chân dung ${SITE.name}, chuyên viên tư vấn bất động sản`}
+              width="1000"
+              height="750"
+              class="aspect-[4/3] w-full object-cover"
+              fetchpriority="high"
+            />
+          </picture>
         </div>
       </div>
     </div>
@@ -134,7 +145,7 @@ const jsonLd = {
             title="Dự án bất động sản đáng chú ý"
             description="Kênh thông tin cá nhân hỗ trợ tư vấn, không phải website chính thức của chủ đầu tư hay sàn giao dịch."
           />
-          <a href="/du-an" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
+          <a href="/projects" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
             Xem tất cả dự án
             <Icon name="arrow-right" size={16} />
           </a>
@@ -147,33 +158,38 @@ const jsonLd = {
   )}
 
   <!-- Featured properties -->
-  <section class="section" aria-labelledby="featured-heading">
-    <div class="container-page">
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <SectionHeading id="featured-heading" eyebrow="Bất động sản nổi bật" title="Những lựa chọn đáng cân nhắc" description="Thông tin dự án được cập nhật theo nguồn công bố/tài liệu bán hàng tại thời điểm đăng tải. Vui lòng liên hệ để kiểm tra thông tin mới nhất." />
-        <a href="/properties" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
-          Xem tất cả
-          <Icon name="arrow-right" size={16} />
-        </a>
+  {featuredProperties.length > 0 && (
+    <section class="section" aria-labelledby="featured-heading">
+      <div class="container-page">
+        <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <SectionHeading id="featured-heading" eyebrow="Bất động sản nổi bật" title="Những lựa chọn đáng cân nhắc" description="Thông tin dự án được cập nhật theo nguồn công bố/tài liệu bán hàng tại thời điểm đăng tải. Vui lòng liên hệ để kiểm tra thông tin mới nhất." />
+          <a href="/properties" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
+            Xem tất cả
+            <Icon name="arrow-right" size={16} />
+          </a>
+        </div>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredProperties.map((property) => <PropertyCard property={property} />)}
+        </div>
       </div>
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {featuredProperties.map((property) => <PropertyCard property={property} />)}
-      </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- About teaser -->
   <section class="section bg-primary-50" aria-labelledby="about-heading">
     <div class="container-page grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
       <div class="overflow-hidden rounded-lg shadow-card">
-        <img
-          src="/images/about-portrait.svg"
-          alt={`${SITE.name} tại văn phòng tư vấn`}
-          width="900"
-          height="1200"
-          loading="lazy"
-          class="aspect-[3/4] w-full object-cover"
-        />
+        <picture>
+          <source srcset="/images/dinh-tien-cong-chuyen-vien-bat-dong-san.webp" type="image/webp" />
+          <img
+            src="/images/dinh-tien-cong-chuyen-vien-bat-dong-san.jpg"
+            alt={`${SITE.name}, chuyên viên tư vấn bất động sản uy tín tại TP.HCM`}
+            width="1000"
+            height="1333"
+            loading="lazy"
+            class="aspect-[3/4] w-full object-cover"
+          />
+        </picture>
       </div>
       <div>
         <SectionHeading id="about-heading" eyebrow="Về tôi" title="Người bạn đồng hành đáng tin cậy trong hành trình bất động sản" />

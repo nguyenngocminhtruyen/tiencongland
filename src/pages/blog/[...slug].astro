@@ -34,6 +34,9 @@ const readingMinutes = wordCount > 0 ? Math.max(1, Math.round(wordCount / 200)) 
 const allPosts = await getCollection('blog');
 const related = allPosts.filter((p) => p.id !== post.id && p.data.category === category).slice(0, 3);
 
+const allProjects = await getCollection('projects');
+const relatedProject = allProjects.find((p) => p.data.relatedPosts.includes(blogSlug(post.id)));
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -117,12 +120,16 @@ const jsonLd = {
 
           <div class="mt-12 space-y-8">
             <CTA
-              title="Đăng ký tham quan căn hộ mẫu Gladia Heights"
-              text="Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ hỗ trợ tư vấn, cập nhật thông tin mới nhất và sắp xếp lịch tham quan căn hộ mẫu phù hợp với thời gian của Quý khách."
+              title={relatedProject ? `Đăng ký tham quan căn hộ mẫu ${relatedProject.data.title}` : 'Cần tư vấn thêm về bất động sản?'}
+              text={
+                relatedProject
+                  ? 'Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ hỗ trợ tư vấn, cập nhật thông tin mới nhất và sắp xếp lịch tham quan căn hộ mẫu phù hợp với thời gian của Quý khách.'
+                  : 'Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ hỗ trợ tư vấn theo đúng nhu cầu và phản hồi trong vòng 24 giờ.'
+              }
               primaryLabel="Liên hệ tư vấn"
               primaryHref="/contact"
-              secondaryLabel="Xem thông tin liên hệ"
-              secondaryHref="/contact#lien-he"
+              secondaryLabel={relatedProject ? `Xem dự án ${relatedProject.data.title}` : 'Xem thông tin liên hệ'}
+              secondaryHref={relatedProject ? `/projects/${relatedProject.id}` : '/contact#lien-he'}
             />
 
             <Disclaimer variant="box" text={ARTICLE_REFERENCE_NOTE} secondaryText={ARTICLE_INDEPENDENT_NOTE} />
@@ -135,7 +142,11 @@ const jsonLd = {
             <CTA
               compact
               title="Cần tư vấn thêm?"
-              text="Sắp xếp lịch tham quan hoặc kiểm tra thông tin mới nhất về Gladia Heights."
+              text={
+                relatedProject
+                  ? `Sắp xếp lịch tham quan hoặc kiểm tra thông tin mới nhất về ${relatedProject.data.title}.`
+                  : 'Để lại thông tin, tôi sẽ liên hệ tư vấn theo đúng nhu cầu của Quý khách.'
+              }
               primaryLabel="Liên hệ tư vấn"
               primaryHref="/contact"
             />

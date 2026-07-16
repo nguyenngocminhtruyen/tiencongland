@@ -10,7 +10,7 @@ const credentials = [
   {
     icon: 'shield-check' as const,
     title: 'Chứng chỉ hành nghề môi giới BĐS',
-    description: 'Cấp bởi Bộ Xây dựng, đáp ứng đầy đủ yêu cầu pháp lý hành nghề.',
+    description: 'Số HCM-0098043, đáp ứng đầy đủ yêu cầu pháp lý hành nghề.',
   },
   {
     icon: 'award' as const,
@@ -41,25 +41,43 @@ const values = [
   { title: 'Tận tâm', description: 'Đồng hành cùng khách hàng từ bước tìm hiểu đến khi hoàn tất giao dịch và sau đó.' },
   { title: 'Chuyên nghiệp', description: 'Cập nhật liên tục kiến thức thị trường, pháp lý để đưa ra tư vấn chính xác.' },
 ];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.name,
+  jobTitle: 'Chuyên viên tư vấn bất động sản',
+  image: new URL('/images/dinh-tien-cong-chuyen-vien-bat-dong-san.jpg', SITE.url).toString(),
+  url: new URL('/about', SITE.url).toString(),
+  telephone: SITE.phone,
+  email: SITE.email,
+  ...(SITE.company ? { worksFor: { '@type': 'Organization', name: SITE.company } } : {}),
+  sameAs: [SITE.social.facebook, SITE.social.zalo, SITE.social.youtube, SITE.social.tiktok].filter(Boolean),
+};
 ---
 
 <Layout
   title="Giới thiệu"
   description={`Tìm hiểu về ${SITE.name} - chuyên viên tư vấn bất động sản với 8+ năm kinh nghiệm tại TP.HCM, hướng đến minh bạch và tận tâm với khách hàng.`}
+  image="/images/dinh-tien-cong-chuyen-vien-bat-dong-san.jpg"
+  jsonLd={jsonLd}
 >
   <Breadcrumbs items={[{ label: 'Giới thiệu' }]} />
 
   <!-- Intro -->
   <section class="container-page grid gap-10 pb-16 sm:pb-20 lg:grid-cols-2 lg:items-center lg:gap-16">
     <div class="overflow-hidden rounded-lg shadow-card">
-      <img
-        src="/images/about-portrait.svg"
-        alt={`Chân dung ${SITE.name}`}
-        width="900"
-        height="1200"
-        class="aspect-[3/4] w-full object-cover"
-        fetchpriority="high"
-      />
+      <picture>
+        <source srcset="/images/dinh-tien-cong-chuyen-vien-bat-dong-san.webp" type="image/webp" />
+        <img
+          src="/images/dinh-tien-cong-chuyen-vien-bat-dong-san.jpg"
+          alt={`${SITE.name} - chuyên viên tư vấn bất động sản tại TP.HCM`}
+          width="1000"
+          height="1333"
+          class="aspect-[3/4] w-full object-cover"
+          fetchpriority="high"
+        />
+      </picture>
     </div>
     <div>
       <p class="badge">

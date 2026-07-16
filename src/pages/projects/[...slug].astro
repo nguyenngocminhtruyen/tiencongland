@@ -64,7 +64,7 @@ const jsonLd = {
   name: title,
   description: tagline,
   image: [new URL(heroImage, SITE.url).toString(), ...gallery.map((g) => new URL(g.src, SITE.url).toString())],
-  url: new URL(`/du-an/${project.id}`, SITE.url).toString(),
+  url: new URL(`/projects/${project.id}`, SITE.url).toString(),
   address: {
     '@type': 'PostalAddress',
     streetAddress: location,
@@ -77,8 +77,8 @@ const breadcrumbLd = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Trang chủ', item: SITE.url },
-    { '@type': 'ListItem', position: 2, name: 'Dự án', item: new URL('/du-an', SITE.url).toString() },
-    { '@type': 'ListItem', position: 3, name: title, item: new URL(`/du-an/${project.id}`, SITE.url).toString() },
+    { '@type': 'ListItem', position: 2, name: 'Dự án', item: new URL('/projects', SITE.url).toString() },
+    { '@type': 'ListItem', position: 3, name: title, item: new URL(`/projects/${project.id}`, SITE.url).toString() },
   ],
 };
 
@@ -94,6 +94,9 @@ const quickFacts = [
 
 const DEFAULT_LOCATION_NOTE =
   'Khả năng kết nối đến các khu vực xung quanh nên được khảo sát thực tế. Tôi có thể hỗ trợ sắp xếp lịch tham quan để Quý khách trải nghiệm trực tiếp.';
+
+const highlightImage =
+  gallery.find((g) => /phòng tắm|master/i.test(g.caption ?? g.alt)) ?? gallery[0] ?? { src: heroImage, alt: title };
 ---
 
 <Layout
@@ -106,7 +109,7 @@ const DEFAULT_LOCATION_NOTE =
   type="article"
   jsonLd={[jsonLd, breadcrumbLd]}
 >
-  <Breadcrumbs items={[{ label: 'Dự án', href: '/du-an' }, { label: title }]} />
+  <Breadcrumbs items={[{ label: 'Dự án', href: '/projects' }, { label: title }]} />
 
   <article>
   <!-- 1. Hero -->
@@ -251,8 +254,8 @@ const DEFAULT_LOCATION_NOTE =
         </div>
         <div class="overflow-hidden rounded-xl border border-border shadow-card">
           <img
-            src="/images/blog/gladia-heights-phong-tam-master-kho-uot.webp"
-            alt={`Phòng tắm Master phân tách khu khô ướt tại ${title}`}
+            src={highlightImage.src}
+            alt={highlightImage.alt}
             width="900"
             height="1100"
             loading="lazy"

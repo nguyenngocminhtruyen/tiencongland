@@ -3,7 +3,7 @@ title: "Thủ Tục Sang Tên Sổ Đỏ, Sổ Hồng Mới Nhất"
 description: "Hướng dẫn chi tiết các bước và hồ sơ cần thiết để sang tên sổ đỏ, sổ hồng khi mua bán bất động sản."
 publishDate: 2026-06-05
 category: "Pháp lý"
-image: "/images/blog/thu-tuc-sang-ten-so-do.svg"
+image: "/images/blog/thu-tuc-sang-ten-so-do.jpg"
 featured: false
 ---
 

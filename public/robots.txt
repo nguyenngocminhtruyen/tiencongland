@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.tiencongland.vn/sitemap-index.xml
+Sitemap: https://tiencongland.com/sitemap-index.xml
