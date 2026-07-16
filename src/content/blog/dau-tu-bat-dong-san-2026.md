@@ -3,7 +3,7 @@ title: "Xu Hướng Đầu Tư Bất Động Sản Đáng Chú Ý Năm 2026"
 description: "Phân tích những khu vực và loại hình bất động sản tiềm năng cho nhà đầu tư trong năm 2026."
 publishDate: 2026-07-01
 category: "Đầu tư"
-image: "/images/blog/dau-tu-bat-dong-san-2026.jpg"
+image: "/images/blog/dau-tu-bat-dong-san-2026.webp"
 featured: true
 ---
 

@@ -8,13 +8,29 @@ interface Props {
 }
 
 const { property } = Astro.props;
-const { title, status, propertyType, price, priceUnit, district, city, bedrooms, bathrooms, area, images } = property.data;
+const {
+  title,
+  status,
+  propertyType,
+  price,
+  priceUnit,
+  priceLabel,
+  district,
+  city,
+  bedrooms,
+  bathrooms,
+  area,
+  areaLabel,
+  heroImage,
+} = property.data;
+
+const locationLabel = district ? `${district}, ${city}` : city;
 ---
 
 <article class="card group flex flex-col overflow-hidden hover:shadow-card-hover">
   <a href={`/properties/${property.id}`} class="relative block aspect-[4/3] overflow-hidden bg-primary-100">
     <img
-      src={images[0]}
+      src={heroImage}
       alt={title}
       loading="lazy"
       decoding="async"
@@ -35,30 +51,42 @@ const { title, status, propertyType, price, priceUnit, district, city, bedrooms,
     </a>
     <p class="mt-1.5 flex items-center gap-1.5 text-sm text-primary-500">
       <Icon name="map-pin" size={16} class="shrink-0 text-primary-400" />
-      {district}, {city}
+      {locationLabel}
     </p>
 
-    <div class="mt-4 flex items-center gap-4 text-sm text-primary-600">
-      {bedrooms > 0 && (
-        <span class="flex items-center gap-1.5">
-          <Icon name="bed" size={17} class="text-primary-400" />
-          {bedrooms} PN
-        </span>
-      )}
-      {bathrooms > 0 && (
-        <span class="flex items-center gap-1.5">
-          <Icon name="bath" size={17} class="text-primary-400" />
-          {bathrooms} WC
-        </span>
-      )}
-      <span class="flex items-center gap-1.5">
-        <Icon name="expand" size={16} class="text-primary-400" />
-        {formatArea(area)}
-      </span>
-    </div>
+    {(Boolean(bedrooms) || Boolean(bathrooms) || area) && (
+      <div class="mt-4 flex items-center gap-4 text-sm text-primary-600">
+        {Boolean(bedrooms) && (
+          <span class="flex items-center gap-1.5">
+            <Icon name="bed" size={17} class="text-primary-400" />
+            {bedrooms} PN
+          </span>
+        )}
+        {Boolean(bathrooms) && (
+          <span class="flex items-center gap-1.5">
+            <Icon name="bath" size={17} class="text-primary-400" />
+            {bathrooms} WC
+          </span>
+        )}
+        {area && (
+          <span class="flex items-center gap-1.5">
+            <Icon name="expand" size={16} class="text-primary-400" />
+            {formatArea(area)}
+          </span>
+        )}
+        {!area && areaLabel && (
+          <span class="flex items-center gap-1.5">
+            <Icon name="expand" size={16} class="text-primary-400" />
+            {areaLabel}
+          </span>
+        )}
+      </div>
+    )}
 
     <div class="mt-4 flex items-center justify-between border-t border-border pt-4">
-      <span class="font-serif text-xl font-semibold text-accent-600">{formatPrice(price, priceUnit)}</span>
+      <span class="font-serif text-lg font-semibold text-accent-600">
+        {price && priceUnit ? formatPrice(price, priceUnit) : priceLabel}
+      </span>
       <a href={`/properties/${property.id}`} class="flex items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
         Chi tiết
         <Icon name="arrow-right" size={16} />

@@ -3,7 +3,7 @@ title: "5 Kinh Nghiệm Quan Trọng Khi Mua Nhà Lần Đầu"
 description: "Những điều cần kiểm tra kỹ trước khi xuống tiền mua căn nhà đầu tiên, từ pháp lý đến vị trí và tài chính."
 publishDate: 2026-06-20
 category: "Kinh nghiệm mua bán"
-image: "/images/blog/kinh-nghiem-mua-nha-lan-dau.jpg"
+image: "/images/blog/kinh-nghiem-mua-nha-lan-dau.webp"
 featured: true
 ---
 

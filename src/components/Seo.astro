@@ -1,5 +1,6 @@
 ---
 import { SITE } from '@/lib/site';
+import SchemaMarkup from './SchemaMarkup.astro';
 
 interface Props {
   title?: string;
@@ -22,7 +23,6 @@ const {
 const pageTitle = title ? `${title} | ${SITE.brand}` : SITE.title;
 const canonicalURL = new URL(Astro.url.pathname, SITE.url).toString();
 const imageURL = new URL(image, SITE.url).toString();
-const ldEntries = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 ---
 
 <title>{pageTitle}</title>
@@ -43,6 +43,4 @@ const ldEntries = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={imageURL} />
 
-{ldEntries.map((entry) => (
-  <script type="application/ld+json" set:html={JSON.stringify(entry)} is:inline />
-))}
+{jsonLd && <SchemaMarkup data={jsonLd} />}

@@ -4,7 +4,7 @@ import Layout from '@/layouts/Layout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
 import BlogCard from '@/components/BlogCard.astro';
 
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('blog', (post) => !post.data.draft)).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
 const categories = [...new Set(posts.map((p) => p.data.category))];

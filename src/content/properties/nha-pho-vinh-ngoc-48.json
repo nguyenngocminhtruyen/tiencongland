@@ -1,0 +1,85 @@
+{
+  "title": "Nhà phố Vịnh Ngọc 48",
+  "description": "Nhà phố thương mại thuộc phân khu Boulevard Prime, Vinhomes Green Paradise Cần Giờ — mặt tiền kinh doanh, hướng view vịnh biển nội khu.",
+  "intro": "Nhà phố Vịnh Ngọc 48 là sản phẩm nhà phố thương mại thuộc phân khu Boulevard Prime của dự án Vinhomes Green Paradise Cần Giờ. Theo tài liệu giới thiệu, sản phẩm tọa lạc trên trục phố thương mại của dự án, đối diện khu biệt thự thuộc bộ sưu tập Lagoonia Legacy và hướng ra vịnh biển nội khu. Đây là sản phẩm được giới thiệu kết hợp giữa không gian kinh doanh ở tầng dưới và không gian sống tại các tầng trên.",
+  "audienceFit": "Phù hợp với khách hàng có nhu cầu vừa ở vừa kinh doanh mặt tiền, hoặc nhà đầu tư quan tâm bất động sản thương mại tại khu vực đang phát triển hạ tầng. Mức độ phù hợp cụ thể nên được đánh giá dựa trên khảo sát thực tế và tài liệu pháp lý.",
+  "projectSlug": "vinhomes-paradise-can-gio",
+  "subdivision": "Boulevard Prime",
+  "subdivisionSlug": "boulevard-prime",
+  "propertyType": "house",
+  "status": "for-sale",
+  "district": "Cần Giờ",
+  "address": "Đường Vịnh Ngọc 48, Vinhomes Green Paradise Cần Giờ",
+  "developer": "Vingroup (thương hiệu Vinhomes)",
+  "priceLabel": "Khoảng 12,8 - 13 tỷ đồng/căn",
+  "areaLabel": "Khoảng 75 - 125m² tùy vị trí và loại căn",
+  "legalStatus": "Theo thông tin từ kênh phân phối/môi giới, dự án đã được cơ quan có thẩm quyền chấp thuận triển khai xây dựng và mở bán. Sổ hồng từng sản phẩm dự kiến được chủ đầu tư hỗ trợ cấp sau bàn giao theo quy định. Hồ sơ pháp lý chi tiết vui lòng xác nhận trực tiếp với chủ đầu tư/đơn vị phân phối trước khi giao dịch.",
+  "infoSource": "Tài liệu/hình ảnh giới thiệu do chủ đầu tư công bố; mức giá/diện tích tham khảo tổng hợp từ thị trường (batdongsan.com.vn và các kênh phân phối) tại thời điểm T7/2026, chưa xác nhận chính thức từ chủ đầu tư",
+  "updatedDate": "2026-07-16",
+  "heroImage": "/images/projects/vinhomes-paradise-can-gio/boulevard-prime-ban-cong-view-pho.webp",
+  "gallery": [
+    {
+      "src": "/images/projects/vinhomes-paradise-can-gio/boulevard-prime-pho-thuong-mai.webp",
+      "alt": "Phối cảnh minh họa trục phố thương mại nơi nhà phố Vịnh Ngọc 48 tọa lạc, về đêm",
+      "caption": "Phối cảnh minh họa, không phải hình ảnh thực tế"
+    },
+    {
+      "src": "/images/projects/vinhomes-paradise-can-gio/vinhomes-paradise-can-gio-so-do-ket-noi.webp",
+      "alt": "Sơ đồ định hướng kết nối hạ tầng khu vực Boulevard Prime theo tài liệu quy hoạch",
+      "caption": "Sơ đồ quy hoạch do chủ đầu tư công bố — các tuyến \"tương lai\" chưa hình thành"
+    }
+  ],
+  "videos": [
+    {
+      "src": "/videos/projects/vinhomes-paradise-can-gio/boulevard-prime-video-gioi-thieu.mp4",
+      "title": "Video giới thiệu nhà phố Vịnh Ngọc 48 / Boulevard Prime",
+      "description": "Video do chủ đầu tư/đơn vị phân phối công bố, mang tính giới thiệu tham khảo."
+    }
+  ],
+  "designHighlights": [
+    "Mặt tiền hướng ra trục phố thương mại của dự án, phù hợp bố trí không gian kinh doanh tại tầng trệt.",
+    "Các tầng trên được giới thiệu bố trí không gian sống riêng, tách biệt với khu vực kinh doanh.",
+    "Hướng view về phía khu biệt thự Lagoonia Legacy và vịnh biển nội khu theo tài liệu giới thiệu."
+  ],
+  "valueHighlights": [
+    {
+      "title": "Kết nối vùng",
+      "description": "Theo tài liệu quy hoạch của chủ đầu tư, khu vực Boulevard Prime nằm trên trục đại lộ chính, được định hướng kết nối tới nhiều tuyến hạ tầng vùng đang triển khai (xem chi tiết tại trang dự án)."
+    },
+    {
+      "title": "Không gian kết hợp",
+      "description": "Bố cục kết hợp giữa mặt tiền kinh doanh và không gian sống phía trong, theo giới thiệu của tài liệu bán hàng."
+    },
+    {
+      "title": "View hướng vịnh biển",
+      "description": "Được giới thiệu có tầm nhìn hướng về phía vịnh biển nội khu và khu biệt thự đối diện."
+    },
+    {
+      "title": "Khả năng sử dụng lâu dài",
+      "description": "Phù hợp cho nhu cầu ở kết hợp kinh doanh; khả năng khai thác thực tế nên được khảo sát và xác nhận tại thời điểm tìm hiểu, không có cam kết về hiệu quả kinh doanh hay lợi nhuận."
+    }
+  ],
+  "faq": [
+    {
+      "question": "Nhà phố Vịnh Ngọc 48 thuộc dự án nào?",
+      "answer": "Sản phẩm thuộc phân khu Boulevard Prime của dự án Vinhomes Green Paradise Cần Giờ."
+    },
+    {
+      "question": "Nhà phố Vịnh Ngọc 48 khác gì với phân khu Boulevard Prime?",
+      "answer": "Boulevard Prime là tên phân khu/trục phố thương mại tổng thể của dự án; Nhà phố Vịnh Ngọc 48 là một tuyến sản phẩm cụ thể nằm trong phân khu này. Quý khách có thể xem thông tin tổng quan phân khu tại trang Boulevard Prime."
+    },
+    {
+      "question": "Có thể vừa ở vừa kinh doanh tại đây không?",
+      "answer": "Theo giới thiệu của tài liệu bán hàng, sản phẩm được thiết kế kết hợp không gian kinh doanh mặt tiền và không gian sống phía trong. Quy định khai thác kinh doanh cụ thể nên được xác nhận với ban quản lý dự án."
+    },
+    {
+      "question": "Giá bán, diện tích và pháp lý cụ thể ở đâu?",
+      "answer": "Giá tham khảo khoảng 12,8 - 13 tỷ đồng/căn, diện tích khoảng 75 - 125m² tùy vị trí. Quý khách vui lòng liên hệ trực tiếp để được cung cấp bảng giá, diện tích và hồ sơ pháp lý chính xác theo từng căn."
+    }
+  ],
+  "relatedPosts": ["nha-pho-vinh-ngoc-48-boulevard-prime", "phan-khu-vinhomes-paradise-can-gio"],
+  "seoTitle": "Nhà phố Vịnh Ngọc 48 - Boulevard Prime Cần Giờ",
+  "seoDescription": "Thông tin tham khảo nhà phố Vịnh Ngọc 48, phân khu Boulevard Prime thuộc Vinhomes Green Paradise Cần Giờ: vị trí, thiết kế, hình ảnh và liên hệ tư vấn.",
+  "featured": true,
+  "publishDate": "2026-07-16"
+}

@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PropertyCard from './PropertyCard.astro';
+
+interface Props {
+  properties: CollectionEntry<'properties'>[];
+  heading?: string;
+  headingClass?: string;
+}
+
+const { properties, heading = 'Sản phẩm liên quan', headingClass = 'font-serif text-xl font-semibold text-primary-900' } = Astro.props;
+---
+
+{properties.length > 0 && (
+  <div>
+    <h2 class={headingClass}>{heading}</h2>
+    <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {properties.map((p) => <PropertyCard property={p} />)}
+    </div>
+  </div>
+)}

@@ -18,7 +18,7 @@ const isActive = (href: string) => (href === '/' ? currentPath === '/' : current
       </span>
     </a>
 
-    <nav class="hidden lg:flex lg:items-center lg:gap-8" aria-label="Chính">
+    <nav class="hidden xl:flex xl:items-center xl:gap-6" aria-label="Chính">
       {NAV_LINKS.map((link) => (
         <a
           href={link.href}
@@ -30,7 +30,7 @@ const isActive = (href: string) => (href === '/' ? currentPath === '/' : current
       ))}
     </nav>
 
-    <div class="hidden items-center gap-3 lg:flex">
+    <div class="hidden items-center gap-3 xl:flex">
       <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} class="flex items-center gap-2 text-sm font-medium text-primary-800 hover:text-accent-600">
         <Icon name="phone" size={18} />
         {SITE.phoneDisplay}
@@ -41,7 +41,7 @@ const isActive = (href: string) => (href === '/' ? currentPath === '/' : current
     <button
       id="menu-toggle"
       type="button"
-      class="flex h-11 w-11 items-center justify-center rounded text-primary-800 lg:hidden"
+      class="flex h-11 w-11 items-center justify-center rounded text-primary-800 xl:hidden"
       aria-expanded="false"
       aria-controls="mobile-menu"
       aria-label="Mở menu điều hướng"
@@ -50,7 +50,7 @@ const isActive = (href: string) => (href === '/' ? currentPath === '/' : current
     </button>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t border-border bg-surface lg:hidden" role="dialog" aria-modal="true" aria-label="Menu điều hướng">
+  <div id="mobile-menu" class="hidden border-t border-border bg-surface xl:hidden" role="dialog" aria-modal="true" aria-label="Menu điều hướng">
     <nav class="container-page flex flex-col gap-1 py-4" aria-label="Di động">
       {NAV_LINKS.map((link) => (
         <a
@@ -80,7 +80,7 @@ const isActive = (href: string) => (href === '/' ? currentPath === '/' : current
     toggle.setAttribute('aria-expanded', String(!isOpen));
   });
 
-  const mediaQuery = window.matchMedia('(min-width: 1024px)');
+  const mediaQuery = window.matchMedia('(min-width: 1280px)');
   mediaQuery.addEventListener('change', (e) => {
     if (e.matches) {
       menu?.classList.add('hidden');

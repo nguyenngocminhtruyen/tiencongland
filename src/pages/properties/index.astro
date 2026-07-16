@@ -13,7 +13,7 @@ const properties = (await getCollection('properties')).sort(
 );
 
 const propertyTypes = [...new Set(properties.map((p) => p.data.propertyType))];
-const districts = [...new Set(properties.map((p) => p.data.district))];
+const districts = [...new Set(properties.map((p) => p.data.district).filter((d): d is string => Boolean(d)))];
 ---
 
 <Layout

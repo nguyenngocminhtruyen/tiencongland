@@ -3,7 +3,7 @@ title: "Phong Thủy Chọn Hướng Nhà Hợp Tuổi Gia Chủ"
 description: "Hướng dẫn cơ bản về cách xác định hướng nhà hợp phong thủy theo tuổi, giúp gia chủ an tâm khi chọn mua bất động sản."
 publishDate: 2026-05-15
 category: "Phong thủy"
-image: "/images/blog/phong-thuy-chon-huong-nha.jpg"
+image: "/images/blog/phong-thuy-chon-huong-nha.webp"
 featured: false
 ---
 

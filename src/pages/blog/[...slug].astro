@@ -2,18 +2,19 @@
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import Breadcrumbs from '@/components/Breadcrumbs.astro';
-import BlogCard from '@/components/BlogCard.astro';
 import Icon from '@/components/Icon.astro';
 import CTA from '@/components/CTA.astro';
 import Disclaimer from '@/components/Disclaimer.astro';
 import TableOfContents from '@/components/TableOfContents.astro';
+import RelatedProperties from '@/components/RelatedProperties.astro';
+import RelatedPosts from '@/components/RelatedPosts.astro';
 import { formatDate } from '@/lib/format';
 import { blogSlug } from '@/lib/content';
 import { SITE } from '@/lib/site';
 import { ARTICLE_REFERENCE_NOTE, ARTICLE_INDEPENDENT_NOTE } from '@/lib/legal';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', (post) => !post.data.draft);
   return posts.map((post) => ({
     params: { slug: blogSlug(post.id) },
     props: { post },
@@ -25,17 +26,41 @@ interface Props {
 }
 
 const { post } = Astro.props;
-const { title, description, publishDate, author, category, image } = post.data;
+const {
+  title,
+  description,
+  publishDate,
+  updatedDate,
+  author,
+  category,
+  image,
+  imageAlt,
+  projectSlug,
+  propertySlugs,
+  seoTitle,
+  seoDescription,
+} = post.data;
 const { Content, headings } = await render(post);
 
 const wordCount = post.body ? post.body.replace(/<[^>]+>/g, ' ').trim().split(/\s+/).filter(Boolean).length : 0;
 const readingMinutes = wordCount > 0 ? Math.max(1, Math.round(wordCount / 200)) : null;
 
-const allPosts = await getCollection('blog');
-const related = allPosts.filter((p) => p.id !== post.id && p.data.category === category).slice(0, 3);
-
 const allProjects = await getCollection('projects');
-const relatedProject = allProjects.find((p) => p.data.relatedPosts.includes(blogSlug(post.id)));
+const relatedProject = projectSlug
+  ? allProjects.find((p) => p.id === projectSlug)
+  : allProjects.find((p) => p.data.relatedPosts.includes(blogSlug(post.id)));
+
+const allProperties = await getCollection('properties');
+const relatedProperties = allProperties.filter((p) => propertySlugs.includes(p.id));
+
+const allPosts = await getCollection('blog', (p) => !p.data.draft);
+const sameProject = allPosts.filter(
+  (p) => p.id !== post.id && relatedProject && p.data.projectSlug === relatedProject.id
+);
+const sameCategory = allPosts.filter(
+  (p) => p.id !== post.id && p.data.category === category && !sameProject.some((sp) => sp.id === p.id)
+);
+const related = [...sameProject, ...sameCategory].slice(0, 3);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -44,13 +69,20 @@ const jsonLd = {
   description,
   image: new URL(image, SITE.url).toString(),
   datePublished: publishDate.toISOString().slice(0, 10),
+  ...(updatedDate ? { dateModified: updatedDate.toISOString().slice(0, 10) } : {}),
   author: { '@type': 'Person', name: author },
   publisher: { '@type': 'Organization', name: SITE.brand },
   mainEntityOfPage: new URL(`/blog/${blogSlug(post.id)}`, SITE.url).toString(),
 };
 ---
 
-<Layout title={title} description={description} image={image} type="article" jsonLd={jsonLd}>
+<Layout
+  title={seoTitle ?? title}
+  description={seoDescription ?? description}
+  image={image}
+  type="article"
+  jsonLd={jsonLd}
+>
   <Breadcrumbs items={[{ label: 'Kiến thức', href: '/blog' }, { label: title }]} />
 
   <article class="pb-16 sm:pb-20">
@@ -74,6 +106,12 @@ const jsonLd = {
             <Icon name="calendar" size={16} class="shrink-0" />
             {formatDate(publishDate)}
           </span>
+          {updatedDate && (
+            <span class="flex items-center gap-1.5">
+              <Icon name="clock" size={16} class="shrink-0" />
+              Cập nhật: {formatDate(updatedDate)}
+            </span>
+          )}
           {readingMinutes && (
             <span class="flex items-center gap-1.5">
               <Icon name="clock" size={16} class="shrink-0" />
@@ -86,7 +124,7 @@ const jsonLd = {
       <div class="mx-auto mt-8 max-w-4xl overflow-hidden rounded-xl border border-border shadow-card-hover">
         <img
           src={image}
-          alt={title}
+          alt={imageAlt ?? title}
           width="1600"
           height="900"
           class="aspect-[16/9] w-full object-cover"
@@ -118,12 +156,18 @@ const jsonLd = {
             <Content />
           </div>
 
+          {relatedProperties.length > 0 && (
+            <div class="mt-12">
+              <RelatedProperties properties={relatedProperties} heading="Sản phẩm nhắc đến trong bài" headingClass="font-serif text-xl font-semibold text-primary-900" />
+            </div>
+          )}
+
           <div class="mt-12 space-y-8">
             <CTA
-              title={relatedProject ? `Đăng ký tham quan căn hộ mẫu ${relatedProject.data.title}` : 'Cần tư vấn thêm về bất động sản?'}
+              title={relatedProject ? `Quan tâm ${relatedProject.data.title}?` : 'Cần tư vấn thêm về bất động sản?'}
               text={
                 relatedProject
-                  ? 'Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ hỗ trợ tư vấn, cập nhật thông tin mới nhất và sắp xếp lịch tham quan căn hộ mẫu phù hợp với thời gian của Quý khách.'
+                  ? 'Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ hỗ trợ tư vấn, cập nhật thông tin mới nhất và sắp xếp lịch tìm hiểu thực tế phù hợp với thời gian của Quý khách.'
                   : 'Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ hỗ trợ tư vấn theo đúng nhu cầu và phản hồi trong vòng 24 giờ.'
               }
               primaryLabel="Liên hệ tư vấn"
@@ -144,7 +188,7 @@ const jsonLd = {
               title="Cần tư vấn thêm?"
               text={
                 relatedProject
-                  ? `Sắp xếp lịch tham quan hoặc kiểm tra thông tin mới nhất về ${relatedProject.data.title}.`
+                  ? `Kiểm tra thông tin mới nhất hoặc sắp xếp lịch tìm hiểu thực tế về ${relatedProject.data.title}.`
                   : 'Để lại thông tin, tôi sẽ liên hệ tư vấn theo đúng nhu cầu của Quý khách.'
               }
               primaryLabel="Liên hệ tư vấn"
@@ -159,10 +203,7 @@ const jsonLd = {
   {related.length > 0 && (
     <section class="section bg-primary-50 pt-0 sm:pt-0 lg:pt-0">
       <div class="container-page">
-        <h2 class="font-serif text-2xl font-semibold">Bài viết liên quan</h2>
-        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {related.map((p) => <BlogCard post={p} />)}
-        </div>
+        <RelatedPosts posts={related} headingClass="font-serif text-2xl font-semibold text-primary-900" />
       </div>
     </section>
   )}

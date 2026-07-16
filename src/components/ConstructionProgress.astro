@@ -1,0 +1,48 @@
+---
+import Icon from './Icon.astro';
+import VideoSection from './VideoSection.astro';
+import { formatDate } from '@/lib/format';
+
+interface ProgressVideo {
+  src: string;
+  title: string;
+}
+
+interface Props {
+  updatedDate?: Date;
+  summary?: string;
+  sourceLabel?: string;
+  sourceUrl?: string;
+  videos: ProgressVideo[];
+}
+
+const { updatedDate, summary, sourceLabel, sourceUrl, videos } = Astro.props;
+---
+
+<section class="bg-primary-50 py-16 sm:py-20" aria-labelledby="progress-heading">
+  <div class="container-page">
+    <div class="flex flex-wrap items-baseline justify-between gap-2">
+      <h2 id="progress-heading" class="font-serif text-2xl font-semibold text-primary-900">Tiến độ thi công</h2>
+      {updatedDate && <span class="text-xs text-primary-400">Cập nhật: {formatDate(updatedDate)}</span>}
+    </div>
+    {summary && <p class="mt-3 max-w-2xl text-sm leading-relaxed text-primary-600">{summary}</p>}
+
+    {sourceUrl && (
+      <a
+        href={sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent-600 hover:underline"
+      >
+        <Icon name="external-link" size={16} />
+        {sourceLabel ?? 'Xem nguồn tham khảo'}
+      </a>
+    )}
+
+    {videos.length > 0 && (
+      <div class="mt-8">
+        <VideoSection videos={videos} columns={3} compact preload="none" />
+      </div>
+    )}
+  </div>
+</section>

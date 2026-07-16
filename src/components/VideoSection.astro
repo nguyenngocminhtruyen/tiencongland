@@ -1,0 +1,31 @@
+---
+interface VideoItem {
+  src: string;
+  title: string;
+  description?: string;
+}
+
+interface Props {
+  videos: VideoItem[];
+  columns?: 2 | 3;
+  compact?: boolean;
+  preload?: 'metadata' | 'none';
+}
+
+const { videos, columns = 2, compact = false, preload = 'metadata' } = Astro.props;
+const colClass = columns === 3 ? 'sm:grid-cols-2 lg:grid-cols-3' : 'sm:grid-cols-2';
+---
+
+<div class:list={['grid gap-6', colClass]}>
+  {videos.map((video) => (
+    <div class:list={['overflow-hidden rounded-lg border border-border shadow-subtle', compact && 'bg-surface-card']}>
+      <video controls preload={preload} class="aspect-video w-full bg-primary-900">
+        <source src={video.src} type="video/mp4" />
+      </video>
+      <div class="p-4">
+        <p class="text-sm font-medium text-primary-800">{video.title}</p>
+        {video.description && <p class="mt-1 text-xs text-primary-400">{video.description}</p>}
+      </div>
+    </div>
+  ))}
+</div>
