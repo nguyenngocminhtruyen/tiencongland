@@ -1,0 +1,70 @@
+{
+  "title": "Căn Hộ 1 Phòng Ngủ Nexus Zone",
+  "description": "Căn 1 phòng ngủ tại phân khu Nexus Zone, Masterise Cosmo Central, diện tích khoảng 57,2 m² (tim tường), ghi nhận thực tế chưa hoàn thiện nội thất.",
+  "intro": "Đây là căn 1 phòng ngủ (1PN) thuộc phân khu Nexus Zone, dự án Masterise Cosmo Central. Video thực tế ghi nhận căn hộ ở trạng thái chưa hoàn thiện nội thất tại thời điểm quay, giúp Quý khách hình dung phần thô thực tế bên cạnh các căn hộ mẫu đã trang trí.",
+  "audienceFit": "Phù hợp với cá nhân, cặp đôi hoặc khách có nhu cầu diện tích tối ưu. Mức độ phù hợp cụ thể nên dựa trên khảo sát thực tế, không dựa trên kỳ vọng tăng giá hay khai thác cho thuê.",
+  "projectSlug": "masterise-cosmo-central",
+  "subdivision": "Nexus Zone",
+  "subdivisionSlug": "nexus-zone",
+  "propertyType": "apartment",
+  "status": "for-sale",
+  "district": "Bình Trưng",
+  "address": "Khu đô thị The Global City, Đường Đỗ Xuân Hợp, Phường Bình Trưng, TP. Hồ Chí Minh",
+  "developer": "Masterise Homes (thuộc tập đoàn Masterise)",
+  "priceLabel": "Vui lòng liên hệ để nhận bảng giá mới nhất",
+  "bedrooms": 1,
+  "area": 57.2,
+  "legalStatus": "Theo tài liệu giới thiệu/poster thông tin dự án tại thời điểm cập nhật: sở hữu lâu dài, áp dụng đối với khách hàng quốc tịch Việt Nam. Hồ sơ pháp lý chi tiết vui lòng liên hệ để được xác nhận và cập nhật mới nhất.",
+  "infoSource": "Video thực tế căn hộ do chủ đầu tư/đơn vị phân phối công bố, ghi nhận tại thời điểm cập nhật.",
+  "updatedDate": "2026-07-20",
+  "heroImage": "/images/projects/masterise-cosmo-central/masterise-cosmo-central-can-1-phong-ngu-thuc-te.webp",
+  "gallery": [
+    {
+      "src": "/images/projects/masterise-cosmo-central/masterise-cosmo-central-can-1-phong-ngu-thuc-te.webp",
+      "alt": "Không gian căn 1 phòng ngủ thực tế tại Nexus Zone, chưa hoàn thiện nội thất",
+      "caption": "Căn 1 phòng ngủ - hình ảnh thực tế, chưa hoàn thiện nội thất"
+    }
+  ],
+  "videos": [
+    {
+      "src": "/videos/projects/masterise-cosmo-central/masterise-cosmo-central-video-can-1-phong-ngu.mp4",
+      "title": "Video thực tế căn 1 phòng ngủ (57,2 m² tim tường)",
+      "description": "Ghi nhận thực tế, chưa hoàn thiện nội thất, tại thời điểm quay."
+    }
+  ],
+  "designHighlights": [
+    "Diện tích khoảng 57,2 m² tính theo tim tường, theo video thực tế tại thời điểm cập nhật.",
+    "Video ghi nhận ở trạng thái phần thô, chưa lắp đặt nội thất — khác với các căn hộ mẫu đã trang trí."
+  ],
+  "amenities": [
+    "Hồ bơi vô cực",
+    "Phòng gym chuẩn quốc tế",
+    "Yoga studio",
+    "Đường chạy bộ ven kênh đào",
+    "Không gian co-working",
+    "Phố thương mại SOHO"
+  ],
+  "faq": [
+    {
+      "question": "Căn 1 phòng ngủ tại Nexus Zone có diện tích bao nhiêu?",
+      "answer": "Theo video thực tế ghi nhận tại thời điểm cập nhật, diện tích khoảng 57,2 m² tính theo tim tường."
+    },
+    {
+      "question": "Căn hộ đã hoàn thiện nội thất chưa?",
+      "answer": "Chưa. Video ghi nhận căn hộ ở trạng thái chưa hoàn thiện nội thất (phần thô) tại thời điểm quay."
+    },
+    {
+      "question": "Giá bán căn 1 phòng ngủ là bao nhiêu?",
+      "answer": "Giá bán chưa được xác nhận trong tài liệu hiện có. Quý khách vui lòng liên hệ để được cập nhật bảng giá mới nhất."
+    },
+    {
+      "question": "Căn hộ này thuộc phân khu nào?",
+      "answer": "Thuộc phân khu Nexus Zone của dự án Masterise Cosmo Central. Quý khách có thể xem thêm tiện ích chung của phân khu tại trang Nexus Zone."
+    }
+  ],
+  "relatedPosts": ["tong-quan-masterise-cosmo-central"],
+  "seoTitle": "Căn Hộ 1 Phòng Ngủ Nexus Zone - Masterise Cosmo Central",
+  "seoDescription": "Thông tin tham khảo căn 1 phòng ngủ (57,2 m²) tại Nexus Zone, Masterise Cosmo Central - hình ảnh, video thực tế và liên hệ tư vấn.",
+  "featured": false,
+  "publishDate": "2026-07-20"
+}

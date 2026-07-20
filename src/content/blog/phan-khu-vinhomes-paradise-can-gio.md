@@ -80,4 +80,4 @@ Cách tiếp cận an toàn nhất là chọn phân khu theo nhu cầu sử dụ
 
 ## Kết luận
 
-Boulevard Prime và Lagoonia Legacy phục vụ hai nhu cầu khác nhau trong cùng một dự án — kinh doanh kết hợp ở, và nghỉ dưỡng riêng tư. Nếu bạn cần tư vấn để chọn phân khu phù hợp với mục tiêu cụ thể của mình, hãy [liên hệ với tôi](/contact/) hoặc xem thêm tại [trang dự án Vinhomes Paradise Cần Giờ](/projects/vinhomes-paradise-can-gio/).
+Boulevard Prime và Lagoonia Legacy phục vụ hai nhu cầu khác nhau trong cùng một dự án — kinh doanh kết hợp ở, và nghỉ dưỡng riêng tư. Nếu bạn cần tư vấn để chọn phân khu phù hợp với mục tiêu cụ thể của mình, hãy [liên hệ với tôi](/contact/) hoặc xem thêm tại [trang dự án Vinhomes Paradise Cần Giờ](/projects/vinhomes-paradise-can-gio/). Nếu bạn còn thắc mắc chung trước khi tìm hiểu sâu khu vực này, xem thêm [FAQ đầu tư bất động sản Cần Giờ](/faq/faq-dau-tu-bat-dong-san-can-gio/).

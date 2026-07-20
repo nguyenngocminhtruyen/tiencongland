@@ -37,11 +37,11 @@ Những gì có thể quan sát trực tiếp từ hình ảnh trong video:
   <dl>
     <div>
       <dt>Nội dung video</dt>
-      <dd>Flycam toàn cảnh công trường, không lời bình</dd>
+      <dd>Flycam toàn cảnh công trường</dd>
     </div>
     <div>
       <dt>Số căn đề cập</dt>
-      <dd>1.500 căn đầu tiên (theo tiêu đề video)</dd>
+      <dd>1.500 căn đầu tiên</dd>
     </div>
     <div>
       <dt>Loại hình quan sát được</dt>

@@ -19,6 +19,6 @@ Người thuộc Đông tứ mệnh hợp với các hướng Bắc, Nam, Đông
 
 ## Lưu ý khi kết hợp phong thủy với thực tế
 
-Phong thủy chỉ nên là yếu tố tham khảo bổ sung. Vị trí, pháp lý, hạ tầng và tiềm năng tăng giá vẫn là những yếu tố quan trọng nhất khi quyết định đầu tư.
+Phong thủy chỉ nên là yếu tố tham khảo bổ sung. Vị trí, pháp lý, hạ tầng và tiềm năng tăng giá vẫn là những yếu tố quan trọng nhất khi quyết định đầu tư. Nếu đây là lần đầu bạn mua nhà, có thể tham khảo thêm [5 kinh nghiệm quan trọng khi mua nhà lần đầu](/blog/kinh-nghiem-mua-nha-lan-dau/) để có góc nhìn đầy đủ hơn ngoài yếu tố phong thủy.
 
 Cần tư vấn thêm về phong thủy khi chọn mua bất động sản? [Liên hệ với tôi](/contact/) để được hỗ trợ chi tiết.

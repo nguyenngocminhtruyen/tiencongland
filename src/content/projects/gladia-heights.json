@@ -4,15 +4,15 @@
   "seoTitle": "Gladia Heights – Căn hộ cao cấp tại đường Võ Chí Công, TP.HCM",
   "seoDescription": "Tìm hiểu thông tin tham khảo về Gladia Heights, khu căn hộ cao cấp hợp tác phát triển bởi Keppel và Khang Điền tại đường Võ Chí Công, TP.HCM.",
   "location": "Đường Võ Chí Công, P. Bình Trưng (Quận 2 cũ), TP. Hồ Chí Minh",
-  "locationNote": "Dự án nằm trên trục đường kết nối của khu Đông TP.HCM, khu vực những năm qua ghi nhận nhiều dự án căn hộ và khu dân cư quy hoạch đồng bộ. Khả năng kết nối cụ thể đến từng khu vực Quý khách quan tâm nên được khảo sát thực tế, tôi có thể hỗ trợ sắp xếp lịch tham quan để Quý khách trải nghiệm trực tiếp.",
+  "locationNote": "Theo thông báo chính thức của chủ đầu tư, dự án nằm trên trục đường Võ Chí Công, kết nối trực tiếp với đường Mai Chí Thọ, cao tốc TP.HCM - Long Thành - Dầu Giây và đường Vành đai 2 — khu vực khu Đông TP.HCM những năm qua ghi nhận nhiều dự án căn hộ và khu dân cư quy hoạch đồng bộ. Khả năng kết nối cụ thể đến từng khu vực Quý khách quan tâm nên được khảo sát thực tế, tôi có thể hỗ trợ sắp xếp lịch tham quan để Quý khách trải nghiệm trực tiếp.",
   "type": "Khu căn hộ cao cấp",
   "developer": "Keppel và Khang Điền",
   "distributor": "Đang cập nhật",
-  "status": "Đang cập nhật",
+  "status": "Đã ra mắt chính thức (06/2026), đang triển khai xây dựng",
   "priceLabel": "Vui lòng liên hệ để kiểm tra bảng giá mới nhất",
-  "legalStatus": "Theo thông tin công bố/tài liệu bán hàng tại thời điểm cập nhật",
-  "updatedDate": "2026-07-14",
-  "source": "Tài liệu/thông tin bán hàng tại thời điểm cập nhật",
+  "legalStatus": "Theo thông báo chính thức của Keppel và Khang Điền: dự án áp dụng hạn mức sở hữu cho người nước ngoài theo quy định pháp luật hiện hành (tối đa 30% số lượng căn hộ mỗi tòa). Hồ sơ pháp lý chi tiết theo từng căn hộ vui lòng liên hệ để được xác nhận và cập nhật mới nhất.",
+  "updatedDate": "2026-07-20",
+  "source": "Thông cáo báo chí chính thức của Keppel (06/2026) và trang thông tin chính thức của Khang Điền; hình ảnh căn hộ mẫu theo tài liệu bán hàng tại thời điểm cập nhật.",
   "featuredUnit": "3 phòng ngủ - Serene Spark",
   "heroImage": "/images/blog/gladia-heights-can-ho-mau-3-phong-ngu-01.webp",
   "gallery": [
@@ -77,6 +77,22 @@
     "headline": "Quan tâm Gladia Heights?",
     "text": "Tôi có thể hỗ trợ Quý khách kiểm tra thông tin mới nhất, tư vấn loại căn phù hợp và sắp xếp lịch tham quan căn hộ mẫu nếu có nhu cầu."
   },
-  "relatedPosts": ["can-ho-mau-3-phong-ngu-gladia-heights"],
-  "featured": true
+  "relatedPosts": ["can-ho-mau-3-phong-ngu-gladia-heights", "tong-quan-masterise-cosmo-central"],
+  "featured": true,
+  "productLines": [
+    {
+      "name": "Căn Hộ 3 Phòng Ngủ Gladia Heights",
+      "type": "Căn hộ 3 phòng ngủ",
+      "tagline": "Chuẩn sống Future First, tham khảo qua căn hộ mẫu Serene Spark",
+      "description": "Loại căn hộ 3 phòng ngủ đang được giới thiệu tại Gladia Heights. Chủ đầu tư trưng bày căn hộ mẫu mang tên Serene Spark để khách tham quan hình dung bố cục và chất lượng hoàn thiện thực tế trước khi quyết định tìm hiểu sâu hơn.",
+      "image": "/images/blog/gladia-heights-can-ho-mau-3-phong-ngu-01.webp",
+      "gallery": [
+        {
+          "src": "/images/blog/gladia-heights-phong-master.webp",
+          "alt": "Phòng ngủ Master tại căn hộ mẫu Serene Spark",
+          "caption": "Phòng ngủ Master"
+        }
+      ]
+    }
+  ]
 }

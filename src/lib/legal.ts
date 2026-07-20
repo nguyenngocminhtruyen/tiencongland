@@ -22,7 +22,7 @@ export const REFERENCE_ONLY_NOTE =
   'Nội dung trên website mang tính tham khảo, không thay thế tài liệu pháp lý/chính sách chính thức tại thời điểm giao dịch.';
 
 export const ARTICLE_REFERENCE_NOTE =
-  'Thông tin trong bài viết được tổng hợp từ tài liệu/thông tin bán hàng tại thời điểm cập nhật. Giá bán, chính sách ưu đãi, tình trạng sản phẩm và thông tin pháp lý có thể thay đổi theo thông báo của chủ đầu tư/công ty phân phối. Quý khách vui lòng liên hệ để kiểm tra thông tin mới nhất trước khi quyết định giao dịch.';
+  'Thông tin trong bài viết/trang này được tổng hợp từ tài liệu/thông tin bán hàng tại thời điểm cập nhật. Giá bán, chính sách ưu đãi, tình trạng sản phẩm và thông tin pháp lý có thể thay đổi theo thông báo của chủ đầu tư/công ty phân phối. Quý khách vui lòng liên hệ để kiểm tra thông tin mới nhất trước khi quyết định giao dịch.';
 
 export const ARTICLE_INDEPENDENT_NOTE = `Bài viết mang tính chất chia sẻ thông tin tham khảo từ ${SITE.name}, chuyên viên tư vấn bất động sản độc lập, không phải nội dung chính thức từ chủ đầu tư dự án.`;
 

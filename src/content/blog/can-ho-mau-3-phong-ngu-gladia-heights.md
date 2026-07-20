@@ -4,6 +4,7 @@ description: "Tham quan căn hộ mẫu 3 phòng ngủ Gladia Heights - dự án
 publishDate: 2026-07-14
 category: "Dự án nổi bật"
 image: "/images/blog/gladia-heights-can-ho-mau-3-phong-ngu-01.webp"
+projectSlug: "gladia-heights"
 featured: true
 ---
 
@@ -127,4 +128,4 @@ Một số thông tin tổng quan để Quý khách tiện tham khảo trước 
 
 Hình ảnh và mô tả trong bài viết chỉ phản ánh một phần trải nghiệm thực tế tại căn hộ mẫu. Ánh sáng, mùi hương vật liệu, cảm giác không gian khi đứng trong phòng khách hay ngắm nhìn từ cửa sổ phòng ngủ Master là những điều khó truyền tải trọn vẹn qua hình ảnh. Nếu Quý khách đang tìm hiểu căn hộ mẫu 3 phòng ngủ Gladia Heights hoặc dòng sản phẩm Gladia by the Waters nói chung, việc sắp xếp một buổi tham quan trực tiếp sẽ giúp hình dung rõ ràng hơn về không gian sống trước khi đưa ra quyết định.
 
-Quý khách cũng có thể tham khảo thêm các bài viết khác tại [chuyên mục kiến thức bất động sản](/blog/) để có thêm góc nhìn khi tìm hiểu căn hộ cao cấp tại TP.HCM.
+Quý khách cũng có thể tham khảo thêm các bài viết khác tại [chuyên mục kiến thức bất động sản](/blog/), hoặc xem [FAQ mua căn hộ cao cấp tại TP.HCM](/faq/faq-mua-can-ho-cao-cap-tphcm/) để có thêm góc nhìn khi tìm hiểu căn hộ cao cấp tại TP.HCM.

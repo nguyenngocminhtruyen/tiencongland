@@ -7,7 +7,7 @@ image: "/images/blog/thu-tuc-sang-ten-so-do.webp"
 featured: false
 ---
 
-Sang tên sổ đỏ, sổ hồng là bước quan trọng cuối cùng trong giao dịch mua bán bất động sản. Dưới đây là quy trình cơ bản.
+Sang tên sổ đỏ, sổ hồng là bước quan trọng cuối cùng trong giao dịch mua bán bất động sản. Dưới đây là quy trình cơ bản. Nếu bạn đang ở giai đoạn tìm hiểu trước khi mua, có thể xem lại [5 kinh nghiệm quan trọng khi mua nhà lần đầu](/blog/kinh-nghiem-mua-nha-lan-dau/) để chuẩn bị tốt hơn trước khi đến bước này.
 
 ## Bước 1: Công chứng hợp đồng mua bán
 
@@ -25,4 +25,4 @@ Hồ sơ gồm hợp đồng công chứng, giấy chứng nhận đã nộp thu
 
 Thời gian xử lý thường từ 10-15 ngày làm việc tùy địa phương.
 
-Nếu cần hỗ trợ chuẩn bị hồ sơ hoặc kiểm tra pháp lý, [liên hệ với tôi](/contact/) để được đồng hành trong suốt quá trình giao dịch.
+Còn thắc mắc khác về pháp lý khi mua bất động sản hình thành trong tương lai? Xem thêm [FAQ pháp lý khi mua bất động sản hình thành trong tương lai](/faq/faq-phap-ly-mua-bat-dong-san-hinh-thanh-trong-tuong-lai/), hoặc nếu cần hỗ trợ chuẩn bị hồ sơ, [liên hệ với tôi](/contact/) để được đồng hành trong suốt quá trình giao dịch.

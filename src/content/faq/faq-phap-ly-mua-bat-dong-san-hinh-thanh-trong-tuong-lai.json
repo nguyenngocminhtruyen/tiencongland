@@ -1,0 +1,37 @@
+{
+  "title": "FAQ pháp lý khi mua bất động sản hình thành trong tương lai",
+  "description": "Giải đáp các câu hỏi pháp lý phổ biến khi mua bất động sản hình thành trong tương lai: hợp đồng mua bán, đặt cọc, sổ hồng và những rủi ro cần lưu ý.",
+  "intro": "Bất động sản hình thành trong tương lai có một số đặc điểm pháp lý khác với nhà đất đã có sổ. Đây là những câu hỏi khách hàng thường hỏi tôi nhất về chủ đề này.",
+  "category": "Pháp lý",
+  "tags": ["pháp lý bất động sản", "đặt cọc mua căn hộ", "hợp đồng mua bán căn hộ"],
+  "image": "/images/blog/thu-tuc-sang-ten-so-do.webp",
+  "imageAlt": "Hồ sơ và giấy tờ pháp lý khi giao dịch bất động sản",
+  "relatedPosts": ["thu-tuc-sang-ten-so-do", "kinh-nghiem-mua-nha-lan-dau"],
+  "faq": [
+    {
+      "question": "Bất động sản hình thành trong tương lai là gì?",
+      "answer": "Là loại bất động sản chưa hoàn thành xây dựng hoặc chưa được nghiệm thu đưa vào sử dụng tại thời điểm ký hợp đồng mua bán, phổ biến ở các dự án căn hộ, nhà phố đang triển khai."
+    },
+    {
+      "question": "Đặt cọc mua bất động sản hình thành trong tương lai cần lưu ý gì?",
+      "answer": "Nên đọc kỹ biên nhận/hợp đồng đặt cọc, xác nhận rõ số tiền, thời hạn và điều kiện hoàn/mất cọc. Mọi giao dịch đặt cọc cần thực hiện theo quy trình chính thức của chủ đầu tư/đơn vị phân phối, qua tài khoản được chỉ định hợp lệ — không chuyển tiền đặt cọc vào tài khoản cá nhân của nhân viên bán hàng."
+    },
+    {
+      "question": "Hợp đồng mua bán căn hộ cần kiểm tra những điều khoản nào?",
+      "answer": "Cần chú ý điều khoản tiến độ thanh toán, thời điểm bàn giao, diện tích thực tế và sai số cho phép, cùng điều khoản phạt vi phạm hoặc chấm dứt hợp đồng. Nên tham khảo thêm luật sư hoặc chuyên viên pháp lý nếu có điều khoản chưa rõ."
+    },
+    {
+      "question": "Khi nào người mua được cấp sổ hồng?",
+      "answer": "Thời gian cấp sổ hồng phụ thuộc vào tiến độ hoàn thiện hồ sơ pháp lý của từng dự án và quy trình xử lý tại cơ quan nhà nước có thẩm quyền, có thể khác nhau giữa các dự án. Quý khách nên xác nhận trực tiếp với chủ đầu tư/đơn vị phân phối về tình trạng cụ thể của dự án đang quan tâm."
+    },
+    {
+      "question": "Làm sao để kiểm tra pháp lý một dự án trước khi mua?",
+      "answer": "Nên yêu cầu chủ đầu tư/đơn vị phân phối cung cấp văn bản pháp lý liên quan (giấy phép xây dựng, văn bản chấp thuận đầu tư nếu có), đối chiếu thông tin dự án tại thời điểm tìm hiểu, và không nên chỉ dựa vào lời giới thiệu miệng. Tôi có thể hỗ trợ kiểm tra và tổng hợp thông tin theo đúng nhu cầu của Quý khách."
+    }
+  ],
+  "seoTitle": "FAQ Pháp Lý Mua Bất Động Sản Hình Thành Tương Lai",
+  "seoDescription": "Giải đáp câu hỏi pháp lý khi mua bất động sản hình thành trong tương lai: đặt cọc, hợp đồng mua bán, sổ hồng — thông tin tham khảo, không thay tư vấn pháp lý.",
+  "publishDate": "2026-07-20",
+  "featured": true,
+  "draft": false
+}

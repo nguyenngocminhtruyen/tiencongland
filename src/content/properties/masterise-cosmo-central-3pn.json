@@ -1,0 +1,70 @@
+{
+  "title": "Căn Hộ 3 Phòng Ngủ Nexus Zone",
+  "description": "Căn hộ 3 phòng ngủ tại phân khu Nexus Zone, Masterise Cosmo Central, diện tích khoảng 98,9 m² (tim tường). Hình ảnh tham khảo từ căn hộ mẫu đã hoàn thiện nội thất.",
+  "intro": "Đây là loại căn hộ 3 phòng ngủ (3PN) thuộc phân khu Nexus Zone, dự án Masterise Cosmo Central. Để khách hàng hình dung công năng và hoàn thiện thực tế, chủ đầu tư trưng bày một căn hộ mẫu đã hoàn thiện nội thất — video trong trang này ghi nhận từ căn hộ mẫu đó (không gian bếp hiện đại và một phòng ngủ trẻ em trang trí theo chủ đề đại dương), mang tính tham khảo, không phải là sản phẩm giao dịch.",
+  "audienceFit": "Phù hợp với gia đình có trẻ nhỏ cần thêm không gian riêng cho các thành viên. Mức độ phù hợp cụ thể nên dựa trên khảo sát thực tế, không dựa trên kỳ vọng tăng giá hay khai thác cho thuê.",
+  "projectSlug": "masterise-cosmo-central",
+  "subdivision": "Nexus Zone",
+  "subdivisionSlug": "nexus-zone",
+  "propertyType": "apartment",
+  "status": "for-sale",
+  "district": "Bình Trưng",
+  "address": "Khu đô thị The Global City, Đường Đỗ Xuân Hợp, Phường Bình Trưng, TP. Hồ Chí Minh",
+  "developer": "Masterise Homes (thuộc tập đoàn Masterise)",
+  "priceLabel": "Vui lòng liên hệ để nhận bảng giá mới nhất",
+  "bedrooms": 3,
+  "area": 98.9,
+  "legalStatus": "Theo tài liệu giới thiệu/poster thông tin dự án tại thời điểm cập nhật: sở hữu lâu dài, áp dụng đối với khách hàng quốc tịch Việt Nam. Hồ sơ pháp lý chi tiết vui lòng liên hệ để được xác nhận và cập nhật mới nhất.",
+  "infoSource": "Video căn hộ mẫu do chủ đầu tư/đơn vị phân phối công bố, ghi nhận tại thời điểm cập nhật.",
+  "updatedDate": "2026-07-20",
+  "heroImage": "/images/projects/masterise-cosmo-central/masterise-cosmo-central-can-3-phong-ngu-phong-be.webp",
+  "gallery": [
+    {
+      "src": "/images/projects/masterise-cosmo-central/masterise-cosmo-central-can-3-phong-ngu-phong-be.webp",
+      "alt": "Phòng bé trang trí theo chủ đề đại dương trong căn hộ mẫu 3 phòng ngủ tại Nexus Zone",
+      "caption": "Căn hộ mẫu 3 phòng ngủ - phòng bé, hình ảnh thực tế"
+    }
+  ],
+  "videos": [
+    {
+      "src": "/videos/projects/masterise-cosmo-central/masterise-cosmo-central-video-can-3-phong-ngu.mp4",
+      "title": "Video căn hộ mẫu 3 phòng ngủ (98,9 m² tim tường)",
+      "description": "Căn hộ mẫu đã hoàn thiện nội thất, mang tính tham khảo."
+    }
+  ],
+  "designHighlights": [
+    "Diện tích khoảng 98,9 m² tính theo tim tường, theo video căn hộ mẫu tại thời điểm cập nhật.",
+    "Một phòng ngủ trẻ em được trang trí theo chủ đề đại dương trong căn hộ mẫu."
+  ],
+  "amenities": [
+    "Hồ bơi vô cực",
+    "Phòng gym chuẩn quốc tế",
+    "Yoga studio",
+    "Đường chạy bộ ven kênh đào",
+    "Không gian co-working",
+    "Phố thương mại SOHO"
+  ],
+  "faq": [
+    {
+      "question": "Căn 3 phòng ngủ tại Nexus Zone có diện tích bao nhiêu?",
+      "answer": "Theo video căn hộ mẫu ghi nhận tại thời điểm cập nhật, diện tích khoảng 98,9 m² tính theo tim tường."
+    },
+    {
+      "question": "Đây là căn hộ mẫu hay căn hộ thực tế?",
+      "answer": "Là căn hộ mẫu đã hoàn thiện nội thất, mang tính tham khảo — có thể khác với căn hộ thực tế bàn giao."
+    },
+    {
+      "question": "Giá bán căn 3 phòng ngủ là bao nhiêu?",
+      "answer": "Giá bán chưa được xác nhận trong tài liệu hiện có. Quý khách vui lòng liên hệ để được cập nhật bảng giá mới nhất."
+    },
+    {
+      "question": "Căn hộ này thuộc phân khu nào?",
+      "answer": "Thuộc phân khu Nexus Zone của dự án Masterise Cosmo Central. Quý khách có thể xem thêm tiện ích chung của phân khu tại trang Nexus Zone."
+    }
+  ],
+  "relatedPosts": ["tong-quan-masterise-cosmo-central"],
+  "seoTitle": "Căn Hộ 3 Phòng Ngủ Nexus Zone - Masterise Cosmo Central",
+  "seoDescription": "Thông tin tham khảo căn hộ mẫu 3 phòng ngủ (98,9 m²) tại Nexus Zone, Masterise Cosmo Central - hình ảnh, video và liên hệ tư vấn.",
+  "featured": false,
+  "publishDate": "2026-07-20"
+}

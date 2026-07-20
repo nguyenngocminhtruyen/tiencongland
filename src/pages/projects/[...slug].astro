@@ -14,7 +14,7 @@ import FaqSection from '@/components/FaqSection.astro';
 import { formatDate } from '@/lib/format';
 import { blogSlug } from '@/lib/content';
 import { SITE } from '@/lib/site';
-import { PROJECT_HERO_NOTE, PROJECT_REFERENCE_NOTE, PROPERTY_INFO_NOTE } from '@/lib/legal';
+import { PROJECT_HERO_NOTE, PROJECT_REFERENCE_NOTE, PROPERTY_INFO_NOTE, PAYMENT_RISK_NOTE } from '@/lib/legal';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -418,6 +418,7 @@ const tocItems = [
     </div>
     <p class="mt-4 text-xs text-primary-400">Pháp lý: {legalStatus}</p>
     <Disclaimer text={PROPERTY_INFO_NOTE} class="mt-4" />
+    <Disclaimer text={PAYMENT_RISK_NOTE} class="mt-2" />
   </section>
 
   <!-- 10. FAQ -->

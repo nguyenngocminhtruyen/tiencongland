@@ -1,0 +1,113 @@
+{
+  "title": "Căn Hộ 3 Phòng Ngủ Gladia Heights",
+  "description": "Căn hộ 3 phòng ngủ tại Gladia Heights, dự án do Keppel và Khang Điền phát triển trên đường Võ Chí Công, TP.HCM. Hình ảnh tham khảo từ căn hộ mẫu Serene Spark trưng bày tại dự án.",
+  "intro": "Đây là loại căn hộ 3 phòng ngủ đang được giới thiệu tại Gladia Heights, thuộc quần thể Gladia by the Waters do Keppel và Khang Điền phát triển. Để khách hàng hình dung công năng và chất lượng hoàn thiện thực tế, chủ đầu tư trưng bày một căn hộ mẫu mang tên Serene Spark — toàn bộ hình ảnh trong trang này được ghi nhận từ căn hộ mẫu đó, mang tính tham khảo cho loại căn 3 phòng ngủ, không phải là sản phẩm giao dịch. Theo thông báo chính thức của chủ đầu tư (06/2026), Gladia Heights là giai đoạn căn hộ cao tầng đầu tiên của quần thể, gồm 3 tòa tháp với 639 căn hộ (1-4 phòng ngủ) và khối shophouse.",
+  "audienceFit": "Phù hợp với gia đình nhiều thế hệ hoặc gia đình có con nhỏ, nhờ bố cục 3 phòng ngủ riêng biệt và không gian sinh hoạt chung liên thông. Mức độ phù hợp cụ thể nên dựa trên khảo sát thực tế, không dựa trên kỳ vọng tăng giá.",
+  "projectSlug": "gladia-heights",
+  "propertyType": "apartment",
+  "status": "for-sale",
+  "district": "Bình Trưng",
+  "address": "Đường Võ Chí Công, Phường Bình Trưng, TP. Hồ Chí Minh",
+  "developer": "Keppel và Khang Điền",
+  "priceLabel": "Tham khảo khoảng 9,5 - 9,6 tỷ đồng/căn (tổng hợp từ thị trường, chưa xác nhận chính thức từ chủ đầu tư)",
+  "areaLabel": "Diện tích tham khảo khoảng 115 - 124 m² tùy vị trí, theo tổng hợp thị trường tại thời điểm cập nhật, chưa xác nhận chính thức từ chủ đầu tư",
+  "legalStatus": "Theo thông báo chính thức của Keppel và Khang Điền: dự án áp dụng hạn mức sở hữu cho người nước ngoài theo quy định pháp luật hiện hành (tối đa 30% số lượng căn hộ mỗi tòa). Hồ sơ pháp lý chi tiết theo từng căn hộ vui lòng liên hệ để được xác nhận và cập nhật mới nhất.",
+  "infoSource": "Thông cáo báo chí chính thức của Keppel (06/2026) và trang thông tin chính thức của Khang Điền; hình ảnh căn hộ mẫu theo tài liệu bán hàng; giá tham khảo tổng hợp từ thị trường (batdongsan.com.vn và các kênh phân phối) tại thời điểm T7/2026, chưa xác nhận chính thức từ chủ đầu tư.",
+  "updatedDate": "2026-07-20",
+  "heroImage": "/images/blog/gladia-heights-can-ho-mau-3-phong-ngu-01.webp",
+  "gallery": [
+    {
+      "src": "/images/blog/gladia-heights-phong-khach-bep-lien-thong.webp",
+      "alt": "Phòng khách kết nối phòng ăn và bếp tại căn hộ mẫu Serene Spark",
+      "caption": "Phòng khách - bếp - phòng ăn liên thông"
+    },
+    {
+      "src": "/images/blog/gladia-heights-dao-bep-thong-minh.webp",
+      "alt": "Đảo bếp thông minh trong căn hộ mẫu Serene Spark",
+      "caption": "Đảo bếp trung tâm"
+    },
+    {
+      "src": "/images/blog/gladia-heights-phong-master.webp",
+      "alt": "Phòng ngủ Master tại căn hộ mẫu Serene Spark",
+      "caption": "Phòng ngủ Master"
+    },
+    {
+      "src": "/images/blog/gladia-heights-phong-tam-master-kho-uot.webp",
+      "alt": "Phòng tắm Master phân tách khu khô ướt tại căn hộ mẫu Serene Spark",
+      "caption": "Phòng tắm Master khô - ướt"
+    },
+    {
+      "src": "/images/blog/gladia-heights-phong-ngu-be-trai.webp",
+      "alt": "Phòng ngủ dành cho bé trai tại căn hộ mẫu Serene Spark",
+      "caption": "Phòng ngủ bé trai"
+    },
+    {
+      "src": "/images/blog/gladia-heights-phong-ngu-be-gai.webp",
+      "alt": "Phòng ngủ dành cho bé gái tại căn hộ mẫu Serene Spark",
+      "caption": "Phòng ngủ bé gái"
+    },
+    {
+      "src": "/images/blog/gladia-heights-phong-ngu-linh-hoat.webp",
+      "alt": "Không gian phòng ngủ linh hoạt tại căn hộ mẫu Serene Spark",
+      "caption": "Không gian linh hoạt"
+    }
+  ],
+  "designHighlights": [
+    "Các đặc điểm dưới đây được ghi nhận qua căn hộ mẫu Serene Spark, mang tính tham khảo cho loại căn 3 phòng ngủ.",
+    "Phòng Master với phòng tắm phân tách khu khô - ướt, bồn tắm nằm và phòng tắm đứng riêng biệt.",
+    "Không gian khách - bếp - ăn thiết kế liên thông.",
+    "Vật liệu và thiết bị hoàn thiện tham khảo từ các thương hiệu Grohe, Philips, Hafele.",
+    "Gladia Heights đạt chứng nhận công trình xanh BCA Green Mark Gold (Singapore) theo công bố của chủ đầu tư."
+  ],
+  "valueHighlights": [
+    {
+      "title": "Riêng tư",
+      "description": "Mỗi phòng ngủ được thiết kế như một không gian sống độc lập, tạo sự thư thái cho từng thành viên."
+    },
+    {
+      "title": "Kết nối",
+      "description": "Phòng khách, phòng ăn và bếp liên thông, tạo không gian sinh hoạt chung rộng rãi và tự nhiên."
+    },
+    {
+      "title": "Quy mô dự án",
+      "description": "Theo công bố chính thức, Gladia Heights gồm 3 tòa tháp với 639 căn hộ và khối shophouse, quản lý vận hành theo chuẩn quốc tế."
+    }
+  ],
+  "amenities": [
+    "Hơn 60 tiện ích nội khu (theo công bố chính thức của chủ đầu tư)",
+    "5 công viên nội khu",
+    "Quản lý vận hành theo chuẩn quốc tế (Savills)",
+    "Chứng nhận công trình xanh BCA Green Mark Gold"
+  ],
+  "faq": [
+    {
+      "question": "Sản phẩm được giới thiệu ở đây là gì?",
+      "answer": "Là loại căn hộ 3 phòng ngủ tại Gladia Heights — sản phẩm đang được giới thiệu để khách hàng tìm hiểu. Hình ảnh trong trang này tham khảo từ căn hộ mẫu Serene Spark trưng bày tại dự án, không phải là sản phẩm giao dịch."
+    },
+    {
+      "question": "Serene Spark có phải là căn hộ được bán không?",
+      "answer": "Không. Serene Spark là tên căn hộ mẫu (nhà mẫu) được chủ đầu tư trưng bày để khách tham quan, tham khảo công năng và chất lượng hoàn thiện. Sản phẩm thực tế được giới thiệu để bán là căn hộ 3 phòng ngủ tại Gladia Heights; căn hộ bàn giao thực tế có thể khác với căn hộ mẫu."
+    },
+    {
+      "question": "Gladia Heights có quy mô như thế nào?",
+      "answer": "Theo thông báo chính thức của Keppel và Khang Điền (06/2026), dự án gồm 3 tòa tháp với 639 căn hộ từ 1-4 phòng ngủ và khối shophouse, thuộc quần thể Gladia by the Waters."
+    },
+    {
+      "question": "Giá bán căn 3 phòng ngủ Gladia Heights là bao nhiêu?",
+      "answer": "Giá tham khảo tổng hợp từ thị trường khoảng 9,5 - 9,6 tỷ đồng/căn tại thời điểm cập nhật, chưa xác nhận chính thức từ chủ đầu tư. Quý khách vui lòng liên hệ để được cập nhật bảng giá mới nhất."
+    },
+    {
+      "question": "Người nước ngoài có thể mua căn hộ tại Gladia Heights không?",
+      "answer": "Theo thông báo chính thức của chủ đầu tư, dự án áp dụng hạn mức sở hữu cho người nước ngoài theo quy định pháp luật hiện hành (tối đa 30% số lượng căn hộ mỗi tòa). Quý khách nên liên hệ để được xác nhận chi tiết theo từng tòa/thời điểm."
+    },
+    {
+      "question": "Làm sao để tham quan căn hộ mẫu Serene Spark trực tiếp?",
+      "answer": "Quý khách có thể liên hệ với tôi để được hỗ trợ sắp xếp lịch tham quan căn hộ mẫu vào thời gian thuận tiện."
+    }
+  ],
+  "relatedPosts": ["can-ho-mau-3-phong-ngu-gladia-heights"],
+  "seoTitle": "Căn Hộ 3 Phòng Ngủ Gladia Heights - Keppel & Khang Điền",
+  "seoDescription": "Thông tin tham khảo căn hộ 3 phòng ngủ tại Gladia Heights (Keppel & Khang Điền): hình ảnh tham khảo từ căn hộ mẫu Serene Spark, quy mô dự án và liên hệ tư vấn.",
+  "featured": true,
+  "publishDate": "2026-07-20"
+}

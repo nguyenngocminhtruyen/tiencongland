@@ -146,7 +146,7 @@
   }
 
   .video-frame video {
-    @apply aspect-video w-full bg-primary-900;
+    @apply aspect-video w-full bg-primary-900 object-contain;
   }
 
   .video-frame figcaption {

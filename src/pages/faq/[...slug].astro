@@ -1,0 +1,161 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import Breadcrumbs from '@/components/Breadcrumbs.astro';
+import Icon from '@/components/Icon.astro';
+import CTA from '@/components/CTA.astro';
+import Disclaimer from '@/components/Disclaimer.astro';
+import FaqSection from '@/components/FaqSection.astro';
+import RelatedProperties from '@/components/RelatedProperties.astro';
+import RelatedPosts from '@/components/RelatedPosts.astro';
+import { formatDate } from '@/lib/format';
+import { blogSlug } from '@/lib/content';
+import { ARTICLE_REFERENCE_NOTE, ARTICLE_INDEPENDENT_NOTE } from '@/lib/legal';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('faq', (p) => !p.data.draft);
+  return pages.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
+  }));
+}
+
+interface Props {
+  page: CollectionEntry<'faq'>;
+}
+
+const { page } = Astro.props;
+const {
+  title,
+  description,
+  intro,
+  category,
+  image,
+  imageAlt,
+  author,
+  projectSlug,
+  propertySlugs,
+  relatedPosts,
+  faq,
+  seoTitle,
+  seoDescription,
+  publishDate,
+  updatedDate,
+} = page.data;
+
+const allProjects = await getCollection('projects');
+const relatedProject = projectSlug ? allProjects.find((p) => p.id === projectSlug) : undefined;
+
+const allProperties = await getCollection('properties');
+const relatedProperties = allProperties.filter((p) => propertySlugs.includes(p.id));
+
+const allPosts = await getCollection('blog', (p) => !p.data.draft);
+const relatedPostEntries = relatedPosts
+  .map((slug) => allPosts.find((p) => blogSlug(p.id) === slug))
+  .filter((p): p is CollectionEntry<'blog'> => p !== undefined);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+
+// BreadcrumbList schema is emitted by <Breadcrumbs> below — không lặp lại ở đây.
+---
+
+<Layout
+  title={seoTitle ?? title}
+  description={seoDescription ?? description}
+  image={image}
+  type="article"
+  jsonLd={jsonLd}
+>
+  <Breadcrumbs items={[{ label: 'Câu hỏi thường gặp', href: '/faq/' }, { label: title }]} />
+
+  <article class="pb-16 sm:pb-20">
+    <!-- Hero -->
+    <header class="container-page">
+      <div class="mx-auto max-w-3xl">
+        <span class="badge border-accent-200 bg-accent-50 text-accent-700">{category}</span>
+        <h1 class="mt-4 font-serif text-3xl font-semibold leading-tight text-primary-900 sm:text-4xl lg:text-[2.75rem]">
+          {title}
+        </h1>
+        <p class="mt-4 text-lg leading-relaxed text-primary-500">{intro}</p>
+
+        <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-border pt-5 text-sm text-primary-400">
+          <span class="flex items-center gap-1.5">
+            <span class="flex h-7 w-7 items-center justify-center rounded-full bg-primary-100 text-[11px] font-semibold text-primary-600">
+              {author.charAt(0)}
+            </span>
+            <span class="text-primary-600">{author}</span>
+          </span>
+          <span class="flex items-center gap-1.5">
+            <Icon name="calendar" size={16} class="shrink-0" />
+            {formatDate(publishDate)}
+          </span>
+          {updatedDate && (
+            <span class="flex items-center gap-1.5">
+              <Icon name="clock" size={16} class="shrink-0" />
+              Cập nhật: {formatDate(updatedDate)}
+            </span>
+          )}
+          <span class="flex items-center gap-1.5">
+            <Icon name="list" size={16} class="shrink-0" />
+            {faq.length} câu hỏi
+          </span>
+        </div>
+      </div>
+
+      <div class="mx-auto mt-8 max-w-4xl overflow-hidden rounded-xl border border-border shadow-card-hover">
+        <img
+          src={image}
+          alt={imageAlt ?? title}
+          width="1600"
+          height="900"
+          class="aspect-[16/9] w-full object-cover"
+          fetchpriority="high"
+        />
+      </div>
+    </header>
+
+    <!-- Body -->
+    <div class="container-page mt-10 sm:mt-12">
+      <div class="mx-auto max-w-3xl">
+        <FaqSection faq={faq} class="max-w-none" />
+
+        {relatedProperties.length > 0 && (
+          <div class="mt-12">
+            <RelatedProperties properties={relatedProperties} heading="Sản phẩm liên quan" headingClass="font-serif text-xl font-semibold text-primary-900" />
+          </div>
+        )}
+
+        {relatedPostEntries.length > 0 && (
+          <div class="mt-12">
+            <RelatedPosts posts={relatedPostEntries} heading="Bài viết liên quan" headingClass="font-serif text-xl font-semibold text-primary-900" />
+          </div>
+        )}
+
+        <div class="mt-12 space-y-8">
+          <CTA
+            title={relatedProject ? `Quan tâm ${relatedProject.data.title}?` : 'Cần tư vấn thêm về bất động sản?'}
+            text={
+              relatedProject
+                ? 'Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ hỗ trợ tư vấn, cập nhật thông tin mới nhất và sắp xếp lịch tìm hiểu thực tế phù hợp với thời gian của Quý khách.'
+                : 'Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ hỗ trợ tư vấn theo đúng nhu cầu và phản hồi trong vòng 24 giờ.'
+            }
+            primaryLabel="Liên hệ tư vấn"
+            primaryHref="/contact/"
+            secondaryLabel={relatedProject ? `Xem dự án ${relatedProject.data.title}` : 'Xem thông tin liên hệ'}
+            secondaryHref={relatedProject ? `/projects/${relatedProject.id}/` : '/contact/#lien-he'}
+          />
+
+          <Disclaimer variant="box" text={ARTICLE_REFERENCE_NOTE} secondaryText={ARTICLE_INDEPENDENT_NOTE} />
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

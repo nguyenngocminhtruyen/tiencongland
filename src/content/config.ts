@@ -165,4 +165,34 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { properties, blog, projects };
+/**
+ * FAQ/supporting pages — standalone Q&A hub pages (ví dụ "FAQ pháp lý khi mua bất động sản
+ * hình thành trong tương lai"). Khác với `faq[]` gắn trong `properties`/`projects` (câu hỏi
+ * riêng của một sản phẩm/dự án), collection này phục vụ nội dung FAQ mang tính chủ đề chung,
+ * đứng độc lập tại `/faq/` và có thể trỏ tới nhiều project/property/blog liên quan.
+ */
+const faq = defineCollection({
+  type: 'data',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    intro: z.string(),
+    category: z.string(),
+    tags: z.array(z.string()).default([]),
+    image: z.string(),
+    imageAlt: z.string().optional(),
+    author: z.string().default('Đinh Tiến Công'),
+    projectSlug: z.string().optional(),
+    propertySlugs: z.array(z.string()).default([]),
+    relatedPosts: z.array(z.string()).default([]),
+    faq: z.array(z.object({ question: z.string(), answer: z.string() })).min(1),
+    seoTitle: z.string().optional(),
+    seoDescription: z.string().optional(),
+    publishDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    featured: z.boolean().default(false),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { properties, blog, projects, faq };

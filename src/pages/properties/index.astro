@@ -11,9 +11,15 @@ import Disclaimer from '@/components/Disclaimer.astro';
 const properties = (await getCollection('properties')).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
+const allProjects = await getCollection('projects');
 
 const propertyTypes = [...new Set(properties.map((p) => p.data.propertyType))];
 const districts = [...new Set(properties.map((p) => p.data.district).filter((d): d is string => Boolean(d)))];
+const usedProjectSlugs = new Set(properties.map((p) => p.data.projectSlug).filter((s): s is string => Boolean(s)));
+const projectOptions = allProjects
+  .filter((p) => usedProjectSlugs.has(p.id))
+  .map((p) => ({ slug: p.id, title: p.data.title }))
+  .sort((a, b) => a.title.localeCompare(b.title));
 ---
 
 <Layout
@@ -39,16 +45,17 @@ const districts = [...new Set(properties.map((p) => p.data.district).filter((d):
           Lọc theo:
         </div>
 
-        <select id="filter-status" class="h-11 rounded border border-primary-200 bg-surface-card px-3 text-sm text-primary-800">
-          <option value="all">Tất cả nhu cầu</option>
-          <option value="for-sale">Bán</option>
-          <option value="for-rent">Cho thuê</option>
-        </select>
-
         <select id="filter-type" class="h-11 rounded border border-primary-200 bg-surface-card px-3 text-sm text-primary-800">
           <option value="all">Tất cả loại hình</option>
           {propertyTypes.map((t) => <option value={t}>{typeLabel(t)}</option>)}
         </select>
+
+        {projectOptions.length > 0 && (
+          <select id="filter-project" class="h-11 rounded border border-primary-200 bg-surface-card px-3 text-sm text-primary-800">
+            <option value="all">Tất cả dự án</option>
+            {projectOptions.map((p) => <option value={p.slug}>{p.title}</option>)}
+          </select>
+        )}
 
         <select id="filter-district" class="h-11 rounded border border-primary-200 bg-surface-card px-3 text-sm text-primary-800">
           <option value="all">Tất cả khu vực</option>
@@ -70,8 +77,8 @@ const districts = [...new Set(properties.map((p) => p.data.district).filter((d):
           {properties.map((property) => (
             <div
               class="property-item"
-              data-status={property.data.status}
               data-type={property.data.propertyType}
+              data-project={property.data.projectSlug}
               data-district={property.data.district}
             >
               <PropertyCard property={property} />
@@ -91,24 +98,24 @@ const districts = [...new Set(properties.map((p) => p.data.district).filter((d):
 </Layout>
 
 <script>
-  const statusSelect = document.getElementById('filter-status') as HTMLSelectElement | null;
   const typeSelect = document.getElementById('filter-type') as HTMLSelectElement | null;
+  const projectSelect = document.getElementById('filter-project') as HTMLSelectElement | null;
   const districtSelect = document.getElementById('filter-district') as HTMLSelectElement | null;
   const resetBtn = document.getElementById('filter-reset');
   const items = Array.from(document.querySelectorAll<HTMLElement>('.property-item'));
   const emptyState = document.getElementById('empty-state');
 
   function applyFilters() {
-    if (!statusSelect || !typeSelect || !districtSelect) return;
-    const status = statusSelect.value;
+    if (!typeSelect || !districtSelect) return;
     const type = typeSelect.value;
+    const project = projectSelect?.value ?? 'all';
     const district = districtSelect.value;
     let visibleCount = 0;
 
     for (const item of items) {
       const matches =
-        (status === 'all' || item.dataset.status === status) &&
         (type === 'all' || item.dataset.type === type) &&
+        (project === 'all' || item.dataset.project === project) &&
         (district === 'all' || item.dataset.district === district);
       item.classList.toggle('hidden', !matches);
       if (matches) visibleCount++;
@@ -117,13 +124,13 @@ const districts = [...new Set(properties.map((p) => p.data.district).filter((d):
     emptyState?.classList.toggle('hidden', visibleCount !== 0);
   }
 
-  statusSelect?.addEventListener('change', applyFilters);
   typeSelect?.addEventListener('change', applyFilters);
+  projectSelect?.addEventListener('change', applyFilters);
   districtSelect?.addEventListener('change', applyFilters);
   resetBtn?.addEventListener('click', () => {
-    if (!statusSelect || !typeSelect || !districtSelect) return;
-    statusSelect.value = 'all';
+    if (!typeSelect || !districtSelect) return;
     typeSelect.value = 'all';
+    if (projectSelect) projectSelect.value = 'all';
     districtSelect.value = 'all';
     applyFilters();
   });
