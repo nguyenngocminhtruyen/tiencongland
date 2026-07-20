@@ -25,4 +25,4 @@ Nhu cầu kinh doanh mặt bằng tại các khu dân cư đông đúc đang ph�
 
 Ưu tiên pháp lý minh bạch, chủ đầu tư uy tín và tầm nhìn trung - dài hạn thay vì chạy theo sóng ngắn hạn.
 
-Muốn tư vấn cơ hội đầu tư phù hợp với ngân sách của bạn? [Liên hệ với tôi](/contact) ngay hôm nay.
+Muốn tư vấn cơ hội đầu tư phù hợp với ngân sách của bạn? [Liên hệ với tôi](/contact/) ngay hôm nay.

@@ -25,4 +25,4 @@ Hồ sơ gồm hợp đồng công chứng, giấy chứng nhận đã nộp thu
 
 Thời gian xử lý thường từ 10-15 ngày làm việc tùy địa phương.
 
-Nếu cần hỗ trợ chuẩn bị hồ sơ hoặc kiểm tra pháp lý, [liên hệ với tôi](/contact) để được đồng hành trong suốt quá trình giao dịch.
+Nếu cần hỗ trợ chuẩn bị hồ sơ hoặc kiểm tra pháp lý, [liên hệ với tôi](/contact/) để được đồng hành trong suốt quá trình giao dịch.

@@ -86,11 +86,11 @@ const jsonLd = {
           Tôi là {SITE.name}, chuyên viên tư vấn bất động sản tại TP.HCM — kênh thông tin cá nhân hỗ trợ tư vấn, kết nối và cung cấp thông tin tham khảo về các dự án đang được phân phối. Không phải website chính thức của chủ đầu tư hay sàn giao dịch.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-          <a href="/properties" class="btn-accent">
+          <a href="/properties/" class="btn-accent">
             Xem bất động sản
             <Icon name="arrow-right" size={18} />
           </a>
-          <a href="/contact" class="btn-outline-dark">
+          <a href="/contact/" class="btn-outline-dark">
             Đặt lịch tư vấn miễn phí
           </a>
         </div>
@@ -145,7 +145,7 @@ const jsonLd = {
             title="Dự án bất động sản đáng chú ý"
             description="Kênh thông tin cá nhân hỗ trợ tư vấn, không phải website chính thức của chủ đầu tư hay sàn giao dịch."
           />
-          <a href="/projects" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
+          <a href="/projects/" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
             Xem tất cả dự án
             <Icon name="arrow-right" size={16} />
           </a>
@@ -163,7 +163,7 @@ const jsonLd = {
       <div class="container-page">
         <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading id="featured-heading" eyebrow="Bất động sản nổi bật" title="Những lựa chọn đáng cân nhắc" description="Thông tin dự án được cập nhật theo nguồn công bố/tài liệu bán hàng tại thời điểm đăng tải. Vui lòng liên hệ để kiểm tra thông tin mới nhất." />
-          <a href="/properties" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
+          <a href="/properties/" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
             Xem tất cả
             <Icon name="arrow-right" size={16} />
           </a>
@@ -208,7 +208,7 @@ const jsonLd = {
             </li>
           ))}
         </ul>
-        <a href="/about" class="btn-primary mt-8">
+        <a href="/about/" class="btn-primary mt-8">
           Tìm hiểu thêm về tôi
           <Icon name="arrow-right" size={18} />
         </a>
@@ -231,7 +231,7 @@ const jsonLd = {
     <div class="container-page">
       <div class="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <SectionHeading id="blog-heading" eyebrow="Kiến thức bất động sản" title="Cập nhật thông tin hữu ích" description="Kinh nghiệm mua bán, pháp lý và xu hướng đầu tư được chia sẻ thường xuyên." />
-        <a href="/blog" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
+        <a href="/blog/" class="flex shrink-0 items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
           Xem tất cả
           <Icon name="arrow-right" size={16} />
         </a>
@@ -252,7 +252,7 @@ const jsonLd = {
         Liên hệ ngay để được tư vấn miễn phí, không ràng buộc. Tôi sẽ phản hồi trong vòng 24 giờ.
       </p>
       <div class="flex flex-col gap-3 sm:flex-row">
-        <a href="/contact" class="btn-accent">Đặt lịch tư vấn miễn phí</a>
+        <a href="/contact/" class="btn-accent">Đặt lịch tư vấn miễn phí</a>
         <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} class="btn-outline-dark">
           <Icon name="phone" size={18} />
           Gọi {SITE.phoneDisplay}

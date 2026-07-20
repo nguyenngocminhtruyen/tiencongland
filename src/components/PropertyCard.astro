@@ -28,7 +28,7 @@ const locationLabel = district ? `${district}, ${city}` : city;
 ---
 
 <article class="card group flex flex-col overflow-hidden hover:shadow-card-hover">
-  <a href={`/properties/${property.id}`} class="relative block aspect-[4/3] overflow-hidden bg-primary-100">
+  <a href={`/properties/${property.id}/`} class="relative block aspect-[4/3] overflow-hidden bg-primary-100">
     <img
       src={heroImage}
       alt={title}
@@ -46,7 +46,7 @@ const locationLabel = district ? `${district}, ${city}` : city;
     </span>
   </a>
   <div class="flex flex-1 flex-col p-5">
-    <a href={`/properties/${property.id}`} class="line-clamp-2 font-serif text-lg font-semibold text-primary-900 hover:text-accent-600">
+    <a href={`/properties/${property.id}/`} class="line-clamp-2 font-serif text-lg font-semibold text-primary-900 hover:text-accent-600">
       {title}
     </a>
     <p class="mt-1.5 flex items-center gap-1.5 text-sm text-primary-500">
@@ -87,7 +87,7 @@ const locationLabel = district ? `${district}, ${city}` : city;
       <span class="font-serif text-lg font-semibold text-accent-600">
         {price && priceUnit ? formatPrice(price, priceUnit) : priceLabel}
       </span>
-      <a href={`/properties/${property.id}`} class="flex items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
+      <a href={`/properties/${property.id}/`} class="flex items-center gap-1 text-sm font-medium text-primary-700 hover:text-accent-600">
         Chi tiết
         <Icon name="arrow-right" size={16} />
       </a>

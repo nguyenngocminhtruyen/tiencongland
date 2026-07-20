@@ -83,7 +83,7 @@ const jsonLd = {
   type="article"
   jsonLd={jsonLd}
 >
-  <Breadcrumbs items={[{ label: 'Kiến thức', href: '/blog' }, { label: title }]} />
+  <Breadcrumbs items={[{ label: 'Kiến thức', href: '/blog/' }, { label: title }]} />
 
   <article class="pb-16 sm:pb-20">
     <!-- Hero -->
@@ -171,9 +171,9 @@ const jsonLd = {
                   : 'Để lại thông tin hoặc liên hệ trực tiếp, tôi sẽ hỗ trợ tư vấn theo đúng nhu cầu và phản hồi trong vòng 24 giờ.'
               }
               primaryLabel="Liên hệ tư vấn"
-              primaryHref="/contact"
+              primaryHref="/contact/"
               secondaryLabel={relatedProject ? `Xem dự án ${relatedProject.data.title}` : 'Xem thông tin liên hệ'}
-              secondaryHref={relatedProject ? `/projects/${relatedProject.id}` : '/contact#lien-he'}
+              secondaryHref={relatedProject ? `/projects/${relatedProject.id}/` : '/contact/#lien-he'}
             />
 
             <Disclaimer variant="box" text={ARTICLE_REFERENCE_NOTE} secondaryText={ARTICLE_INDEPENDENT_NOTE} />
@@ -192,7 +192,7 @@ const jsonLd = {
                   : 'Để lại thông tin, tôi sẽ liên hệ tư vấn theo đúng nhu cầu của Quý khách.'
               }
               primaryLabel="Liên hệ tư vấn"
-              primaryHref="/contact"
+              primaryHref="/contact/"
             />
           </div>
         </aside>

@@ -25,7 +25,7 @@ Nếu bạn đang tìm hiểu Vinhomes Paradise Cần Giờ đã xây đến đ�
 
 Thông tin tiến độ đáng tin cậy nhất hiện có đến từ báo chí độc lập, không phải tài liệu quảng cáo. VTC News đã có phóng sự ảnh ghi nhận thực tế công trường sau hơn 1 năm thi công, bạn có thể xem chi tiết tại bài viết gốc: [Siêu dự án Cần Giờ thay đổi ra sao sau hơn 1 năm thi công thần tốc? (VTC News)](https://vtcnews.vn/sieu-du-an-can-gio-thay-doi-ra-sao-sau-sau-hon-1-nam-thi-cong-than-toc-ar1027540.html).
 
-Bên cạnh đó, chủ đầu tư/đơn vị phân phối cũng công bố một số video giới thiệu và cập nhật tiến độ. Các video này mang tính giới thiệu, tôi đã tổng hợp và gắn trực tiếp tại [trang dự án Vinhomes Paradise Cần Giờ](/projects/vinhomes-paradise-can-gio) để bạn tiện xem, thay vì trích dẫn lại nội dung tại đây khi chưa xem kỹ toàn bộ video.
+Bên cạnh đó, chủ đầu tư/đơn vị phân phối cũng công bố một số video giới thiệu và cập nhật tiến độ. Các video này mang tính giới thiệu, tôi đã tổng hợp và gắn trực tiếp tại [trang dự án Vinhomes Paradise Cần Giờ](/projects/vinhomes-paradise-can-gio/) để bạn tiện xem, thay vì trích dẫn lại nội dung tại đây khi chưa xem kỹ toàn bộ video.
 
 ## Lộ trình hạ tầng kết nối vùng 2026-2029
 
@@ -36,7 +36,7 @@ Bên cạnh đó, chủ đầu tư/đơn vị phân phối cũng công bố mộ
 - **2028**: Đường sắt tốc độ cao Bến Thành - Cần Giờ (dự kiến hoàn thành).
 - **2029**: Đường vượt biển Cần Giờ - Vũng Tàu, cầu Cần Giờ, và đường bộ xuyên Rừng Sác mở rộng lên 10 làn xe (đã được phê duyệt chủ trương mở rộng) — cả ba đều dự kiến hoàn thành trong năm này.
 
-Bạn có thể xem lại bảng lộ trình đầy đủ, có phân nhóm theo năm, tại mục "Vị trí & kết nối" trên [trang dự án](/projects/vinhomes-paradise-can-gio#location-heading).
+Bạn có thể xem lại bảng lộ trình đầy đủ, có phân nhóm theo năm, tại mục "Vị trí & kết nối" trên [trang dự án](/projects/vinhomes-paradise-can-gio/#location-heading).
 
 ## Phân tích thực tế: hạ tầng ảnh hưởng thế nào đến khu vực
 
@@ -81,4 +81,4 @@ Tuy nhiên, tôi không đưa ra nhận định về mức độ tăng giá bấ
 
 ## Kết luận
 
-Tiến độ thi công và hạ tầng kết nối là hai yếu tố quan trọng khi tìm hiểu Vinhomes Paradise Cần Giờ, nhưng cả hai đều cần được theo dõi liên tục thay vì chỉ nhìn tại một thời điểm. Nếu bạn muốn tôi hỗ trợ cập nhật tiến độ mới nhất hoặc kết nối trực tiếp với chủ đầu tư/đơn vị phân phối, hãy [liên hệ với tôi](/contact) hoặc xem thêm thông tin tại [trang dự án Vinhomes Paradise Cần Giờ](/projects/vinhomes-paradise-can-gio).
+Tiến độ thi công và hạ tầng kết nối là hai yếu tố quan trọng khi tìm hiểu Vinhomes Paradise Cần Giờ, nhưng cả hai đều cần được theo dõi liên tục thay vì chỉ nhìn tại một thời điểm. Nếu bạn muốn tôi hỗ trợ cập nhật tiến độ mới nhất hoặc kết nối trực tiếp với chủ đầu tư/đơn vị phân phối, hãy [liên hệ với tôi](/contact/) hoặc xem thêm thông tin tại [trang dự án Vinhomes Paradise Cần Giờ](/projects/vinhomes-paradise-can-gio/).

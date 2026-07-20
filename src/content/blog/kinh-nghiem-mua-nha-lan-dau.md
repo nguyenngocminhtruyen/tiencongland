@@ -29,4 +29,4 @@ So sánh giá với các giao dịch tương tự trong khu vực để tránh m
 
 Một chuyên viên có kinh nghiệm sẽ giúp bạn thương lượng giá tốt hơn và tránh các rủi ro pháp lý tiềm ẩn.
 
-Nếu bạn đang cân nhắc mua căn nhà đầu tiên, đừng ngần ngại [liên hệ với tôi](/contact) để được tư vấn miễn phí.
+Nếu bạn đang cân nhắc mua căn nhà đầu tiên, đừng ngần ngại [liên hệ với tôi](/contact/) để được tư vấn miễn phí.

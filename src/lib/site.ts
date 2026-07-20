@@ -26,9 +26,9 @@ export const SITE = {
 
 export const NAV_LINKS = [
   { href: '/', label: 'Trang chủ' },
-  { href: '/about', label: 'Giới thiệu' },
-  { href: '/projects', label: 'Dự án' },
-  { href: '/properties', label: 'Bất động sản' },
-  { href: '/blog', label: 'Kiến thức' },
-  { href: '/contact', label: 'Liên hệ' },
+  { href: '/about/', label: 'Giới thiệu' },
+  { href: '/projects/', label: 'Dự án' },
+  { href: '/properties/', label: 'Bất động sản' },
+  { href: '/blog/', label: 'Kiến thức' },
+  { href: '/contact/', label: 'Liên hệ' },
 ] as const;

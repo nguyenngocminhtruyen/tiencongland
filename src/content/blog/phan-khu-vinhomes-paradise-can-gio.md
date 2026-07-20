@@ -29,15 +29,15 @@ Một trong những câu hỏi phổ biến khi tìm hiểu Vinhomes Paradise C�
 
 ## Boulevard Prime: hướng đến khách hàng cần mặt tiền kinh doanh
 
-Boulevard Prime là phân khu phố thương mại nằm trên trục đại lộ chính của dự án, trong đó nhà phố Vịnh Ngọc 48 là sản phẩm cụ thể đã có tài liệu giới thiệu. Theo định vị của chủ đầu tư, khu vực này được kỳ vọng hưởng lợi từ các tuyến hạ tầng kết nối vùng đang quy hoạch (xem chi tiết tại [bài viết tiến độ hạ tầng](/blog/tien-do-thi-cong-vinhomes-paradise-can-gio)). Sản phẩm tại đây thường kết hợp mặt tiền kinh doanh ở tầng trệt và không gian sống tại các tầng trên.
+Boulevard Prime là phân khu phố thương mại nằm trên trục đại lộ chính của dự án, trong đó nhà phố Vịnh Ngọc 48 là sản phẩm cụ thể đã có tài liệu giới thiệu. Theo định vị của chủ đầu tư, khu vực này được kỳ vọng hưởng lợi từ các tuyến hạ tầng kết nối vùng đang quy hoạch (xem chi tiết tại [bài viết tiến độ hạ tầng](/blog/tien-do-thi-cong-vinhomes-paradise-can-gio/)). Sản phẩm tại đây thường kết hợp mặt tiền kinh doanh ở tầng trệt và không gian sống tại các tầng trên.
 
-Đọc thêm: [Nhà phố Vịnh Ngọc 48 — chi tiết sản phẩm](/blog/nha-pho-vinh-ngoc-48-boulevard-prime).
+Đọc thêm: [Nhà phố Vịnh Ngọc 48 — chi tiết sản phẩm](/blog/nha-pho-vinh-ngoc-48-boulevard-prime/).
 
 ## Lagoonia Legacy: hướng đến khách hàng cần không gian nghỉ dưỡng riêng tư
 
 Lagoonia Legacy là bộ sưu tập biệt thự nghỉ dưỡng, trong đó Lagoonia Emerald Cove là sản phẩm đã có tài liệu mô tả chi tiết nhất hiện nay. Vị trí tại khu vực eo vịnh nội khu, thiết kế theo hướng kiến trúc biophilic, và điểm nhấn là mặt biển phía sau nhà. Đây là hướng sản phẩm phù hợp với nhu cầu ở/nghỉ dưỡng hơn là kinh doanh.
 
-Đọc thêm: [Khám phá Lagoonia Emerald Cove](/blog/kham-pha-lagoonia-emerald-cove).
+Đọc thêm: [Khám phá Lagoonia Emerald Cove](/blog/kham-pha-lagoonia-emerald-cove/).
 
 ## Phân tích thực tế: nên cân nhắc theo nhu cầu, không phải theo "tiềm năng"
 
@@ -73,11 +73,11 @@ Cách tiếp cận an toàn nhất là chọn phân khu theo nhu cầu sử dụ
   <details class="faq-item">
     <summary>Có thể xem toàn bộ thông tin dự án ở đâu?</summary>
     <div>
-      <p>Quý khách có thể xem tổng quan đầy đủ tại <a href="/projects/vinhomes-paradise-can-gio">trang dự án Vinhomes Paradise Cần Giờ</a>.</p>
+      <p>Quý khách có thể xem tổng quan đầy đủ tại <a href="/projects/vinhomes-paradise-can-gio/">trang dự án Vinhomes Paradise Cần Giờ</a>.</p>
     </div>
   </details>
 </div>
 
 ## Kết luận
 
-Boulevard Prime và Lagoonia Legacy phục vụ hai nhu cầu khác nhau trong cùng một dự án — kinh doanh kết hợp ở, và nghỉ dưỡng riêng tư. Nếu bạn cần tư vấn để chọn phân khu phù hợp với mục tiêu cụ thể của mình, hãy [liên hệ với tôi](/contact) hoặc xem thêm tại [trang dự án Vinhomes Paradise Cần Giờ](/projects/vinhomes-paradise-can-gio).
+Boulevard Prime và Lagoonia Legacy phục vụ hai nhu cầu khác nhau trong cùng một dự án — kinh doanh kết hợp ở, và nghỉ dưỡng riêng tư. Nếu bạn cần tư vấn để chọn phân khu phù hợp với mục tiêu cụ thể của mình, hãy [liên hệ với tôi](/contact/) hoặc xem thêm tại [trang dự án Vinhomes Paradise Cần Giờ](/projects/vinhomes-paradise-can-gio/).

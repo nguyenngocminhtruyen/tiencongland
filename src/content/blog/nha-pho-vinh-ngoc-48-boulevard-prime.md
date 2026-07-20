@@ -39,7 +39,7 @@ Theo tài liệu bán hàng, nhà phố được giới thiệu theo hướng k�
 
 ## Giá trị nổi bật
 
-- **Kết nối vùng**: nằm trong khu vực Boulevard Prime, được định hướng kết nối tới nhiều tuyến hạ tầng vùng đang triển khai (xem chi tiết lộ trình tại [bài viết tiến độ hạ tầng](/blog/tien-do-thi-cong-vinhomes-paradise-can-gio)).
+- **Kết nối vùng**: nằm trong khu vực Boulevard Prime, được định hướng kết nối tới nhiều tuyến hạ tầng vùng đang triển khai (xem chi tiết lộ trình tại [bài viết tiến độ hạ tầng](/blog/tien-do-thi-cong-vinhomes-paradise-can-gio/)).
 - **Không gian kết hợp**: mặt tiền kinh doanh và không gian sống trong cùng sản phẩm.
 - **View hướng vịnh biển**: theo giới thiệu, tầm nhìn hướng về phía vịnh biển nội khu và khu biệt thự đối diện.
 
@@ -51,7 +51,7 @@ Mô hình nhà phố vừa ở vừa kinh doanh thường phù hợp với hai n
 
 - Khách hàng có nhu cầu vừa ở vừa kinh doanh mặt tiền.
 - Nhà đầu tư quan tâm bất động sản thương mại tại khu vực đang phát triển hạ tầng, chấp nhận tầm nhìn trung - dài hạn.
-- Khách hàng đã tìm hiểu và có nhu cầu so sánh với các dòng sản phẩm khác trong cùng dự án — xem thêm tại [bài phân tích các dòng sản phẩm Vinhomes Paradise Cần Giờ](/blog/phan-khu-vinhomes-paradise-can-gio).
+- Khách hàng đã tìm hiểu và có nhu cầu so sánh với các dòng sản phẩm khác trong cùng dự án — xem thêm tại [bài phân tích các dòng sản phẩm Vinhomes Paradise Cần Giờ](/blog/phan-khu-vinhomes-paradise-can-gio/).
 
 ## Lưu ý khi tìm hiểu
 
@@ -77,11 +77,11 @@ Mô hình nhà phố vừa ở vừa kinh doanh thường phù hợp với hai n
   <details class="faq-item">
     <summary>Có thể xem thêm hình ảnh và video ở đâu?</summary>
     <div>
-      <p>Quý khách có thể xem thư viện hình ảnh và video giới thiệu tại <a href="/properties/nha-pho-vinh-ngoc-48">trang sản phẩm Nhà phố Vịnh Ngọc 48</a>.</p>
+      <p>Quý khách có thể xem thư viện hình ảnh và video giới thiệu tại <a href="/properties/nha-pho-vinh-ngoc-48/">trang sản phẩm Nhà phố Vịnh Ngọc 48</a>.</p>
     </div>
   </details>
 </div>
 
 ## Kết luận
 
-Nhà phố Vịnh Ngọc 48 là sản phẩm đáng chú ý trong phân khu Boulevard Prime nhờ mô hình kết hợp kinh doanh - ở và vị trí hướng vịnh biển, nhưng vẫn còn nhiều thông tin cụ thể (giá, diện tích, pháp lý) chưa được công bố. Nếu bạn muốn xem chi tiết sản phẩm hoặc nhận thông tin cập nhật, tham khảo [trang sản phẩm Nhà phố Vịnh Ngọc 48](/properties/nha-pho-vinh-ngoc-48) hoặc [liên hệ với tôi](/contact) để được tư vấn trực tiếp.
+Nhà phố Vịnh Ngọc 48 là sản phẩm đáng chú ý trong phân khu Boulevard Prime nhờ mô hình kết hợp kinh doanh - ở và vị trí hướng vịnh biển, nhưng vẫn còn nhiều thông tin cụ thể (giá, diện tích, pháp lý) chưa được công bố. Nếu bạn muốn xem chi tiết sản phẩm hoặc nhận thông tin cập nhật, tham khảo [trang sản phẩm Nhà phố Vịnh Ngọc 48](/properties/nha-pho-vinh-ngoc-48/) hoặc [liên hệ với tôi](/contact/) để được tư vấn trực tiếp.

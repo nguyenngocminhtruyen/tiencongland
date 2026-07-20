@@ -78,7 +78,7 @@ const productLineLinks = productLines.map((line) => {
   const match =
     projectProperties.find((p) => slugify(p.data.title) === target) ??
     projectProperties.find((p) => p.data.subdivision && slugify(p.data.subdivision) === target);
-  return match ? `/properties/${match.id}` : `/contact?property=${project.id}-${target}`;
+  return match ? `/properties/${match.id}/` : `/contact/?property=${project.id}-${target}`;
 });
 
 const allProjects = await getCollection('projects');
@@ -153,7 +153,7 @@ const tocItems = [
   type="article"
   jsonLd={faqLd ? [jsonLd, faqLd] : jsonLd}
 >
-  <Breadcrumbs items={[{ label: 'Dự án', href: '/projects' }, { label: title }]} />
+  <Breadcrumbs items={[{ label: 'Dự án', href: '/projects/' }, { label: title }]} />
 
   <article>
   <!-- 1. Hero -->
@@ -182,12 +182,12 @@ const tocItems = [
       </div>
 
       <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-        <a href="/contact" class="btn-accent justify-center">
+        <a href="/contact/" class="btn-accent justify-center">
           <Icon name="phone" size={17} />
           Nhận bảng giá &amp; đăng ký tư vấn
         </a>
         {relatedPostEntries.length > 0 && (
-          <a href={`/blog/${blogSlug(relatedPostEntries[0].id)}`} class="btn-outline justify-center">
+          <a href={`/blog/${blogSlug(relatedPostEntries[0].id)}/`} class="btn-outline justify-center">
             Xem bài viết liên quan
             <Icon name="arrow-right" size={17} />
           </a>
@@ -437,9 +437,9 @@ const tocItems = [
         'Tôi có thể hỗ trợ Quý khách kiểm tra thông tin mới nhất, tư vấn loại sản phẩm phù hợp và sắp xếp lịch tìm hiểu thực tế nếu có nhu cầu.'
       }
       primaryLabel="Nhận bảng giá & tư vấn"
-      primaryHref="/contact"
+      primaryHref="/contact/"
       secondaryLabel="Xem thông tin liên hệ"
-      secondaryHref="/contact#lien-he"
+      secondaryHref="/contact/#lien-he"
     />
   </section>
   </article>

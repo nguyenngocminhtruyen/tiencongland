@@ -140,6 +140,19 @@
     @apply m-0;
   }
 
+  /* Video embed inside article prose via raw HTML <figure><video> */
+  .video-frame {
+    @apply overflow-hidden rounded-lg border border-border bg-primary-900 shadow-card;
+  }
+
+  .video-frame video {
+    @apply aspect-video w-full bg-primary-900;
+  }
+
+  .video-frame figcaption {
+    @apply bg-surface-card px-4 py-3 text-sm leading-relaxed text-primary-500;
+  }
+
   /* Mobile collapsible table of contents */
   .toc summary::-webkit-details-marker {
     display: none;

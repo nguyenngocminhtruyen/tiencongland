@@ -52,7 +52,7 @@ Mô hình biệt thự ven vịnh nội khu (không phải ven biển tự nhiê
 
 - Gia đình tìm không gian nghỉ dưỡng riêng tư để ở hoặc dùng vào cuối tuần.
 - Khách hàng ưu tiên yếu tố cảnh quan, mặt nước hơn là vị trí gần trục thương mại.
-- Khách hàng muốn so sánh với các phân khu khác trong dự án — xem thêm tại [bài phân tích các dòng sản phẩm Vinhomes Paradise Cần Giờ](/blog/phan-khu-vinhomes-paradise-can-gio).
+- Khách hàng muốn so sánh với các phân khu khác trong dự án — xem thêm tại [bài phân tích các dòng sản phẩm Vinhomes Paradise Cần Giờ](/blog/phan-khu-vinhomes-paradise-can-gio/).
 
 ## Lưu ý khi tìm hiểu
 
@@ -78,11 +78,11 @@ Mô hình biệt thự ven vịnh nội khu (không phải ven biển tự nhiê
   <details class="faq-item">
     <summary>Có thể xem thêm hình ảnh sản phẩm ở đâu?</summary>
     <div>
-      <p>Quý khách có thể xem thư viện hình ảnh tại <a href="/properties/lagoonia-emerald-cove">trang sản phẩm Lagoonia Emerald Cove</a>.</p>
+      <p>Quý khách có thể xem thư viện hình ảnh tại <a href="/properties/lagoonia-emerald-cove/">trang sản phẩm Lagoonia Emerald Cove</a>.</p>
     </div>
   </details>
 </div>
 
 ## Kết luận
 
-Lagoonia Emerald Cove nổi bật với vị trí ven vịnh và thiết kế hướng thiên nhiên, nhưng thông tin về diện tích, giá bán và pháp lý vẫn cần được cập nhật thêm. Xem chi tiết tại [trang sản phẩm Lagoonia Emerald Cove](/properties/lagoonia-emerald-cove) hoặc [liên hệ với tôi](/contact) nếu bạn cần tư vấn thêm về sản phẩm này.
+Lagoonia Emerald Cove nổi bật với vị trí ven vịnh và thiết kế hướng thiên nhiên, nhưng thông tin về diện tích, giá bán và pháp lý vẫn cần được cập nhật thêm. Xem chi tiết tại [trang sản phẩm Lagoonia Emerald Cove](/properties/lagoonia-emerald-cove/) hoặc [liên hệ với tôi](/contact/) nếu bạn cần tư vấn thêm về sản phẩm này.

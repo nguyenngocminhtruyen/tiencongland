@@ -8,7 +8,7 @@ interface Props {
 
 const { project } = Astro.props;
 const { title, tagline, location, type, status, heroImage } = project.data;
-const href = `/projects/${project.id}`;
+const href = `/projects/${project.id}/`;
 ---
 
 <article class="card group flex flex-col overflow-hidden hover:shadow-card-hover">
@@ -44,7 +44,7 @@ const href = `/projects/${project.id}`;
         Xem chi tiết
         <Icon name="arrow-right" size={16} />
       </a>
-      <a href="/contact" class="btn-outline flex-1 justify-center text-sm">
+      <a href="/contact/" class="btn-outline flex-1 justify-center text-sm">
         Liên hệ tư vấn
       </a>
     </div>

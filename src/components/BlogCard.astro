@@ -10,7 +10,7 @@ interface Props {
 
 const { post } = Astro.props;
 const { title, description, publishDate, category, image } = post.data;
-const href = `/blog/${blogSlug(post.id)}`;
+const href = `/blog/${blogSlug(post.id)}/`;
 ---
 
 <article class="card group flex flex-col overflow-hidden hover:shadow-card-hover">
