@@ -16,6 +16,10 @@ pnpm-debug.log*
 .env.*
 !.env.example
 
+# Wrangler local secrets (used by `wrangler dev` for RESEND_API_KEY etc.)
+.dev.vars
+.dev.vars.*
+
 # OS files
 .DS_Store
 Thumbs.db

@@ -1,7 +1,7 @@
 ---
 title: "Tiến Độ 1.500 Căn Đầu Tiên Tại Vinhomes Green Paradise Cần Giờ"
 description: "Cập nhật tiến độ 1.500 căn đầu tiên tại Vinhomes Green Paradise Cần Giờ qua video flycam thực tế, giúp khách hàng có góc nhìn thực về tốc độ triển khai dự án."
-seoTitle: "Tiến Độ 1.500 Căn Đầu Tiên Vinhomes Green Paradise"
+seoTitle: "Tiến Độ 1.500 Căn Vinhomes Green Paradise"
 publishDate: 2026-07-20
 author: "Đinh Tiến Công"
 category: "Dự án bất động sản"

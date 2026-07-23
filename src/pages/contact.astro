@@ -129,6 +129,8 @@ const jsonLd = {
               <p class="field-error mt-1.5 hidden text-sm text-danger" role="alert"></p>
             </div>
 
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
             <button type="submit" class="btn-accent w-full sm:w-auto">
               <span id="submit-label">Gửi yêu cầu</span>
               <Icon name="arrow-right" size={18} />
@@ -199,7 +201,7 @@ const jsonLd = {
   </section>
 </Layout>
 
-<script define:vars={{ contactEmail: SITE.email }} is:inline>
+<script define:vars={{ phoneDisplay: SITE.phoneDisplay, zaloUrl: SITE.social.zalo }} is:inline>
   const form = document.getElementById('contact-form');
   const statusBox = document.getElementById('form-status');
   const submitBtn = form.querySelector('button[type="submit"]');
@@ -268,7 +270,18 @@ const jsonLd = {
     field.addEventListener(eventName, () => validateField(field));
   });
 
-  form.addEventListener('submit', (e) => {
+  const fallbackHtml = `Vui lòng gọi <a href="tel:${phoneDisplay.replace(/\s/g, '')}" class="font-medium underline">${phoneDisplay}</a> hoặc <a href="${zaloUrl}" target="_blank" rel="noopener noreferrer" class="font-medium underline">chat Zalo</a> để được hỗ trợ ngay.`;
+
+  function showStatus(html, tone) {
+    statusBox.innerHTML = html;
+    statusBox.classList.remove('hidden');
+    statusBox.className =
+      tone === 'success'
+        ? 'rounded border border-success/30 bg-success/10 p-3 text-sm text-success'
+        : 'rounded border border-danger/30 bg-danger/10 p-3 text-sm text-danger';
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     let firstInvalid = null;
@@ -289,20 +302,23 @@ const jsonLd = {
     submitBtn.disabled = true;
     submitLabel.textContent = 'Đang gửi...';
 
-    const data = new FormData(form);
-    const subject = encodeURIComponent(`Yêu cầu tư vấn từ ${data.get('name')}`);
-    const body = encodeURIComponent(
-      `Họ tên: ${data.get('name')}\nSĐT: ${data.get('phone')}\nEmail: ${data.get('email') || 'Không cung cấp'}\nNhu cầu: ${data.get('interest')}\n\nNội dung:\n${data.get('message')}`
-    );
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: new FormData(form),
+      });
 
-    window.setTimeout(() => {
-      window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
-      statusBox.textContent = 'Đã mở ứng dụng email của bạn. Vui lòng nhấn gửi để hoàn tất yêu cầu tư vấn.';
-      statusBox.classList.remove('hidden');
-      statusBox.className = 'rounded border border-success/30 bg-success/10 p-3 text-sm text-success';
+      if (response.ok) {
+        showStatus('Đã gửi yêu cầu thành công. Tôi sẽ liên hệ lại trong vòng 24 giờ.', 'success');
+        form.reset();
+      } else {
+        showStatus(`Gửi không thành công do lỗi hệ thống. ${fallbackHtml}`, 'error');
+      }
+    } catch (err) {
+      showStatus(`Không thể kết nối để gửi yêu cầu (có thể do mạng). ${fallbackHtml}`, 'error');
+    } finally {
       submitBtn.disabled = false;
       submitLabel.textContent = 'Gửi yêu cầu';
-      form.reset();
-    }, 400);
+    }
   });
 </script>

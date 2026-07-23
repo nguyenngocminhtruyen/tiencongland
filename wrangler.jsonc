@@ -1,8 +1,10 @@
 {
   "name": "tiencongland",
   "compatibility_date": "2026-07-17",
+  "main": "worker/index.ts",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     "not_found_handling": "404-page"
   }
 }

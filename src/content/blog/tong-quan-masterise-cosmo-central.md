@@ -1,7 +1,7 @@
 ---
 title: "Tổng Quan Masterise Cosmo Central Tại The Global City"
 description: "Thông tin tham khảo về Masterise Cosmo Central: vị trí, loại hình căn hộ, phân khu Nexus và tiện ích nội khu, dành cho khách hàng đang tìm hiểu căn hộ cao cấp."
-seoTitle: "Tổng Quan Masterise Cosmo Central Tại The Global City"
+seoTitle: "Tổng Quan Masterise Cosmo Central"
 publishDate: 2026-07-20
 author: "Đinh Tiến Công"
 category: "Dự án nổi bật"

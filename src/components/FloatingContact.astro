@@ -1,0 +1,31 @@
+---
+import Icon from './Icon.astro';
+import { SITE } from '@/lib/site';
+---
+
+<div class="fixed inset-x-0 bottom-0 z-50 flex justify-end gap-3 px-4 pb-4 sm:px-6 sm:pb-6" style="pointer-events: none;">
+  <a
+    href={SITE.social.zalo}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={`Chat Zalo với ${SITE.name}`}
+    style="pointer-events: auto;"
+    class="group relative flex h-[52px] w-[52px] items-center justify-center rounded-full bg-white text-accent-600 shadow-card-hover ring-1 ring-primary-200 transition-transform duration-200 hover:scale-105 active:scale-95"
+  >
+    <Icon name="zalo" size={26} />
+    <span class="pointer-events-none absolute right-full top-1/2 mr-3 hidden -translate-y-1/2 whitespace-nowrap rounded bg-primary-900 px-2.5 py-1.5 text-xs font-medium text-white group-hover:sm:block">
+      Chat Zalo
+    </span>
+  </a>
+  <a
+    href={`tel:${SITE.phone.replace(/\s/g, '')}`}
+    aria-label={`Gọi điện ${SITE.phoneDisplay}`}
+    style="pointer-events: auto;"
+    class="group relative flex h-[52px] w-[52px] items-center justify-center rounded-full bg-accent text-white shadow-card-hover transition-transform duration-200 hover:scale-105 active:scale-95"
+  >
+    <Icon name="phone" size={24} filled />
+    <span class="pointer-events-none absolute right-full top-1/2 mr-3 hidden -translate-y-1/2 whitespace-nowrap rounded bg-primary-900 px-2.5 py-1.5 text-xs font-medium text-white group-hover:sm:block">
+      Gọi {SITE.phoneDisplay}
+    </span>
+  </a>
+</div>

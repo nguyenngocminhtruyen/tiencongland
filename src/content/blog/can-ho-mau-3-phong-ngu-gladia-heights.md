@@ -1,6 +1,7 @@
 ---
 title: "Căn hộ mẫu 3 phòng ngủ Gladia Heights: 3 giá trị sống làm nên một tương lai trọn vẹn"
 description: "Tham quan căn hộ mẫu 3 phòng ngủ Gladia Heights - dự án căn hộ cao cấp tại Bình Trưng, TP.HCM hợp tác phát triển bởi Keppel và Khang Điền. Thông tin tham khảo, liên hệ tư vấn chi tiết."
+seoTitle: "Căn Hộ Mẫu 3 Phòng Ngủ Gladia Heights"
 publishDate: 2026-07-14
 category: "Dự án nổi bật"
 image: "/images/blog/gladia-heights-can-ho-mau-3-phong-ngu-01.webp"
