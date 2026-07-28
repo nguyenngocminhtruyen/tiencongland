@@ -94,6 +94,10 @@ const projects = defineCollection({
     distributor: z.string().optional(),
     status: z.string().default('Đang cập nhật'),
     priceLabel: z.string().default('Vui lòng liên hệ để kiểm tra bảng giá mới nhất'),
+    // Giá khởi điểm/m² (VND) — chỉ điền khi đây là con số CHÍNH THỨC theo tài liệu bán hàng/booking của
+    // chủ đầu tư (không suy ra/tính toán). Dùng để phát JSON-LD priceSpecification (UnitPriceSpecification)
+    // hỗ trợ rich results và AI Overview trích dẫn giá; để trống nếu chưa có giá chính thức.
+    startingPricePerSqm: z.number().optional(),
     legalStatus: z.string().default('Theo thông tin công bố/tài liệu bán hàng tại thời điểm cập nhật'),
     updatedDate: z.coerce.date(),
     source: z.string().default('Tài liệu/thông tin bán hàng tại thời điểm cập nhật'),

@@ -9,11 +9,11 @@
   "district": "Bình Trưng",
   "address": "Đường Võ Chí Công, Phường Bình Trưng, TP. Hồ Chí Minh",
   "developer": "Keppel và Khang Điền",
-  "priceLabel": "Tham khảo khoảng 9,5 - 9,6 tỷ đồng/căn (tổng hợp từ thị trường, chưa xác nhận chính thức từ chủ đầu tư)",
-  "areaLabel": "Diện tích tham khảo khoảng 115 - 124 m² tùy vị trí, theo tổng hợp thị trường tại thời điểm cập nhật, chưa xác nhận chính thức từ chủ đầu tư",
+  "priceLabel": "Giá khởi điểm chính thức từ 83 triệu/m² (giai đoạn booking) - tương đương khoảng 8,72 - 9,96 tỷ đồng cho diện tích 105-120m², gần với mức 9,5 - 9,6 tỷ đồng/căn tổng hợp từ thị trường trước đó",
+  "areaLabel": "Diện tích tham khảo khoảng 105 - 124 m² tùy vị trí, theo tài liệu chính sách bán hàng và tổng hợp thị trường tại thời điểm cập nhật, chưa xác nhận chính thức từng căn từ chủ đầu tư",
   "legalStatus": "Theo thông báo chính thức của Keppel và Khang Điền: dự án áp dụng hạn mức sở hữu cho người nước ngoài theo quy định pháp luật hiện hành (tối đa 30% số lượng căn hộ mỗi tòa). Hồ sơ pháp lý chi tiết theo từng căn hộ vui lòng liên hệ để được xác nhận và cập nhật mới nhất.",
-  "infoSource": "Thông cáo báo chí chính thức của Keppel (06/2026) và trang thông tin chính thức của Khang Điền; hình ảnh căn hộ mẫu theo tài liệu bán hàng; giá tham khảo tổng hợp từ thị trường (batdongsan.com.vn và các kênh phân phối) tại thời điểm T7/2026, chưa xác nhận chính thức từ chủ đầu tư.",
-  "updatedDate": "2026-07-20",
+  "infoSource": "Thông cáo báo chí chính thức của Keppel (06/2026), trang thông tin chính thức của Khang Điền và tài liệu chính sách bán hàng/booking (07/2026); hình ảnh căn hộ mẫu theo tài liệu bán hàng; giá khởi điểm 83 triệu/m² theo chính sách booking chính thức, giá tham khảo 9,5-9,6 tỷ/căn tổng hợp từ thị trường (batdongsan.com.vn và các kênh phân phối) tại thời điểm T7/2026.",
+  "updatedDate": "2026-07-28",
   "heroImage": "/images/blog/gladia-heights-can-ho-mau-3-phong-ngu-01.webp",
   "gallery": [
     {
@@ -94,7 +94,7 @@
     },
     {
       "question": "Giá bán căn 3 phòng ngủ Gladia Heights là bao nhiêu?",
-      "answer": "Giá tham khảo tổng hợp từ thị trường khoảng 9,5 - 9,6 tỷ đồng/căn tại thời điểm cập nhật, chưa xác nhận chính thức từ chủ đầu tư. Quý khách vui lòng liên hệ để được cập nhật bảng giá mới nhất."
+      "answer": "Theo tài liệu chính sách bán hàng/booking chính thức (07/2026), giá khởi điểm Gladia Heights từ 83 triệu/m², tương đương khoảng 8,72 - 9,96 tỷ đồng cho căn 3PN diện tích 105-120m² - khá gần với mức 9,5-9,6 tỷ đồng/căn tổng hợp từ thị trường trước đó. Giá bán chính thức theo từng căn cụ thể có thể khác, Quý khách vui lòng liên hệ để được cập nhật bảng giá mới nhất."
     },
     {
       "question": "Người nước ngoài có thể mua căn hộ tại Gladia Heights không?",
@@ -105,7 +105,7 @@
       "answer": "Quý khách có thể liên hệ với tôi để được hỗ trợ sắp xếp lịch tham quan căn hộ mẫu vào thời gian thuận tiện."
     }
   ],
-  "relatedPosts": ["can-ho-mau-3-phong-ngu-gladia-heights"],
+  "relatedPosts": ["can-ho-mau-3-phong-ngu-gladia-heights", "gia-ban-chinh-sach-thanh-toan-gladia-heights"],
   "seoTitle": "Căn Hộ 3PN Gladia Heights - Serene Spark",
   "seoDescription": "Thông tin tham khảo căn hộ 3 phòng ngủ tại Gladia Heights (Keppel & Khang Điền): hình ảnh tham khảo từ căn hộ mẫu Serene Spark, quy mô dự án và liên hệ tư vấn.",
   "featured": true,

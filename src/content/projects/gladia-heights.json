@@ -8,11 +8,12 @@
   "type": "Khu căn hộ cao cấp",
   "developer": "Keppel và Khang Điền",
   "distributor": "Đang cập nhật",
-  "status": "Đã ra mắt chính thức (06/2026), đang triển khai xây dựng",
-  "priceLabel": "Vui lòng liên hệ để kiểm tra bảng giá mới nhất",
+  "status": "Đang nhận booking chính thức (từ 07/2026), đang triển khai xây dựng",
+  "priceLabel": "Giai đoạn booking: chỉ từ 83 triệu/m² (giá khởi điểm, giá theo từng căn có thể khác)",
+  "startingPricePerSqm": 83000000,
   "legalStatus": "Theo thông báo chính thức của Keppel và Khang Điền: dự án áp dụng hạn mức sở hữu cho người nước ngoài theo quy định pháp luật hiện hành (tối đa 30% số lượng căn hộ mỗi tòa). Hồ sơ pháp lý chi tiết theo từng căn hộ vui lòng liên hệ để được xác nhận và cập nhật mới nhất.",
-  "updatedDate": "2026-07-20",
-  "source": "Thông cáo báo chí chính thức của Keppel (06/2026) và trang thông tin chính thức của Khang Điền; hình ảnh căn hộ mẫu theo tài liệu bán hàng tại thời điểm cập nhật.",
+  "updatedDate": "2026-07-28",
+  "source": "Thông cáo báo chí chính thức của Keppel (06/2026), trang thông tin chính thức của Khang Điền và tài liệu chính sách bán hàng/booking cập nhật 07/2026; hình ảnh căn hộ mẫu theo tài liệu bán hàng tại thời điểm cập nhật.",
   "featuredUnit": "3 phòng ngủ - Serene Spark",
   "heroImage": "/images/blog/gladia-heights-can-ho-mau-3-phong-ngu-01.webp",
   "gallery": [
@@ -53,9 +54,14 @@
     }
   ],
   "highlights": [
+    "Đang nhận booking với giá khởi điểm chỉ từ 83 triệu/m², theo tài liệu chính sách bán hàng tại thời điểm cập nhật",
+    "Chỉ thanh toán 10% giá trị căn hộ khi ký HĐMB, hỗ trợ lãi suất 0% trong 24 tháng",
+    "Quy mô 3 tòa tháp 15 tầng, 639 căn hộ và 26 căn shophouse khối đế",
+    "Đa dạng diện tích từ 1PN (50-60m²) đến 4PN (~140m²)",
+    "Vị trí 3 mặt giáp sông, kết nối nhanh Thủ Thiêm - An Phú - sân bay Long Thành",
+    "Dự kiến bàn giao cuối năm 2027",
     "Căn hộ mẫu 3 phòng ngủ Serene Spark, theo thông tin giới thiệu/tài liệu bán hàng tại thời điểm cập nhật",
-    "Phòng Master với phòng tắm phân tách khu khô - ướt",
-    "Bồn tắm nằm và phòng tắm đứng riêng biệt",
+    "Phòng Master với phòng tắm phân tách khu khô - ướt, bồn tắm nằm và phòng tắm đứng riêng biệt",
     "Vật liệu và thiết bị hoàn thiện tham khảo từ các thương hiệu Grohe, Philips, Hafele",
     "Không gian khách - bếp - ăn thiết kế liên thông"
   ],
@@ -75,9 +81,13 @@
   ],
   "cta": {
     "headline": "Quan tâm Gladia Heights?",
-    "text": "Tôi có thể hỗ trợ Quý khách kiểm tra thông tin mới nhất, tư vấn loại căn phù hợp và sắp xếp lịch tham quan căn hộ mẫu nếu có nhu cầu."
+    "text": "Tôi có thể hỗ trợ Quý khách kiểm tra bảng giá, chính sách booking mới nhất, tư vấn loại căn phù hợp và sắp xếp lịch tham quan căn hộ mẫu nếu có nhu cầu."
   },
-  "relatedPosts": ["can-ho-mau-3-phong-ngu-gladia-heights", "tong-quan-masterise-cosmo-central"],
+  "relatedPosts": [
+    "gia-ban-chinh-sach-thanh-toan-gladia-heights",
+    "can-ho-mau-3-phong-ngu-gladia-heights",
+    "tong-quan-masterise-cosmo-central"
+  ],
   "featured": true,
   "productLines": [
     {
@@ -93,6 +103,32 @@
           "caption": "Phòng ngủ Master"
         }
       ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Giá bán Gladia Heights hiện nay là bao nhiêu?",
+      "answer": "Theo tài liệu chính sách bán hàng/booking tại thời điểm cập nhật (07/2026), giá khởi điểm Gladia Heights chỉ từ 83 triệu/m². Giá bán chính thức theo từng căn cụ thể (vị trí, tầng, hướng) có thể khác và thay đổi theo từng đợt mở bán - Quý khách vui lòng liên hệ để được cập nhật bảng giá mới nhất."
+    },
+    {
+      "question": "Chính sách thanh toán khi booking Gladia Heights như thế nào?",
+      "answer": "Khách hàng chỉ thanh toán 10% giá trị căn hộ khi ký hợp đồng mua bán (HĐMB), được hỗ trợ lãi suất 0% trong 24 tháng. Ngoài ra có chiết khấu 2% cho khách booking sớm và chiết khấu lên đến 12% nếu thanh toán nhanh. Chính sách áp dụng theo từng đợt mở bán và có thể thay đổi."
+    },
+    {
+      "question": "Gladia Heights có những loại diện tích căn hộ nào?",
+      "answer": "Dự án có 4 loại diện tích: 1PN khoảng 50-60m², 2PN khoảng 70-80m², 3PN khoảng 105-120m² và 4PN khoảng 140m². Số liệu theo tài liệu công bố tại thời điểm cập nhật, có thể chênh lệch theo từng vị trí căn cụ thể."
+    },
+    {
+      "question": "Gladia Heights có quy mô như thế nào?",
+      "answer": "Theo thông báo chính thức của Keppel và Khang Điền, dự án gồm 3 tòa tháp cao 15 tầng với 639 căn hộ và 26 căn shophouse khối đế, phát triển theo mô hình compound resort mật độ thấp, vị trí 3 mặt giáp sông."
+    },
+    {
+      "question": "Gladia Heights dự kiến bàn giao khi nào?",
+      "answer": "Theo thông tin công bố tại thời điểm cập nhật, dự án dự kiến bàn giao vào cuối năm 2027. Tiến độ cụ thể do chủ đầu tư công bố và có thể điều chỉnh trong quá trình xây dựng."
+    },
+    {
+      "question": "Người nước ngoài có thể mua căn hộ tại Gladia Heights không?",
+      "answer": "Theo thông báo chính thức của chủ đầu tư, dự án áp dụng hạn mức sở hữu cho người nước ngoài theo quy định pháp luật hiện hành (tối đa 30% số lượng căn hộ mỗi tòa). Quý khách nên liên hệ để được xác nhận chi tiết theo từng tòa/thời điểm."
     }
   ]
 }
