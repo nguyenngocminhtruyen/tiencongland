@@ -4,14 +4,14 @@
   "seoTitle": "Masterise Cosmo Central - The Global City",
   "seoDescription": "Tìm hiểu thông tin tham khảo về Masterise Cosmo Central, dự án căn hộ đang được tư vấn. Liên hệ để kiểm tra thông tin mới nhất về sản phẩm, giá bán và chính sách.",
   "location": "Khu đô thị The Global City, Đường Đỗ Xuân Hợp, Phường Bình Trưng, TP. Hồ Chí Minh",
-  "locationNote": "Theo sơ đồ định vị do chủ đầu tư công bố, dự án nằm gần trục Đường Liên Phường/Đường D3 và vị trí quy hoạch của tuyến Metro số 5, Metro Thủ Thiêm - Long Thành, cao tốc Long Thành - Dầu Giây. Đây là các tuyến hạ tầng đang trong quá trình quy hoạch/triển khai, chưa có mốc thời gian hoàn thành được xác nhận trong tài liệu hiện có. Khả năng kết nối thực tế nên được khảo sát trực tiếp, tôi có thể hỗ trợ sắp xếp lịch tham quan. Khu vực Phường Bình Trưng cũng là nơi có một số dự án căn hộ cao cấp khác đang được giới thiệu.",
+  "locationNote": "Dự án tọa lạc ngay mặt tiền đường Đỗ Xuân Hợp, tuyến đường đã được mở rộng lên quy mô 6 làn xe theo công bố thực tế của Masterise Homes (cập nhật 31/07/2026). Khu vực cũng ghi nhận 3 tuyến hạ tầng đường bộ khác đã hình thành: cao tốc TP.HCM - Long Thành - Dầu Giây nâng cấp lên 10 làn xe, nút giao An Phú quy mô 4 làn xe và đường Liên Phường quy mô 6 làn xe (rút ngắn kết nối về Thảo Điền còn khoảng 5 phút). Riêng tuyến Metro số 5 và Metro Thủ Thiêm - Long Thành đi qua khu vực vẫn đang trong giai đoạn quy hoạch/triển khai, chưa có mốc thời gian hoàn thành được xác nhận trong tài liệu hiện có. Khả năng kết nối thực tế đến từng điểm đến cụ thể nên được khảo sát trực tiếp, tôi có thể hỗ trợ sắp xếp lịch tham quan. Khu vực Phường Bình Trưng cũng là nơi có một số dự án căn hộ cao cấp khác đang được giới thiệu.",
   "type": "Khu nhà ở kết hợp văn phòng và thương mại dịch vụ",
   "developer": "Masterise Homes (thuộc tập đoàn Masterise)",
   "status": "Đang cập nhật",
   "priceLabel": "Vui lòng liên hệ để kiểm tra bảng giá mới nhất",
   "legalStatus": "Theo tài liệu giới thiệu/poster thông tin dự án tại thời điểm cập nhật: sở hữu lâu dài, áp dụng đối với khách hàng quốc tịch Việt Nam. Hồ sơ pháp lý chi tiết vui lòng liên hệ để được xác nhận và cập nhật mới nhất.",
-  "updatedDate": "2026-07-20",
-  "source": "Poster thông tin dự án và sơ đồ mặt bằng phân khu Nexus do chủ đầu tư/đơn vị phân phối công bố; video căn hộ mẫu ghi nhận tại thời điểm cập nhật.",
+  "updatedDate": "2026-07-31",
+  "source": "Poster thông tin dự án và sơ đồ mặt bằng phân khu Nexus do chủ đầu tư/đơn vị phân phối công bố; video căn hộ mẫu ghi nhận tại thời điểm cập nhật; thông tin và hình ảnh hạ tầng kết nối theo công bố chính thức của Masterise Homes (cập nhật 31/07/2026).",
   "heroImage": "/images/projects/masterise-cosmo-central/masterise-cosmo-central-toan-canh-du-an.webp",
   "gallery": [
     {
@@ -72,6 +72,7 @@
   ],
   "highlights": [
     "Vị trí tại khu đô thị The Global City, đường Đỗ Xuân Hợp, Phường Bình Trưng, TP. Hồ Chí Minh.",
+    "Mặt tiền đường Đỗ Xuân Hợp đã mở rộng 6 làn xe; khu vực có 3 tuyến hạ tầng khác đã hình thành: cao tốc Long Thành - Dầu Giây (10 làn), nút giao An Phú (4 làn), đường Liên Phường (6 làn).",
     "Đa dạng loại hình căn hộ: 1PN, 1PN+, 2PN, 2PN+, 3PN, 4PN, Penthouse, Duplex, Penthouse Duplex (theo tài liệu giới thiệu).",
     "Quy mô 6 tòa tháp cao 19-29 tầng, 3 tầng khối đế và 2 tầng hầm (theo tài liệu giới thiệu).",
     "Phân khu Nexus với hệ tiện ích đa tầng: hồ bơi vô cực, phòng gym, yoga studio, co-working space, tuyến phố thương mại SOHO.",
@@ -100,7 +101,11 @@
     "headline": "Quan tâm Masterise Cosmo Central?",
     "text": "Tôi có thể hỗ trợ Quý khách kiểm tra thông tin mới nhất, tư vấn loại sản phẩm phù hợp và sắp xếp lịch tham quan nếu có nhu cầu."
   },
-  "relatedPosts": ["tong-quan-masterise-cosmo-central", "can-ho-mau-3-phong-ngu-gladia-heights"],
+  "relatedPosts": [
+    "tong-quan-masterise-cosmo-central",
+    "ha-tang-ket-noi-the-global-city",
+    "can-ho-mau-3-phong-ngu-gladia-heights"
+  ],
   "featured": true,
   "productLines": [
     {
@@ -192,6 +197,10 @@
     {
       "question": "Pháp lý và hình thức sở hữu Masterise Cosmo Central như thế nào?",
       "answer": "Theo tài liệu giới thiệu/poster thông tin dự án, hình thức sở hữu là lâu dài, áp dụng đối với khách hàng quốc tịch Việt Nam. Hồ sơ pháp lý chi tiết vui lòng liên hệ để được xác nhận tại thời điểm tìm hiểu."
+    },
+    {
+      "question": "Hạ tầng kết nối quanh Masterise Cosmo Central đã hoàn thành chưa?",
+      "answer": "Theo công bố của Masterise Homes cập nhật 31/07/2026, đường Đỗ Xuân Hợp (mặt tiền dự án) đã mở rộng lên 6 làn xe. Khu vực cũng ghi nhận 3 tuyến hạ tầng khác đã hình thành: cao tốc TP.HCM - Long Thành - Dầu Giây (10 làn xe), nút giao An Phú (4 làn xe) và đường Liên Phường (6 làn xe). Riêng Metro số 5 và Metro Thủ Thiêm - Long Thành vẫn đang trong giai đoạn quy hoạch, chưa có mốc thời gian hoàn thành được xác nhận."
     }
   ]
 }

@@ -2,7 +2,7 @@
 title: "Giá bán Gladia Heights: chỉ từ 83 triệu/m² khi nhận booking, chính sách thanh toán 10%"
 description: "Gladia Heights chính thức nhận booking với giá khởi điểm chỉ từ 83 triệu/m², chỉ thanh toán 10% ký HĐMB, hỗ trợ lãi suất 0% trong 24 tháng. Bảng giá tham khảo theo từng loại căn 1-4PN."
 seoTitle: "Giá Bán & Chính Sách Thanh Toán Gladia Heights"
-publishDate: 2026-07-28
+publishDate: 2026-07-31
 category: "Dự án nổi bật"
 image: "/images/blog/gladia-heights-can-ho-mau-3-phong-ngu-01.webp"
 imageAlt: "Phối cảnh 3 tòa tháp Gladia Heights nhìn từ sông, dự án của Keppel và Khang Điền"
@@ -11,7 +11,7 @@ propertySlugs: ["serene-spark"]
 featured: true
 ---
 
-Gladia Heights chính thức nhận booking với giá khởi điểm **chỉ từ 83 triệu/m²**, áp dụng chính sách chỉ thanh toán **10% khi ký hợp đồng mua bán (HĐMB)** và hỗ trợ lãi suất 0% trong 24 tháng. Đây là thông tin theo tài liệu chính sách bán hàng/booking của chủ đầu tư - đơn vị phân phối, cập nhật ngày 28/07/2026, và có thể thay đổi theo từng đợt mở bán hoặc giỏ hàng cụ thể.
+Gladia Heights chính thức nhận booking với giá khởi điểm **chỉ từ 83 triệu/m²**, áp dụng chính sách chỉ thanh toán **10% khi ký hợp đồng mua bán (HĐMB)** và hỗ trợ lãi suất 0% trong 24 tháng. Đây là thông tin theo tài liệu chính sách bán hàng/booking của chủ đầu tư - đơn vị phân phối, cập nhật ngày 31/07/2026, và có thể thay đổi theo từng đợt mở bán hoặc giỏ hàng cụ thể.
 
 Là chuyên viên tư vấn bất động sản độc lập, tôi tổng hợp lại toàn bộ chính sách giá, thanh toán và cơ cấu diện tích đang áp dụng ở giai đoạn booking, để Quý khách có góc nhìn tham khảo trước khi quyết định giữ chỗ hoặc liên hệ để được xác nhận số liệu chính xác theo từng căn.
 
@@ -34,7 +34,7 @@ Là chuyên viên tư vấn bất động sản độc lập, tôi tổng hợp 
     <div role="row"><dt role="rowheader">Hỗ trợ lãi suất</dt><dd role="cell">0% trong 24 tháng</dd></div>
     <div role="row"><dt role="rowheader">Chiết khấu booking sớm</dt><dd role="cell">2%</dd></div>
     <div role="row"><dt role="rowheader">Chiết khấu thanh toán nhanh</dt><dd role="cell">Lên đến 12%</dd></div>
-    <div role="row"><dt role="rowheader">Nguồn thông tin</dt><dd role="cell">Tài liệu chính sách bán hàng/booking tại thời điểm cập nhật (28/07/2026)</dd></div>
+    <div role="row"><dt role="rowheader">Nguồn thông tin</dt><dd role="cell">Tài liệu chính sách bán hàng/booking tại thời điểm cập nhật (31/07/2026)</dd></div>
   </dl>
 </div>
 
@@ -71,7 +71,7 @@ Gladia Heights gồm 3 tòa tháp cao 15 tầng, với 639 căn hộ và 26 căn
     <div role="row"><dt role="rowheader">Quy mô</dt><dd role="cell">3 tòa tháp 15 tầng, 639 căn hộ và 26 căn shophouse khối đế</dd></div>
     <div role="row"><dt role="rowheader">Diện tích căn hộ</dt><dd role="cell">1PN 50-60m² · 2PN 70-80m² · 3PN 105-120m² · 4PN ~140m²</dd></div>
     <div role="row"><dt role="rowheader">Dự kiến bàn giao</dt><dd role="cell">Cuối năm 2027</dd></div>
-    <div role="row"><dt role="rowheader">Nguồn thông tin</dt><dd role="cell">Tài liệu chính sách bán hàng/booking tại thời điểm cập nhật (28/07/2026)</dd></div>
+    <div role="row"><dt role="rowheader">Nguồn thông tin</dt><dd role="cell">Tài liệu chính sách bán hàng/booking tại thời điểm cập nhật (31/07/2026)</dd></div>
   </dl>
 </div>
 
@@ -97,7 +97,7 @@ Với nhóm khách đầu tư, ngoài mức giá khởi điểm, các yếu tố
   <details class="faq-item">
     <summary>Giá bán Gladia Heights hiện nay là bao nhiêu?</summary>
     <div>
-      <p>Theo tài liệu chính sách bán hàng/booking tại thời điểm cập nhật (28/07/2026), giá khởi điểm Gladia Heights chỉ từ 83 triệu/m². Giá bán chính thức theo từng căn cụ thể (vị trí, tầng, hướng) có thể khác và thay đổi theo từng đợt mở bán - Quý khách vui lòng liên hệ để được cập nhật bảng giá mới nhất.</p>
+      <p>Theo tài liệu chính sách bán hàng/booking tại thời điểm cập nhật (31/07/2026), giá khởi điểm Gladia Heights chỉ từ 83 triệu/m². Giá bán chính thức theo từng căn cụ thể (vị trí, tầng, hướng) có thể khác và thay đổi theo từng đợt mở bán - Quý khách vui lòng liên hệ để được cập nhật bảng giá mới nhất.</p>
     </div>
   </details>
   <details class="faq-item">

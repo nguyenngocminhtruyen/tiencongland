@@ -3,6 +3,7 @@ title: "Tổng Quan Masterise Cosmo Central Tại The Global City"
 description: "Thông tin tham khảo về Masterise Cosmo Central: vị trí, loại hình căn hộ, phân khu Nexus và tiện ích nội khu, dành cho khách hàng đang tìm hiểu căn hộ cao cấp."
 seoTitle: "Tổng Quan Masterise Cosmo Central"
 publishDate: 2026-07-20
+updatedDate: 2026-07-31
 author: "Đinh Tiến Công"
 category: "Dự án nổi bật"
 tags:
@@ -64,14 +65,14 @@ Một điểm được nhấn mạnh trong tài liệu giới thiệu là không
 
 ## Vị trí Masterise Cosmo Central trong The Global City
 
-Dự án tọa lạc tại khu đô thị The Global City, đường Đỗ Xuân Hợp, Phường Bình Trưng, TP.HCM — cùng khu vực với một số dự án căn hộ cao cấp khác đang được giới thiệu, trong đó có [Gladia Heights](/projects/gladia-heights/). Theo sơ đồ định vị do chủ đầu tư công bố, khu vực gần vị trí quy hoạch của tuyến Metro số 5, Metro Thủ Thiêm - Long Thành và cao tốc Long Thành - Dầu Giây. Đây là các tuyến hạ tầng đang trong quá trình quy hoạch/triển khai, chưa có mốc thời gian hoàn thành được xác nhận trong tài liệu hiện có, nên tôi không đưa ra ước tính thời gian di chuyển cụ thể tại đây.
+Dự án tọa lạc tại khu đô thị The Global City, ngay mặt tiền đường Đỗ Xuân Hợp, Phường Bình Trưng, TP.HCM — cùng khu vực với một số dự án căn hộ cao cấp khác đang được giới thiệu, trong đó có [Gladia Heights](/projects/gladia-heights/). **Cập nhật 31/07/2026**: theo công bố thực tế của Masterise Homes, đường Đỗ Xuân Hợp đã mở rộng lên 6 làn xe ngay mặt tiền dự án; khu vực cũng ghi nhận cao tốc TP.HCM - Long Thành - Dầu Giây (nâng lên 10 làn xe), nút giao An Phú (4 làn xe) và đường Liên Phường (6 làn xe, rút ngắn kết nối về Thảo Điền còn khoảng 5 phút) đã hình thành thực tế. Riêng tuyến Metro số 5 và Metro Thủ Thiêm - Long Thành vẫn đang trong giai đoạn quy hoạch/triển khai, chưa có mốc thời gian hoàn thành được xác nhận trong tài liệu hiện có. Quý khách có thể xem chi tiết từng tuyến kèm hình ảnh thực tế tại bài viết [hạ tầng kết nối The Global City](/blog/ha-tang-ket-noi-the-global-city/) mà tôi vừa cập nhật.
 
 ## Những điều cần lưu ý khi tìm hiểu Masterise Cosmo Central
 
 - **Giá bán và chính sách bán hàng**: chưa có trong tài liệu hiện tại, cần liên hệ để được cập nhật theo từng thời điểm.
 - **Pháp lý và hình thức sở hữu**: theo tài liệu giới thiệu là sở hữu lâu dài, áp dụng đối với khách hàng quốc tịch Việt Nam — đây là điểm cần xác nhận rõ nếu Quý khách không thuộc nhóm đối tượng này.
 - **Tiến độ xây dựng và thời điểm bàn giao**: chưa được xác nhận trong tài liệu hiện có, vui lòng liên hệ để kiểm tra thông tin mới nhất.
-- **Hạ tầng kết nối vùng**: các tuyến hạ tầng nêu trong bài là theo sơ đồ định vị của chủ đầu tư, vẫn đang quy hoạch/triển khai, không phải hạ tầng đã hoàn thiện.
+- **Hạ tầng kết nối vùng**: 4 tuyến đường bộ (cao tốc Long Thành - Dầu Giây, nút giao An Phú, đường Liên Phường, đường Đỗ Xuân Hợp) đã hình thành thực tế theo công bố cập nhật 31/07/2026 — xem chi tiết tại [bài viết hạ tầng kết nối The Global City](/blog/ha-tang-ket-noi-the-global-city/). Riêng tuyến Metro số 5 và Metro Thủ Thiêm - Long Thành vẫn đang quy hoạch/triển khai, chưa xác nhận mốc thời gian hoàn thành.
 
 ## Liên hệ tìm hiểu Masterise Cosmo Central
 
